@@ -2,7 +2,7 @@ import { FC, AnchorHTMLAttributes } from 'react'
 import clsx from 'clsx'
 import classes from './Link.module.scss'
 
-enum ELinkVariant {
+enum ELinkSize {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
@@ -15,12 +15,12 @@ enum ELinkAlign {
 }
 
 interface ILink extends AnchorHTMLAttributes<HTMLAnchorElement> {
-	variant?: `${ELinkVariant}`
+	size?: `${ELinkSize}`
 	align?: `${ELinkAlign}`
 }
 
-const Link: FC<ILink> = ({ children, variant = ELinkVariant.small, align, ...props }) => {
-	const styles = clsx([classes.link, classes[variant], align && classes[align]])
+const Link: FC<ILink> = ({ children, size = ELinkSize.small, align, ...props }) => {
+	const styles = clsx([classes.link, classes[size], align && classes[align]])
 
 	return (
 		<a className={styles} {...props}>

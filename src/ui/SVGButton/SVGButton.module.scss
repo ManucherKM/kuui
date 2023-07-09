@@ -1,0 +1,17 @@
+@import '../../assets/styles/index.scss';
+
+.svgButton {
+	width: min-content;
+	height: min-content;
+	cursor: pointer;
+
+	path {
+		fill: $background-250;
+	}
+
+	&:hover {
+		path {
+			fill: $background-dominant-1;
+		}
+	}
+}

@@ -1,0 +1,63 @@
+@import '../../assets/styles/index.scss';
+
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.4375rem 0.875rem;
+	border-radius: 0.25rem;
+	border: none;
+	outline: none;
+	font-family: $fontFamily;
+	font-weight: 400;
+	cursor: pointer;
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	transition: transform 100ms;
+	&:hover {
+		transition: transform 100ms;
+		transform: translateY(-2px);
+	}
+}
+
+.active {
+	background-color: $background-dominant-1;
+	color: black;
+}
+
+.passive {
+	background-color: $background-500;
+	color: $background-250;
+
+	&:hover {
+		color: $background-dominant-2;
+	}
+}
+
+.navigate {
+	background-color: $background-500;
+	color: $background-dominant-2;
+
+	transition: all 100ms;
+	&:hover {
+		transition: all 100ms;
+		background-color: $background-dominant-1;
+		color: $background-1000;
+	}
+}
+
+.large {
+	font-size: 1.5rem;
+}
+
+.medium {
+	font-size: 1.2rem;
+}
+
+.small {
+	font-size: 0.9rem;
+}

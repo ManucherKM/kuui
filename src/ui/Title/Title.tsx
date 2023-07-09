@@ -2,7 +2,7 @@ import { FC, HTMLAttributes } from 'react'
 import classes from './Title.module.scss'
 import clsx from 'clsx'
 
-enum ETitleVariant {
+enum ETitleSize {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
@@ -15,12 +15,12 @@ enum ETitleAlign {
 }
 
 interface ITitle extends HTMLAttributes<HTMLHeadingElement> {
-	variant?: `${ETitleVariant}`
+	size?: `${ETitleSize}`
 	align?: `${ETitleAlign}`
 }
 
-const Title: FC<ITitle> = ({ children, variant = ETitleVariant.medium, align, ...props }) => {
-	const styles = clsx([classes.title, classes[variant], align && classes[align]])
+const Title: FC<ITitle> = ({ children, size = ETitleSize.medium, align, ...props }) => {
+	const styles = clsx([classes.title, classes[size], align && classes[align]])
 
 	return (
 		<h1 className={styles} {...props}>

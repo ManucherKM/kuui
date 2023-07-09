@@ -2,7 +2,7 @@ import { FC, HTMLAttributes } from 'react'
 import clsx from 'clsx'
 import classes from './Subtitle.module.scss'
 
-enum ESubtitleVariant {
+enum ESubtitleSize {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
@@ -15,12 +15,12 @@ enum ESubtitleAlign {
 }
 
 interface ISubtitle extends HTMLAttributes<HTMLHeadingElement> {
-	variant?: `${ESubtitleVariant}`
+	size?: `${ESubtitleSize}`
 	align?: `${ESubtitleAlign}`
 }
 
-const Subtitle: FC<ISubtitle> = ({ children, variant = ESubtitleVariant.medium, align, ...props }) => {
-	const styles = clsx([classes.subtitle, classes[variant], align && classes[align]])
+const Subtitle: FC<ISubtitle> = ({ children, size = ESubtitleSize.medium, align, ...props }) => {
+	const styles = clsx([classes.subtitle, classes[size], align && classes[align]])
 
 	return (
 		<h2 className={styles} {...props}>
