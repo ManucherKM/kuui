@@ -1,0 +1,33 @@
+@import '../../assets/styles/vars.scss';
+
+.label {
+	width: 1.125rem;
+	height: 1.125rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	border-radius: 0.25rem;
+	border: 2px solid $background-dominant-1;
+	cursor: pointer;
+	position: relative;
+
+	span {
+		width: 0.625rem;
+		height: 0.625rem;
+		border-radius: 0.125rem;
+		background-color: $background-dominant-1;
+		display: none;
+	}
+
+	input {
+		width: 0.01px;
+		height: 0.01px;
+		opacity: 0.01;
+		position: absolute;
+
+		&:checked + span {
+			display: block;
+		}
+	}
+}

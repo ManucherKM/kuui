@@ -1,0 +1,58 @@
+:root {
+	--background-1000: #242526;
+	--background-500: #2f3031;
+	--background-250: #737373;
+	--background-dominant-1: #bc98ea;
+	--background-dominant-2: #ebedf0;
+	--warning: #bc3174;
+}
+
+// Redux theme
+.redux {
+	--background-1000: #242526;
+	--background-500: #2f3031;
+	--background-250: #737373;
+	--background-dominant-1: #bc98ea;
+	--background-dominant-2: #ebedf0;
+	--warning: #bc3174;
+}
+
+// Native theme
+.native {
+	--background-1000: #22272e;
+	--background-500: #272e35;
+	--background-250: #6d7887;
+	--background-dominant-1: #4895ef;
+	--background-dominant-2: #cbd0df;
+	--warning: #ef6c75;
+}
+
+// VSCode theme
+.vscode {
+	--background-1000: #252526;
+	--background-500: #333333;
+	--background-250: #818181;
+	--background-dominant-1: #6ebbeb;
+	--background-dominant-2: #d7d7d7;
+	--warning: #f5b732;
+}
+
+// Cornhub theme
+.cornhub {
+	--background-1000: #1b1b1b;
+	--background-500: #292929;
+	--background-250: #808080;
+	--background-dominant-1: #ffa31a;
+	--background-dominant-2: #ffffff;
+	--warning: #c71700;
+}
+
+// BlackAndWhite theme
+.blackAndWhite {
+	--background-1000: #212529;
+	--background-500: #282c31;
+	--background-250: #6e767f;
+	--background-dominant-1: #ced4da;
+	--background-dominant-2: #ced4da;
+	--warning: #dc2f02;
+}

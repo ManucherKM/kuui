@@ -1,10 +1,15 @@
-// Redux dark theme
-$background-1000: #242526;
-$background-500: #2f3031;
-$background-250: #737373;
-$background-dominant-1: #bc98ea;
-$background-dominant-2: #ebedf0;
-$warning: #bc3174;
+/**************************************************/
+/********************* Themes *********************/
+/**************************************************/
+$background-1000: var(--background-1000);
+$background-500: var(--background-500);
+$background-250: var(--background-250);
+$background-dominant-1: var(--background-dominant-1);
+$background-dominant-2: var(--background-dominant-2);
+$warning: var(--warning);
 
-// Fonts
+/**************************************************/
+/********************* Fonts *********************/
+/**************************************************/
+
 $fontFamily: 'Noto Sans Mono', monospace;
