@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
+	plugins: [dts()],
 	build: {
+		lib: {
+			entry: 'src/index.ts',
+			name: 'kuui',
+			fileName: 'index',
+		},
 		rollupOptions: {
-			input: 'src/index.ts',
+			external: ['react'],
 			output: {
-				entryFileNames: 'index.js',
+				globals: {
+					react: 'react',
+				},
 			},
 		},
 	},
