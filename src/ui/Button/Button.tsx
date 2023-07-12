@@ -8,7 +8,7 @@ enum EButton {
 	navigate = 'navigate',
 }
 
-enum EButtonSize {
+enum EButtonDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
@@ -16,11 +16,11 @@ enum EButtonSize {
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: `${EButton}`
-	size?: `${EButtonSize}`
+	dimension?: `${EButtonDimension}`
 }
 
-const Button: FC<IButton> = ({ children, variant = EButton.passive, size = EButtonSize.small, ...props }) => {
-	const styles = clsx([classes.button, classes[variant], classes[size]])
+const Button: FC<IButton> = ({ children, variant = EButton.passive, dimension = EButtonDimension.small, ...props }) => {
+	const styles = clsx([classes.button, classes[variant], classes[dimension]])
 
 	return (
 		<button className={styles} {...props}>

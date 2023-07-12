@@ -1,12 +1,23 @@
 import { FC } from 'react'
 import { InputHTMLAttributes } from 'react'
 import classes from './CheckBox.module.scss'
+import clsx from 'clsx'
 
-interface ICheckBox extends InputHTMLAttributes<HTMLInputElement> {}
+enum ECheckBoxDimension {
+	large = 'large',
+	medium = 'medium',
+	small = 'small',
+}
 
-const CheckBox: FC<ICheckBox> = ({ ...props }) => {
+interface ICheckBox extends InputHTMLAttributes<HTMLInputElement> {
+	dimension?: `${ECheckBoxDimension}`
+}
+
+const CheckBox: FC<ICheckBox> = ({ dimension = ECheckBoxDimension.small, ...props }) => {
+	const styles = clsx([classes.label, classes[dimension]])
+
 	return (
-		<label className={classes.label}>
+		<label className={styles}>
 			<input type="checkbox" {...props} />
 			<span />
 		</label>

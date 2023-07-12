@@ -1,8 +1,6 @@
 @import '../../assets/styles/vars.scss';
 
 .label {
-	width: 1.125rem;
-	height: 1.125rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -13,8 +11,6 @@
 	position: relative;
 
 	span {
-		width: 0.625rem;
-		height: 0.625rem;
 		border-radius: 0.125rem;
 		background-color: $background-dominant-1;
 		display: none;
@@ -29,5 +25,35 @@
 		&:checked + span {
 			display: block;
 		}
+	}
+}
+
+.large {
+	width: 1.5075rem;
+	height: 1.5075rem;
+
+	span {
+		width: 0.8375rem;
+		height: 0.8375rem;
+	}
+}
+
+.medium {
+	width: 1.305rem;
+	height: 1.305rem;
+
+	span {
+		width: 0.725rem;
+		height: 0.725rem;
+	}
+}
+
+.small {
+	width: 1.125rem;
+	height: 1.125rem;
+
+	span {
+		width: 0.625rem;
+		height: 0.625rem;
 	}
 }
