@@ -1,0 +1,60 @@
+@import '@/assets/styles/vars.scss';
+
+.text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.4375rem 0.875rem;
+	border-radius: 0.25rem;
+	background-color: transparent;
+	width: min-content;
+	height: min-content;
+	cursor: pointer;
+	font-family: $fontFamily;
+	transition: background-color 100ms;
+
+	span {
+		color: $background-dominant-2;
+		font-weight: 400;
+		transition: color 100ms;
+	}
+
+	&.active {
+		background-color: $background-dominant-1;
+		transition: background-color 100ms;
+
+		span {
+			color: $background-1000;
+			transition: color 100ms;
+		}
+	}
+
+	&:hover {
+		@extend .active;
+	}
+
+	input {
+		width: 0.01px;
+		height: 0.01px;
+		opacity: 0.01;
+		position: absolute;
+	}
+}
+
+.large {
+	span {
+		font-size: 1.3rem;
+	}
+}
+
+.medium {
+	span {
+		font-size: 1.125rem;
+	}
+}
+
+.small {
+	span {
+		font-size: 0.875rem;
+	}
+}
