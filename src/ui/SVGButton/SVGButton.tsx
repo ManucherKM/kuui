@@ -1,7 +1,7 @@
 import classes from './SVGButton.module.scss'
 import { FC, HTMLAttributes } from 'react'
 
-interface ISVGButton extends HTMLAttributes<HTMLDivElement> {}
+export interface ISVGButton extends HTMLAttributes<HTMLDivElement> {}
 
 const SVGButton: FC<ISVGButton> = ({ children, ...props }) => {
 	return (

@@ -1,4 +1,4 @@
-// Components
+// UI
 import Title from './ui/Title/Title'
 import Subtitile from './ui/Subtitle/Subtitle'
 import Paragraph from './ui/Paragraph/Paragraph'

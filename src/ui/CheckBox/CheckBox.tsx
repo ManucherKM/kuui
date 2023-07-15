@@ -1,21 +1,17 @@
 import { FC } from 'react'
-import { InputHTMLAttributes } from 'react'
-import Box, { EBoxDimension } from './Variant/Box/Box'
-import Text, { ETextDimension } from './Variant/Text/Text'
+import Box, { IBox } from './Variant/Box/Box'
+import Text, { IText } from './Variant/Text/Text'
 
-type ECheckBoxDimension = EBoxDimension | ETextDimension
-
-enum ECheckBoxVariant {
+export enum ECheckBoxVariant {
 	box = 'box',
 	text = 'text',
 }
 
-interface ICheckBox extends InputHTMLAttributes<HTMLInputElement> {
-	variant?: `${ECheckBoxVariant}`
-	dimension?: `${ECheckBoxDimension}`
+export interface ICheckBox extends IBox, IText {
+	variant: `${ECheckBoxVariant}`
 }
 
-const CheckBox: FC<ICheckBox> = ({ variant = ECheckBoxVariant.box, ...props }) => {
+const CheckBox: FC<ICheckBox> = ({ variant, ...props }) => {
 	return (
 		<>
 			{variant === ECheckBoxVariant.box && <Box {...props} />}

@@ -12,7 +12,11 @@ export interface IText extends InputHTMLAttributes<HTMLInputElement> {
 	dimension?: `${ETextDimension}`
 }
 
-const Text: FC<IText> = ({ dimension = ETextDimension.small, onChange, ...props }) => {
+const Text: FC<IText> = ({
+	dimension = ETextDimension.small,
+	onChange,
+	...props
+}) => {
 	const [isChecked, setIsChecked] = useState<boolean | undefined>(props.checked)
 
 	function changeHandler(e: ChangeEvent<HTMLInputElement> | undefined) {
@@ -23,7 +27,11 @@ const Text: FC<IText> = ({ dimension = ETextDimension.small, onChange, ...props 
 		setIsChecked(p => !p)
 	}
 
-	const styles = clsx([classes.text, classes[dimension], isChecked && classes.active])
+	const styles = clsx([
+		classes.text,
+		classes[dimension],
+		isChecked && classes.active,
+	])
 
 	return (
 		<label className={styles}>

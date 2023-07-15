@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import path from 'path'
-console.log(path.resolve('./src'))
 
 export default defineConfig({
 	plugins: [dts()],
