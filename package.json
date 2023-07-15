@@ -9,7 +9,7 @@
 		"preview": "vite preview",
 		"format": "npx prettier --write src/",
 		"push": "npx prettier --write src/ && git add . && git commit -m '.' && git push origin master",
-		"publish": "vite build && npm version patch --no-git-tag-version && npm run publish"
+		"publish": "vite build && npm version patch && npm run publish"
 	},
 	"dependencies": {
 		"clsx": "^1.2.1"
