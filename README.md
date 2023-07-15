@@ -10,5 +10,5 @@
 ## Install
 
 ```powershell
-npm install kuui
+npm install kuui-react
 ```
