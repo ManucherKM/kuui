@@ -1,7 +1,7 @@
 {
 	"name": "kuui-react",
 	"private": false,
-	"version": "0.0.2",
+	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -9,7 +9,7 @@
 		"preview": "vite preview",
 		"format": "npx prettier --write src/",
 		"push": "npx prettier --write src/ && git add . && git commit -m '.' && git push origin kuui-react",
-		"publish": "vite build && npm version patch --no-git-tag-version && npm publish"
+		"npmjs": "vite build && npm version patch --no-git-tag-version && npm publish"
 	},
 	"dependencies": {
 		"clsx": "^1.2.1"
