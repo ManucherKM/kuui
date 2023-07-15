@@ -1,10 +1,19 @@
 import clsx from 'clsx'
 import { FC, InputHTMLAttributes } from 'react'
+import classes from './Radio.module.scss'
 
-interface IRadio extends InputHTMLAttributes<HTMLInputElement> {}
+enum ERadioDimension {
+	large = 'large',
+	medium = 'medium',
+	small = 'small',
+}
 
-const Radio: FC<IRadio> = ({ ...props }) => {
-	const styles = clsx([])
+interface IRadio extends InputHTMLAttributes<HTMLInputElement> {
+	dimension?: `${ERadioDimension}`
+}
+
+const Radio: FC<IRadio> = ({ dimension = ERadioDimension.small, ...props }) => {
+	const styles = clsx([classes.radio, classes[dimension]])
 
 	return <input type="radio" className={styles} {...props} />
 }

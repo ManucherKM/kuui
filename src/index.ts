@@ -6,8 +6,9 @@ import Link from './ui/Link/Link'
 import CheckBox from './ui/CheckBox/CheckBox'
 import Button from './ui/Button/Button'
 import SVGButton from './ui/SVGButton/SVGButton'
+import Radio from './ui/Radio/Radio'
 
 // Styles
 import '@/assets/styles/index.scss'
 
-export { Title, Subtitile, Paragraph, Link, CheckBox, Button, SVGButton }
+export { Title, Subtitile, Paragraph, Link, CheckBox, Button, SVGButton, Radio }

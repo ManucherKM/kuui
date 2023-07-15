@@ -1,4 +1,21 @@
 @import '@/assets/styles/vars.scss';
 
 .radio {
+	accent-color: $background-dominant-1;
+	cursor: pointer;
+}
+
+.large {
+	width: 40px;
+	height: 40px;
+}
+
+.medium {
+	width: 20px;
+	height: 20px;
+}
+
+.small {
+	width: 15px;
+	height: 15px;
 }
