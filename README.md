@@ -1,4 +1,4 @@
-# Kuui (in developing)
+# Kuui (Beta)
 
 ## Tools
 
@@ -11,4 +11,21 @@
 
 ```powershell
 npm install kuui-react
+```
+
+## Quick start
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'kuui-react/styles'
+import { Button } from 'kuui-react'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(
+	<Button dimension='medium' variant='passive'>
+		Click me
+	</Button>
+)
 ```
