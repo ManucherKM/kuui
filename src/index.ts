@@ -8,7 +8,20 @@ import Button from './ui/Button/Button'
 import SVGButton from './ui/SVGButton/SVGButton'
 import Radio from './ui/Radio/Radio'
 
+// Components
+import SettingsPanel from './components/SettingsPanel/SettingsPanel'
+
 // Styles
 import '@/assets/styles/index.scss'
 
-export { Title, Subtitile, Paragraph, Link, CheckBox, Button, SVGButton, Radio }
+export {
+	Title,
+	Subtitile,
+	Paragraph,
+	Link,
+	CheckBox,
+	Button,
+	SVGButton,
+	Radio,
+	SettingsPanel,
+}

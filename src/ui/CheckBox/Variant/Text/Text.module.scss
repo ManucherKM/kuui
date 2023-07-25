@@ -7,10 +7,12 @@
 	padding: 0.4375rem 0.875rem;
 	border-radius: 0.25rem;
 	background-color: transparent;
-	width: min-content;
+	width: 50px;
+	box-sizing: border-box;
 	height: min-content;
 	cursor: pointer;
 	font-family: $fontFamily;
+	user-select: none;
 	transition: background-color 100ms;
 
 	span {
