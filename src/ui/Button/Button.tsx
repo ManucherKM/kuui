@@ -19,7 +19,7 @@ export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 	dimension?: `${EButtonDimension}`
 }
 
-const Button: FC<IButton> = ({
+export const Button: FC<IButton> = ({
 	children,
 	variant = EButton.passive,
 	dimension = EButtonDimension.small,
@@ -33,5 +33,3 @@ const Button: FC<IButton> = ({
 		</button>
 	)
 }
-
-export default Button

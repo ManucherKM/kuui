@@ -12,7 +12,10 @@ export interface IRadio extends InputHTMLAttributes<HTMLInputElement> {
 	dimension?: `${ERadioDimension}`
 }
 
-const Radio: FC<IRadio> = ({ dimension = ERadioDimension.small, ...props }) => {
+export const Radio: FC<IRadio> = ({
+	dimension = ERadioDimension.small,
+	...props
+}) => {
 	const styles = clsx([classes.label, classes[dimension]])
 
 	return (
@@ -22,5 +25,3 @@ const Radio: FC<IRadio> = ({ dimension = ERadioDimension.small, ...props }) => {
 		</label>
 	)
 }
-
-export default Radio

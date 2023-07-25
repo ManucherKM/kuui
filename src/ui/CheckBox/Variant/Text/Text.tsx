@@ -12,7 +12,7 @@ export interface IText extends InputHTMLAttributes<HTMLInputElement> {
 	dimension?: `${ETextDimension}`
 }
 
-const Text: FC<IText> = ({
+export const Text: FC<IText> = ({
 	dimension = ETextDimension.small,
 	onChange,
 	...props
@@ -40,5 +40,3 @@ const Text: FC<IText> = ({
 		</label>
 	)
 }
-
-export default Text

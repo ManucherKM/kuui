@@ -19,7 +19,7 @@ export interface ILink extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	align?: `${ELinkAlign}`
 }
 
-const Link: FC<ILink> = ({
+export const Link: FC<ILink> = ({
 	children,
 	dimension = ELinkDimension.small,
 	align,
@@ -37,5 +37,3 @@ const Link: FC<ILink> = ({
 		</a>
 	)
 }
-
-export default Link

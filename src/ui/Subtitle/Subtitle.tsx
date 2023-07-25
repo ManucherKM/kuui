@@ -19,7 +19,7 @@ export interface ISubtitle extends HTMLAttributes<HTMLHeadingElement> {
 	align?: `${ESubtitleAlign}`
 }
 
-const Subtitle: FC<ISubtitle> = ({
+export const Subtitle: FC<ISubtitle> = ({
 	children,
 	dimension = ESubtitleDimension.medium,
 	align,
@@ -37,5 +37,3 @@ const Subtitle: FC<ISubtitle> = ({
 		</h2>
 	)
 }
-
-export default Subtitle

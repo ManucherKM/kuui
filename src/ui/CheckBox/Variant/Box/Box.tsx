@@ -12,7 +12,10 @@ export interface IBox extends InputHTMLAttributes<HTMLInputElement> {
 	dimension?: `${EBoxDimension}`
 }
 
-const Box: FC<IBox> = ({ dimension = EBoxDimension.small, ...props }) => {
+export const Box: FC<IBox> = ({
+	dimension = EBoxDimension.small,
+	...props
+}) => {
 	const styles = clsx([classes.box, classes[dimension]])
 
 	return (
@@ -22,5 +25,3 @@ const Box: FC<IBox> = ({ dimension = EBoxDimension.small, ...props }) => {
 		</label>
 	)
 }
-
-export default Box

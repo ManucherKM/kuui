@@ -19,7 +19,7 @@ export interface ITitle extends HTMLAttributes<HTMLHeadingElement> {
 	align?: `${ETitleAlign}`
 }
 
-const Title: FC<ITitle> = ({
+export const Title: FC<ITitle> = ({
 	children,
 	dimension = ETitleDimension.medium,
 	align,

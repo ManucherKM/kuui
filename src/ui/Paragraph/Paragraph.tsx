@@ -20,7 +20,7 @@ export interface IParagraph extends HTMLAttributes<HTMLParagraphElement> {
 	align?: `${EParagraphAlign}`
 }
 
-const Paragraph: FC<IParagraph> = ({
+export const Paragraph: FC<IParagraph> = ({
 	children,
 	dimension = EParagraphDimension.small,
 	align,
@@ -38,5 +38,3 @@ const Paragraph: FC<IParagraph> = ({
 		</p>
 	)
 }
-
-export default Paragraph
