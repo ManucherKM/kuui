@@ -10,6 +10,9 @@ import { Radio } from './ui/Radio/Radio'
 
 // Components
 import { SettingsPanel } from './components/SettingsPanel/SettingsPanel'
+import { Loader } from './components/Loader/Loader'
+import { Popup } from './components/Popup/Popup'
+import { Spinner } from './components/Spinner/Spinner'
 
 // Styles
 import '@/assets/styles/index.scss'
@@ -24,4 +27,7 @@ export {
 	SVGButton,
 	Radio,
 	SettingsPanel,
+	Loader,
+	Popup,
+	Spinner,
 }

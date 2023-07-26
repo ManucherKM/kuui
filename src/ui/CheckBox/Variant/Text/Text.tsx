@@ -1,24 +1,47 @@
-import { ChangeEvent, FC, InputHTMLAttributes, useState } from 'react'
-import classes from './Text.module.scss'
-import clsx from 'clsx'
+// Types
+import type { ChangeEvent, FC, InputHTMLAttributes } from 'react'
 
+// Utils
+import clsx from 'clsx'
+import { useState } from 'react'
+
+// Styles
+import classes from './Text.module.scss'
+
+/**
+ * Enumeration of possible Text dimension.
+ */
 export enum ETextDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
 }
 
+/**
+ * Text component interface.
+ */
 export interface IText extends InputHTMLAttributes<HTMLInputElement> {
 	dimension?: `${ETextDimension}`
 }
 
+/**
+ * The Text component is a customized version of the classic HTML input with attributes type="checkbox". Below is an example of its use.
+ * @example
+ * <Text dimension="medium"/>
+ */
 export const Text: FC<IText> = ({
 	dimension = ETextDimension.small,
 	onChange,
 	...props
 }) => {
+	// Tracking the status of the input
 	const [isChecked, setIsChecked] = useState<boolean | undefined>(props.checked)
 
+	/*
+		Create a handler function
+		that will be executed every time
+		the checked field of an input is changed.
+	*/
 	function changeHandler(e: ChangeEvent<HTMLInputElement> | undefined) {
 		if (onChange && e) {
 			onChange(e)
@@ -27,6 +50,7 @@ export const Text: FC<IText> = ({
 		setIsChecked(p => !p)
 	}
 
+	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
 		classes.text,
 		classes[dimension],
