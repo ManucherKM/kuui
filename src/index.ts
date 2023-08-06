@@ -13,6 +13,7 @@ import { SettingsPanel } from './components/SettingsPanel/SettingsPanel'
 import { Loader } from './components/Loader/Loader'
 import { Popup } from './components/Popup/Popup'
 import { Spinner } from './components/Spinner/Spinner'
+import { Accordion } from './components/Accordion/Accordion'
 
 // Styles
 import '@/assets/styles/index.scss'
@@ -30,4 +31,5 @@ export {
 	Loader,
 	Popup,
 	Spinner,
+	Accordion,
 }

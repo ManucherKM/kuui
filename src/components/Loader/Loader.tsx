@@ -1,5 +1,5 @@
 // Types
-import { FC, HTMLAttributes } from 'react'
+import type { FC, HTMLAttributes } from 'react'
 import type { ESpinnerDimension } from '../Spinner/Spinner'
 
 // Components
