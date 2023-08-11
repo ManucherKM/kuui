@@ -7,6 +7,7 @@ import { CheckBox } from './ui/CheckBox/CheckBox'
 import { Button } from './ui/Button/Button'
 import { SVGButton } from './ui/SVGButton/SVGButton'
 import { Radio } from './ui/Radio/Radio'
+import { Input } from './ui/Input/Input'
 
 // Components
 import { SettingsPanel } from './components/SettingsPanel/SettingsPanel'

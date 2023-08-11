@@ -17,9 +17,15 @@ export enum EBoxDimension {
 }
 
 /**
+ * Allowable Box types.
+ */
+
+export type TBox = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
+
+/**
  * Box component interface.
  */
-export interface IBox extends InputHTMLAttributes<HTMLInputElement> {
+export interface IBox extends TBox {
 	dimension?: `${EBoxDimension}`
 }
 

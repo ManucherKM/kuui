@@ -1,20 +1,16 @@
 // Types
-import type { FC, HTMLAttributes } from 'react'
+import type { FC } from 'react'
 import type { ESpinnerDimension } from '../Spinner/Spinner'
+import type { IPopup } from '../Popup/Popup'
 
 // Components
 import { Spinner } from '../Spinner/Spinner'
 import { Popup } from '../Popup/Popup'
 
 /**
- * Allowable Loader types.
- */
-export type TLoader = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
-
-/**
  * Loader component interface.
  */
-export interface ILoader extends TLoader {
+export interface ILoader extends IPopup {
 	dimension?: `${ESpinnerDimension}`
 }
 

@@ -26,9 +26,15 @@ export enum EButtonDimension {
 }
 
 /**
+ * Allowable Button types.
+ */
+
+export type TButton = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'>
+
+/**
  * Button component interface.
  */
-export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButton extends TButton {
 	variant?: `${EButton}`
 	dimension?: `${EButtonDimension}`
 }

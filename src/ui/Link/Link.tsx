@@ -26,9 +26,15 @@ export enum ELinkAlign {
 }
 
 /**
+ * Allowable Link types.
+ */
+
+export type TLink = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className'>
+
+/**
  * Link component interface.
  */
-export interface ILink extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface ILink extends TLink {
 	dimension?: `${ELinkDimension}`
 	align?: `${ELinkAlign}`
 }

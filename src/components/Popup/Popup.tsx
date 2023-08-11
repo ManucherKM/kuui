@@ -12,7 +12,9 @@ export type TPopup = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
 /**
  * Popup component interface.
  */
-export interface IPopup extends TPopup {}
+export interface IPopup extends TPopup {
+	onClose: () => void
+}
 
 /**
  * The Popup component is a popup window. Below you can see an example of its use.
@@ -21,9 +23,13 @@ export interface IPopup extends TPopup {}
  * 	<Button />
  * </Popup>
  */
-export const Popup: FC<IPopup> = ({ children, ...props }) => {
+export const Popup: FC<IPopup> = ({ children, onClose, ...props }) => {
+	function clickHandler() {
+		onClose()
+	}
+
 	return (
-		<div className={classes.wrapper}>
+		<div onClick={clickHandler} className={classes.wrapper}>
 			<div className={classes.content} {...props}>
 				{children}
 			</div>

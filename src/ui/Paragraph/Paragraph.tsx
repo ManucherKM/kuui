@@ -27,9 +27,15 @@ export enum EParagraphAlign {
 }
 
 /**
+ * Allowable Paragraph types.
+ */
+
+export type TParagraph = Omit<HTMLAttributes<HTMLParagraphElement>, 'className'>
+
+/**
  * Paragraph component interface.
  */
-export interface IParagraph extends HTMLAttributes<HTMLParagraphElement> {
+export interface IParagraph extends TParagraph {
 	dimension?: `${EParagraphDimension}`
 	align?: `${EParagraphAlign}`
 }

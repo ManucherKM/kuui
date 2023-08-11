@@ -1,0 +1,36 @@
+@import '@/assets/styles/vars.scss';
+
+.input {
+	outline: none;
+	box-sizing: border-box;
+}
+
+.default {
+	padding: 10px 20px;
+	font-size: 16px;
+	font-family: $NotoSansMono;
+	border-radius: 8px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+	background-color: $background-500;
+	color: $background-dominant-1;
+	transition: border-color 100ms;
+
+	&::placeholder {
+		color: $background-250;
+	}
+
+	&:focus {
+		transition: border-color 100ms;
+		border-color: $background-dominant-1;
+	}
+}
+
+.fixed {
+	max-width: 300px;
+}
+
+.all {
+	width: 100%;
+}

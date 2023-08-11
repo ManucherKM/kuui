@@ -26,9 +26,14 @@ export enum ESubtitleAlign {
 }
 
 /**
+ * Allowable Subtitle types.
+ */
+export type TSubtitle = Omit<HTMLAttributes<HTMLHeadingElement>, 'className'>
+
+/**
  * Subtitle component interface.
  */
-export interface ISubtitle extends HTMLAttributes<HTMLHeadingElement> {
+export interface ISubtitle extends TSubtitle {
 	dimension?: `${ESubtitleDimension}`
 	align?: `${ESubtitleAlign}`
 }

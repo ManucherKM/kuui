@@ -1,5 +1,5 @@
 // Types
-import type { ChangeEvent, FC } from 'react'
+import type { ChangeEvent, FC, HTMLAttributes } from 'react'
 
 // Components
 import { CheckBox } from '@/ui/CheckBox/CheckBox'
@@ -16,9 +16,15 @@ export interface IToggle {
 }
 
 /**
+ * Allowable SettingsPanel types.
+ */
+
+export type TSettingsPanel = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
+
+/**
  * SettingsPanel component interface.
  */
-export interface ISettingsPanel {
+export interface ISettingsPanel extends TSettingsPanel {
 	name: string
 	toggles: IToggle[]
 }
@@ -36,9 +42,13 @@ export interface ISettingsPanel {
  * 	]}
  * />
  */
-export const SettingsPanel: FC<ISettingsPanel> = ({ name, toggles }) => {
+export const SettingsPanel: FC<ISettingsPanel> = ({
+	name,
+	toggles,
+	...props
+}) => {
 	return (
-		<div className={classes.wrapper}>
+		<div className={classes.wrapper} {...props}>
 			<span className={classes.name}>{name}</span>
 			<div className={classes.toggles}>
 				{toggles.map((toggle, idx) => (

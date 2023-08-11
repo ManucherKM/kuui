@@ -18,9 +18,14 @@ export enum ETextDimension {
 }
 
 /**
+ * Allowable Text types.
+ */
+export type TText = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
+
+/**
  * Text component interface.
  */
-export interface IText extends InputHTMLAttributes<HTMLInputElement> {
+export interface IText extends TText {
 	dimension?: `${ETextDimension}`
 }
 

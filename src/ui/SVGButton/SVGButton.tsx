@@ -5,9 +5,14 @@ import type { FC, HTMLAttributes } from 'react'
 import classes from './SVGButton.module.scss'
 
 /**
+ * Allowable SVGButton types.
+ */
+export type TSVGButton = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
+
+/**
  * SVGButton component interface.
  */
-export interface ISVGButton extends HTMLAttributes<HTMLDivElement> {}
+export interface ISVGButton extends TSVGButton {}
 
 /**
  * SVGButton component is intended for buttons that use svg element as their children. Below you can see an example of its use.

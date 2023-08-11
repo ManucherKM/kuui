@@ -4,7 +4,6 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
 		"build": "vite build",
 		"format": "npx prettier --write src/",
 		"push": "npx prettier --write src/ && git add . && git commit -m '.' && git push origin kuui-react",

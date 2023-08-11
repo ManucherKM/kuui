@@ -17,9 +17,14 @@ export enum ERadioDimension {
 }
 
 /**
+ * Allowable Radio types.
+ */
+export type TRadio = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
+
+/**
  * Radio component interface.
  */
-export interface IRadio extends InputHTMLAttributes<HTMLInputElement> {
+export interface IRadio extends TRadio {
 	dimension?: `${ERadioDimension}`
 }
 

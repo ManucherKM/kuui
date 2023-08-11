@@ -26,9 +26,14 @@ export enum ETitleAlign {
 }
 
 /**
+ * Allowable Title types.
+ */
+export type TTitle = Omit<HTMLAttributes<HTMLHeadingElement>, 'className'>
+
+/**
  * Title component interface.
  */
-export interface ITitle extends HTMLAttributes<HTMLHeadingElement> {
+export interface ITitle extends TTitle {
 	dimension?: `${ETitleDimension}`
 	align?: `${ETitleAlign}`
 }

@@ -3,6 +3,8 @@ import type { FC, HTMLAttributes, ReactNode } from 'react'
 
 // Styles
 import classes from './Accordion.module.scss'
+
+// Components
 import { Item } from './Item/Item'
 
 /**
