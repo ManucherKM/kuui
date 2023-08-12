@@ -25,28 +25,28 @@
 }
 
 .active {
-	background-color: $background-dominant-1;
+	background-color: $dominant-1;
 	color: black;
 }
 
 .passive {
-	background-color: $background-500;
-	color: $background-250;
+	background-color: $black-500;
+	color: $black-250;
 
 	&:hover {
-		color: $background-dominant-2;
+		color: $dominant-2;
 	}
 }
 
 .navigate {
-	background-color: $background-500;
-	color: $background-dominant-2;
+	background-color: $black-500;
+	color: $dominant-2;
 
 	transition: all 100ms;
 	&:hover {
 		transition: all 100ms;
-		background-color: $background-dominant-1;
-		color: $background-1000;
+		background-color: $dominant-1;
+		color: $black-1000;
 	}
 }
 

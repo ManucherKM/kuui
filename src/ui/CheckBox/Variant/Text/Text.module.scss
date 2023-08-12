@@ -16,17 +16,17 @@
 	transition: background-color 100ms;
 
 	span {
-		color: $background-dominant-2;
+		color: $dominant-2;
 		font-weight: 400;
 		transition: color 100ms;
 	}
 
 	&.active {
-		background-color: $background-dominant-1;
+		background-color: $dominant-1;
 		transition: background-color 100ms;
 
 		span {
-			color: $background-1000;
+			color: $black-1000;
 			transition: color 100ms;
 		}
 	}

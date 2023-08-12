@@ -6,12 +6,12 @@
 	cursor: pointer;
 
 	path {
-		fill: $background-250;
+		fill: $black-250;
 	}
 
 	&:hover {
 		path {
-			fill: $background-dominant-1;
+			fill: $dominant-1;
 		}
 	}
 }

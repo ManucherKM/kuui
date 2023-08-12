@@ -5,21 +5,21 @@
 	padding: 20px;
 	box-sizing: border-box;
 	border-radius: 12px;
-	border: 2px solid $background-250;
-	background-color: $background-500;
+	border: 2px solid $black-250;
+	background-color: $black-500;
 	cursor: pointer;
 	transition: border-color 100ms;
 
 	&:hover,
 	&:focus {
 		transition: border-color 100ms;
-		border-color: $background-dominant-1;
+		border-color: $dominant-1;
 
 		.wrapper_title {
 			svg {
 				path {
 					transition: fill 100ms;
-					fill: $background-dominant-1;
+					fill: $dominant-1;
 				}
 			}
 		}
@@ -33,7 +33,7 @@
 
 				path {
 					transition: fill 200ms;
-					fill: $background-dominant-1;
+					fill: $dominant-1;
 				}
 			}
 		}
@@ -51,7 +51,7 @@
 		align-items: center;
 
 		.title {
-			color: $background-dominant-2;
+			color: $dominant-2;
 			font-size: 1.2rem;
 			font-family: $NotoSansMono;
 
@@ -68,7 +68,7 @@
 
 			path {
 				transition: fill 100ms;
-				fill: $background-250;
+				fill: $black-250;
 			}
 		}
 	}
