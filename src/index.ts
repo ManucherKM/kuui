@@ -33,4 +33,5 @@ export {
 	Popup,
 	Spinner,
 	Accordion,
+	Input,
 }
