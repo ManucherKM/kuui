@@ -9,7 +9,6 @@ export default defineConfig({
 			entry: 'src/index.ts',
 			name: 'kuui',
 			fileName: 'index',
-			
 		},
 		rollupOptions: {
 			external: ['react'],
