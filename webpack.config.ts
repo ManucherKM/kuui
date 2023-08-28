@@ -6,7 +6,6 @@ const plugins = [
 	new MiniCssExtractPlugin({
 		filename: 'index.css',
 		chunkFilename: '[id].css',
-
 	}),
 ]
 
