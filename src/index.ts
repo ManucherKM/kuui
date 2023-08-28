@@ -17,7 +17,7 @@ import { Spinner } from './components/Spinner/Spinner'
 import { Accordion } from './components/Accordion/Accordion'
 
 // Styles
-import '@/assets/styles/index.scss'
+import './assets/styles/index.scss'
 
 export {
 	Title,
