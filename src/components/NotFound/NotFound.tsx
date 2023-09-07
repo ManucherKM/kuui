@@ -1,4 +1,4 @@
-import classes from 'NotFound.modules.scss'
+import classes from './NotFound.module.scss'
 
 export const NotFound = () => {
 	return (
