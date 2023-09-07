@@ -15,6 +15,7 @@ import { Loader } from './components/Loader/Loader'
 import { Popup } from './components/Popup/Popup'
 import { Spinner } from './components/Spinner/Spinner'
 import { Accordion } from './components/Accordion/Accordion'
+import { NotFound } from './components/NotFound/NotFound'
 
 // Styles
 import '@/assets/styles/index.scss'
@@ -34,4 +35,5 @@ export {
 	Spinner,
 	Accordion,
 	Input,
+	NotFound,
 }
