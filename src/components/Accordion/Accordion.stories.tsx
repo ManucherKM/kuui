@@ -1,5 +1,3 @@
-/* @vite-ignore */
-
 // Types
 import type { Meta, StoryObj } from '@storybook/react'
 
