@@ -11,7 +11,8 @@
 		"declaration": true,
 		"paths": {
 			"@/*": ["./src/*"]
-		},
-		"exclude": ["node_modules", "dist", ".storybook", "src/**/*.stories.tsx"]
-	}
+		}
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist", ".storybook", "src/**/*.stories.tsx"]
 }
