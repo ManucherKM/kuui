@@ -11,7 +11,11 @@ $warning: var(--kuui-warning);
 /**************************************************/
 /********************* Fonts *********************/
 /**************************************************/
-$NotoSansMono: 'Noto Sans Mono', monospace;
+:root {
+	--Noto-Sans-Mono: 'Noto Sans Mono', monospace;
+}
+
+$NotoSansMono: var(--Noto-Sans-Mono);
 
 /**************************************************/
 /********************* Screens *********************/
