@@ -13,7 +13,7 @@ export type TPopup = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
  * Popup component interface.
  */
 export interface IPopup extends TPopup {
-	onClose: () => void
+	onClose?: () => void
 }
 
 /**
@@ -25,7 +25,9 @@ export interface IPopup extends TPopup {
  */
 export const Popup: FC<IPopup> = ({ children, onClose, ...props }) => {
 	function clickHandler() {
-		onClose()
+		if (onClose) {
+			onClose()
+		}
 	}
 
 	return (
