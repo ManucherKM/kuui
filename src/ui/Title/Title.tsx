@@ -28,7 +28,7 @@ export enum ETitleAlign {
 /**
  * Allowable Title types.
  */
-export type TTitle = Omit<HTMLAttributes<HTMLHeadingElement>, 'className'>
+export type TTitle = HTMLAttributes<HTMLHeadingElement>
 
 /**
  * Title component interface.
@@ -47,6 +47,7 @@ export const Title: FC<ITitle> = ({
 	children,
 	dimension = ETitleDimension.medium,
 	align,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
@@ -54,6 +55,7 @@ export const Title: FC<ITitle> = ({
 		classes.title,
 		classes[dimension],
 		align && classes[align],
+		className,
 	])
 
 	return (

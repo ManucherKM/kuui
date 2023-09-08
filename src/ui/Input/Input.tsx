@@ -25,10 +25,7 @@ export enum EInputFill {
 /**
  * Allowable Input types.
  */
-export type TInput = Omit<
-	InputHTMLAttributes<HTMLInputElement>,
-	'type' | 'className'
->
+export type TInput = InputHTMLAttributes<HTMLInputElement>
 
 /**
  * Input component interface.
@@ -46,10 +43,16 @@ export interface IInput extends TInput {
 export const Input: FC<IInput> = ({
 	variant = EInput.default,
 	fill = EInputFill.fixed,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.input, classes[variant], classes[fill]])
+	const styles = clsx([
+		classes.input,
+		classes[variant],
+		classes[fill],
+		className,
+	])
 
-	return <input type="text" className={styles} {...props} />
+	return <input className={styles} {...props} />
 }

@@ -8,6 +8,7 @@ import { Button } from './ui/Button/Button'
 import { SVGButton } from './ui/SVGButton/SVGButton'
 import { Radio } from './ui/Radio/Radio'
 import { Input } from './ui/Input/Input'
+import { TextError } from './ui/TextError/TextError'
 
 // Components
 import { SettingsPanel } from './components/SettingsPanel/SettingsPanel'
@@ -16,6 +17,7 @@ import { Popup } from './components/Popup/Popup'
 import { Spinner } from './components/Spinner/Spinner'
 import { Accordion } from './components/Accordion/Accordion'
 import { NotFound } from './components/NotFound/NotFound'
+import { Form } from './ui/Form/Form'
 
 // Styles
 import '@/assets/styles/index.scss'
@@ -36,4 +38,6 @@ export {
 	Accordion,
 	Input,
 	NotFound,
+	Form,
+	TextError,
 }

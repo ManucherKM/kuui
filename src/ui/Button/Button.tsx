@@ -29,7 +29,7 @@ export enum EButtonDimension {
  * Allowable Button types.
  */
 
-export type TButton = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'>
+export type TButton = ButtonHTMLAttributes<HTMLButtonElement>
 
 /**
  * Button component interface.
@@ -49,10 +49,16 @@ export const Button: FC<IButton> = ({
 	children,
 	variant = EButton.passive,
 	dimension = EButtonDimension.small,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.button, classes[variant], classes[dimension]])
+	const styles = clsx([
+		classes.button,
+		classes[variant],
+		classes[dimension],
+		className,
+	])
 
 	return (
 		<button className={styles} {...props}>

@@ -28,7 +28,7 @@ export enum ESubtitleAlign {
 /**
  * Allowable Subtitle types.
  */
-export type TSubtitle = Omit<HTMLAttributes<HTMLHeadingElement>, 'className'>
+export type TSubtitle = HTMLAttributes<HTMLHeadingElement>
 
 /**
  * Subtitle component interface.
@@ -47,6 +47,7 @@ export const Subtitle: FC<ISubtitle> = ({
 	children,
 	dimension = ESubtitleDimension.medium,
 	align,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
@@ -54,6 +55,7 @@ export const Subtitle: FC<ISubtitle> = ({
 		classes.subtitle,
 		classes[dimension],
 		align && classes[align],
+		className,
 	])
 
 	return (
