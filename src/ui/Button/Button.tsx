@@ -7,43 +7,36 @@ import clsx from 'clsx'
 // Styles
 import classes from './Button.module.scss'
 
-/**
- * Enumeration of possible Button variants.
- */
+/** Enumeration of possible Button variants. */
 export enum EButton {
 	active = 'active',
 	passive = 'passive',
 	navigate = 'navigate',
 }
 
-/**
- * Enumeration of possible Button dimension.
- */
+/** Enumeration of possible Button dimension. */
 export enum EButtonDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
 }
 
-/**
- * Allowable Button types.
- */
-
+/** Allowable Button types. */
 export type TButton = ButtonHTMLAttributes<HTMLButtonElement>
 
-/**
- * Button component interface.
- */
+/** Button component interface. */
 export interface IButton extends TButton {
 	variant?: `${EButton}`
 	dimension?: `${EButtonDimension}`
 }
 
 /**
- * The Button component is an extended version of the classic HTML button, with added styling. Below you can see an example of its use.
+ * The Button component is an extended version of the classic HTML button, with
+ * added styling. Below you can see an example of its use.
+ *
  * @example
- * <Button variant="active" dimension="small">Click me</Button>
- * <Button disabled>Click me</Button>
+ * 	<Button variant="active" dimension="small">Click me</Button>
+ * 	<Button disabled>Click me</Button>
  */
 export const Button: FC<IButton> = ({
 	children,

@@ -7,25 +7,23 @@ import type { IText } from './Variant/Text/Text'
 import { Box } from './Variant/Box/Box'
 import { Text } from './Variant/Text/Text'
 
-/**
- * Enumeration of possible CheckBox variants.
- */
+/** Enumeration of possible CheckBox variants. */
 export enum ECheckBoxVariant {
 	box = 'box',
 	text = 'text',
 }
 
-/**
- * CheckBox component interface.
- */
+/** CheckBox component interface. */
 export interface ICheckBox extends IBox, IText {
 	variant: `${ECheckBoxVariant}`
 }
 
 /**
- * The CheckBox component is a customized version of the classic HTML input with attributes type="checkbox". Below is an example of its use.
+ * The CheckBox component is a customized version of the classic HTML input with
+ * attributes type="checkbox". Below is an example of its use.
+ *
  * @example
- * <CheckBox variant="text" checked/>
+ * 	;<CheckBox variant="text" checked />
  */
 export const CheckBox: FC<ICheckBox> = ({ variant, ...props }) => {
 	return (

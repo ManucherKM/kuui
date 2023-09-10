@@ -7,40 +7,36 @@ import { CheckBox } from '@/ui/CheckBox/CheckBox'
 // Styles
 import classes from './SettingsPanel.module.scss'
 
-/**
- * Сheckbox options interface
- */
+/** Сheckbox options interface */
 export interface IToggle {
 	checked?: boolean
 	callback: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-/**
- * Allowable SettingsPanel types.
- */
+/** Allowable SettingsPanel types. */
 
 export type TSettingsPanel = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
 
-/**
- * SettingsPanel component interface.
- */
+/** SettingsPanel component interface. */
 export interface ISettingsPanel extends TSettingsPanel {
 	name: string
 	toggles: IToggle[]
 }
 
 /**
- * The SettingsPanel component is a panel for settings.  Below you can see an example of its use.
+ * The SettingsPanel component is a panel for settings. Below you can see an
+ * example of its use.
+ *
  * @example
- * <SettingsPanel
- * 	name="Name 1"
- * 	toggles={[
- * 		{
- * 			checked: true,
- * 			callback: () => console.log('Click 1')
- * 		}
- * 	]}
- * />
+ * 	;<SettingsPanel
+ * 		name="Name 1"
+ * 		toggles={[
+ * 			{
+ * 				checked: true,
+ * 				callback: () => console.log('Click 1'),
+ * 			},
+ * 		]}
+ * 	/>
  */
 export const SettingsPanel: FC<ISettingsPanel> = ({
 	name,

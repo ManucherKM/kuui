@@ -7,41 +7,37 @@ import clsx from 'clsx'
 // Styles
 import classes from './Title.module.scss'
 
-/**
- * Enumeration of possible Title dimension.
- */
+/** Enumeration of possible Title dimension. */
 export enum ETitleDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
 }
 
-/**
- * Enumeration of possible Title positions.
- */
+/** Enumeration of possible Title positions. */
 export enum ETitleAlign {
 	left = 'left',
 	center = 'center',
 	right = 'right',
 }
 
-/**
- * Allowable Title types.
- */
+/** Allowable Title types. */
 export type TTitle = HTMLAttributes<HTMLHeadingElement>
 
-/**
- * Title component interface.
- */
+/** Title component interface. */
 export interface ITitle extends TTitle {
 	dimension?: `${ETitleDimension}`
 	align?: `${ETitleAlign}`
 }
 
 /**
- * The Title component is a classic HTML "h1" tag with some styles added. Below you can see an example of its use.
+ * The Title component is a classic HTML "h1" tag with some styles added. Below
+ * you can see an example of its use.
+ *
  * @example
- * <Title align="center" dimension="small">Title</Title>
+ * 	;<Title align="center" dimension="small">
+ * 		Title
+ * 	</Title>
  */
 export const Title: FC<ITitle> = ({
 	children,

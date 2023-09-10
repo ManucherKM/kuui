@@ -7,41 +7,37 @@ import clsx from 'clsx'
 // Styles
 import classes from './Subtitle.module.scss'
 
-/**
- * Enumeration of possible Subtitle dimension.
- */
+/** Enumeration of possible Subtitle dimension. */
 export enum ESubtitleDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
 }
 
-/**
- * Enumeration of possible Subtitle positions.
- */
+/** Enumeration of possible Subtitle positions. */
 export enum ESubtitleAlign {
 	left = 'left',
 	center = 'center',
 	right = 'right',
 }
 
-/**
- * Allowable Subtitle types.
- */
+/** Allowable Subtitle types. */
 export type TSubtitle = HTMLAttributes<HTMLHeadingElement>
 
-/**
- * Subtitle component interface.
- */
+/** Subtitle component interface. */
 export interface ISubtitle extends TSubtitle {
 	dimension?: `${ESubtitleDimension}`
 	align?: `${ESubtitleAlign}`
 }
 
 /**
- * The Subtitle component is a classic HTML "h2" tag with some styles added. Below you can see an example of its use.
+ * The Subtitle component is a classic HTML "h2" tag with some styles added.
+ * Below you can see an example of its use.
+ *
  * @example
- * <Subtitle align="center" dimension="small">Subtitle</Subtitle>
+ * 	;<Subtitle align="center" dimension="small">
+ * 		Subtitle
+ * 	</Subtitle>
  */
 export const Subtitle: FC<ISubtitle> = ({
 	children,

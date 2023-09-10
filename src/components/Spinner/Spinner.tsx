@@ -7,34 +7,30 @@ import clsx from 'clsx'
 // Styles
 import classes from './Spinner.module.scss'
 
-/**
- * Enumeration of possible Spinner dimension.
- */
+/** Enumeration of possible Spinner dimension. */
 export enum ESpinnerDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
 }
 
-/**
- * Allowable SVG types.
- */
+/** Allowable SVG types. */
 export type SVGSpinnerTypes = Omit<
 	SVGAttributes<SVGSVGElement>,
 	'xmlns' | 'viewBox' | 'className'
 >
 
-/**
- * Spinner component interface.
- */
+/** Spinner component interface. */
 export interface ISpinner extends SVGSpinnerTypes {
 	dimension?: `${ESpinnerDimension}`
 }
 
 /**
- * The Spinner component is an HTML svg element with specific styles. Below you can see an example of its use.
+ * The Spinner component is an HTML svg element with specific styles. Below you
+ * can see an example of its use.
+ *
  * @example
- * <Spinner dimension="small"/>
+ * 	;<Spinner dimension="small" />
  */
 export const Spinner: FC<ISpinner> = ({
 	dimension = ESpinnerDimension.medium,

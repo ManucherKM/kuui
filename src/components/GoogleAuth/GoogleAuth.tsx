@@ -1,19 +1,43 @@
+// Types
 import type { FC, HTMLAttributes } from 'react'
+
+// Styles
 import classes from './GoogleAuth.module.scss'
+
+// Utils
 import clsx from 'clsx'
 import { getTabIndex } from '@/utils/getTabIndex'
 
+/** Allowable GoogleAuth types. */
 export type TGoogleAuth = Omit<HTMLAttributes<HTMLDivElement>, 'tabIndex'>
 
+/** Enumeration of possible GoogleAuth variants. */
 export enum EGoogleAuth {
 	small = 'small',
 	large = 'large',
 }
 
+/** GoogleAuth component interface. */
 export interface IGoogleAuth extends TGoogleAuth {
 	variant?: `${EGoogleAuth}`
 }
 
+/**
+ * The GoogleAuth component is the appearance of a button for authorization
+ * through Google.
+ *
+ * @example
+ * 	import { useGoogleLogin } from '@react-oauth/google'
+ *
+ * 	function yourComponent() {
+ * 		const clickHandler = useGoogleLogin({
+ * 			flow: 'auth-code',
+ * 			onSuccess: console.log,
+ * 		})
+ *
+ * 		return <GoogleAuth onClick={clickHandler} />
+ * 	}
+ */
 export const GoogleAuth: FC<IGoogleAuth> = ({
 	variant = EGoogleAuth.small,
 	...props
@@ -44,7 +68,7 @@ export const GoogleAuth: FC<IGoogleAuth> = ({
 				</g>
 			</svg>
 			{variant === EGoogleAuth.large && (
-				<span className={classes.title}>Continue with Google.</span>
+				<span className={classes.title}>Continue with Google</span>
 			)}
 		</div>
 	)

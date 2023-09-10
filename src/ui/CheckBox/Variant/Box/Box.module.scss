@@ -5,13 +5,13 @@
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
-	border-radius: 0.25rem;
+	border-radius: $radius;
 	border: 2px solid $dominant-1;
 	cursor: pointer;
 	position: relative;
 
 	span {
-		border-radius: 0.125rem;
+		border-radius: $radius;
 		background-color: $dominant-1;
 		display: none;
 	}

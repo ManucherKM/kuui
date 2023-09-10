@@ -7,27 +7,26 @@ import classes from './Item.module.scss'
 // Utils
 import { getTabIndex } from '@/utils/getTabIndex'
 
-/**
- * Allowable Item types.
- */
+/** Allowable Item types. */
 export type TItem = Omit<
 	HTMLAttributes<HTMLDivElement>,
 	'className' | 'tabIndex'
 >
 
-/**
- * IItem component interface.
- */
+/** IItem component interface. */
 export interface IItem extends TItem {
 	name: ReactNode
 }
 
 /**
- * The Item component is a child component of the Accordion. Below is an example of its use.
+ * The Item component is a child component of the Accordion. Below is an example
+ * of its use.
+ *
  * @example
- * <Item name="What's that?">
- *      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, praesentium.
- * </Item>
+ * 	;<Item name="What's that?">
+ * 		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed,
+ * 		praesentium.
+ * 	</Item>
  */
 export const Item: FC<IItem> = ({ name, children, ...props }) => {
 	return (

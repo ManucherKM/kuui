@@ -1,47 +1,89 @@
+// Types
 import type { FC, HTMLAttributes } from 'react'
+
+// Styles
 import classes from './VKAuth.module.scss'
+
+// Utils
 import clsx from 'clsx'
 import { getTabIndex } from '@/utils/getTabIndex'
 
+/** Allowable VKAuth types. */
 export type TVKAuth = Omit<HTMLAttributes<HTMLDivElement>, 'tabIndex'>
 
+/** Enumeration of possible VKAuth variants. */
 export enum EVKAuth {
 	small = 'small',
 	large = 'large',
 }
 
+/** VKAuth component interface. */
 export interface IVKAuth extends TVKAuth {
 	variant?: `${EVKAuth}`
 }
 
+import { useEffect } from 'react'
+interface IParams {
+	client_id: string
+	redirect_uri: string
+	display: string
+}
+
+function yourComponent() {
+	let params = {} as IParams
+
+	async function clickHandler() {
+		params = {
+			client_id: 'YOUR_CLIENT_ID',
+			redirect_uri: 'YOUR_REDIRECT_URI',
+			display: 'YOUR_DISPLAY',
+		}
+
+		window.location.href = `https://oauth.vk.com/authorize?client_id=${params.client_id}&display=${params.display}&redirect_uri=${params.redirect_uri}&scope=email&response_type=code&v=5.131`
+	}
+
+	useEffect(() => {
+		if (window.location.href.includes('?code=')) {
+			const result = {
+				...params,
+				client_secret: 'YOUR_SECRET',
+				code: window.location.href.split('=')[1],
+			}
+
+			console.log(result)
+		}
+	}, [window.location.href])
+
+	return <VKAuth onClick={clickHandler} />
+}
+
+/**
+ * The VKAuth component is the appearance of a button for authorization through
+ * VKAuth.
+ *
+ * @example
+ * 	console.log()
+ */
 export const VKAuth: FC<IVKAuth> = ({ variant = EVKAuth.small, ...props }) => {
 	const styles = clsx([classes.vkAuth, classes[variant]])
 
 	return (
 		<div className={styles} tabIndex={getTabIndex()} {...props}>
-			<svg className={classes.googleLogo} viewBox="0 0 48 48">
-				<g>
-					<path
-						fill="#EA4335"
-						d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
-					></path>
-					<path
-						fill="#4285F4"
-						d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
-					></path>
-					<path
-						fill="#FBBC05"
-						d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
-					></path>
-					<path
-						fill="#34A853"
-						d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
-					></path>
-					<path fill="none" d="M0 0h48v48H0z"></path>
-				</g>
+			<svg
+				className={classes.vkLogo}
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="none"
+			>
+				<rect rx="4" fill="#0077FF" />
+				<path
+					d="M10.7839 14.495C4.61225 14.5613 3.22886 8.99835 3.30862 6.20862H5.61885C5.65845 10.2947 7.64305 11.697 8.6304 11.8874V6.20862H10.7839V9.41226C12.632 9.101 13.6497 7.14681 13.9274 6.20862H16.0561C15.6205 8.42054 13.9879 9.85652 13.2261 10.298C15.1799 11.0265 16.2899 13.3996 16.6007 14.495H14.2162C13.5759 12.3295 11.6612 11.5784 10.7839 11.4735V14.495Z"
+					fill="white"
+				/>
 			</svg>
+
 			{variant === EVKAuth.large && (
-				<span className={classes.title}>Continue with VK.</span>
+				<span className={classes.title}>Continue with VK</span>
 			)}
 		</div>
 	)

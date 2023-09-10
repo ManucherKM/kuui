@@ -3,7 +3,7 @@
 .googleAuth {
 	background-color: $black-500;
 	color: $dominant-2;
-	border-radius: 12px;
+	border-radius: $radius;
 	cursor: pointer;
 	border: 1px solid transparent;
 	transition: border-color 200ms;

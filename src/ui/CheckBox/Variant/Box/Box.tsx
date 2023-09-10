@@ -7,32 +7,28 @@ import clsx from 'clsx'
 // Styles
 import classes from './Box.module.scss'
 
-/**
- * Enumeration of possible Box dimension.
- */
+/** Enumeration of possible Box dimension. */
 export enum EBoxDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
 }
 
-/**
- * Allowable Box types.
- */
+/** Allowable Box types. */
 
 export type TBox = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
-/**
- * Box component interface.
- */
+/** Box component interface. */
 export interface IBox extends TBox {
 	dimension?: `${EBoxDimension}`
 }
 
 /**
- * The Box component is a customized version of the classic HTML input with attributes type="checkbox". Below is an example of its use.
+ * The Box component is a customized version of the classic HTML input with
+ * attributes type="checkbox". Below is an example of its use.
+ *
  * @example
- * <Box dimension="medium"/>
+ * 	;<Box dimension="medium" />
  */
 export const Box: FC<IBox> = ({
 	dimension = EBoxDimension.small,

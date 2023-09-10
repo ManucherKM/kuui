@@ -8,31 +8,27 @@ import { useState } from 'react'
 // Styles
 import classes from './Text.module.scss'
 
-/**
- * Enumeration of possible Text dimension.
- */
+/** Enumeration of possible Text dimension. */
 export enum ETextDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
 }
 
-/**
- * Allowable Text types.
- */
+/** Allowable Text types. */
 export type TText = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
-/**
- * Text component interface.
- */
+/** Text component interface. */
 export interface IText extends TText {
 	dimension?: `${ETextDimension}`
 }
 
 /**
- * The Text component is a customized version of the classic HTML input with attributes type="checkbox". Below is an example of its use.
+ * The Text component is a customized version of the classic HTML input with
+ * attributes type="checkbox". Below is an example of its use.
+ *
  * @example
- * <Text dimension="medium"/>
+ * 	;<Text dimension="medium" />
  */
 export const Text: FC<IText> = ({
 	dimension = ETextDimension.small,

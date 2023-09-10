@@ -15,7 +15,7 @@
 
 .content {
 	padding: 0.8rem;
-	border-radius: 0.75rem;
+	border-radius: $radius;
 	background-color: $black-500;
 	display: flex;
 	flex-direction: column;
