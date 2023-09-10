@@ -22,47 +22,46 @@ export interface IVKAuth extends TVKAuth {
 	variant?: `${EVKAuth}`
 }
 
-import { useEffect } from 'react'
-interface IParams {
-	client_id: string
-	redirect_uri: string
-	display: string
-}
-
-function yourComponent() {
-	let params = {} as IParams
-
-	async function clickHandler() {
-		params = {
-			client_id: 'YOUR_CLIENT_ID',
-			redirect_uri: 'YOUR_REDIRECT_URI',
-			display: 'YOUR_DISPLAY',
-		}
-
-		window.location.href = `https://oauth.vk.com/authorize?client_id=${params.client_id}&display=${params.display}&redirect_uri=${params.redirect_uri}&scope=email&response_type=code&v=5.131`
-	}
-
-	useEffect(() => {
-		if (window.location.href.includes('?code=')) {
-			const result = {
-				...params,
-				client_secret: 'YOUR_SECRET',
-				code: window.location.href.split('=')[1],
-			}
-
-			console.log(result)
-		}
-	}, [window.location.href])
-
-	return <VKAuth onClick={clickHandler} />
-}
-
 /**
  * The VKAuth component is the appearance of a button for authorization through
  * VKAuth.
  *
  * @example
- * 	console.log()
+ * 	import { useEffect } from 'react'
+ *
+ * 	interface IParams {
+ * 		client_id: string
+ * 		redirect_uri: string
+ * 		display: string
+ * 	}
+ *
+ * 	function yourComponent() {
+ * 		let params = {} as IParams
+ *
+ * 		async function clickHandler() {
+ * 			params = {
+ * 				client_id: 'YOUR_CLIENT_ID',
+ * 				redirect_uri: 'YOUR_REDIRECT_URI',
+ * 				display: 'YOUR_DISPLAY',
+ * 			}
+ *
+ * 			window.location.href = `https://oauth.vk.com/authorize?client_id=${params.client_id}&display=${params.display}&redirect_uri=${params.redirect_uri}&scope=email&response_type=code&v=5.131`
+ * 		}
+ *
+ * 		useEffect(() => {
+ * 			if (window.location.href.includes('?code=')) {
+ * 				const result = {
+ * 					...params,
+ * 					client_secret: 'YOUR_SECRET',
+ * 					code: window.location.href.split('=')[1],
+ * 				}
+ *
+ * 				console.log(result)
+ * 			}
+ * 		}, [window.location.href])
+ *
+ * 		return <VKAuth onClick={clickHandler} />
+ * 	}
  */
 export const VKAuth: FC<IVKAuth> = ({ variant = EVKAuth.small, ...props }) => {
 	const styles = clsx([classes.vkAuth, classes[variant]])
