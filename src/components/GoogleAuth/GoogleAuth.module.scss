@@ -1,0 +1,47 @@
+@import '@/assets/styles/vars.scss';
+
+.googleAuth {
+	background-color: $black-500;
+	color: $dominant-2;
+	border-radius: 12px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: border-color 200ms;
+
+	.googleLogo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.title {
+		font-family: $NotoSansMono;
+		font-weight: 500;
+		font-size: 0.9rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&:hover,
+	&:focus {
+		transition: border-color 200ms;
+		border-color: $dominant-1;
+	}
+}
+
+.small {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	width: min-content;
+	height: min-content;
+}
+
+.large {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	max-width: 300px;
+	width: 100%;
+	padding: 0.5rem;
+}
