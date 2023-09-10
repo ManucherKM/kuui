@@ -1,6 +1,8 @@
 @import '@/assets/styles/vars.scss';
 
 .vkAuth {
+	user-select: none;
+
 	background-color: $black-500;
 	color: $dominant-2;
 	border-radius: $radius;
