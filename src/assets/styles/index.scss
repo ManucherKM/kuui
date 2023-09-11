@@ -1,2 +1,23 @@
 @import './fonts.scss';
 @import './themes.scss';
+@import './vars.scss';
+
+// Scroll
+*::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+	/* Tracking area color */
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	/* Slider color */
+	background-color: $dominant-1;
+	/* Radius */
+	border-radius: 9999px;
+	/* Rounded out the runner */
+	border: 3px solid transparent;
+}
