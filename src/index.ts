@@ -20,6 +20,7 @@ import { Accordion } from './components/Accordion/Accordion'
 import { NotFound } from './components/NotFound/NotFound'
 import { GoogleAuth } from './components/GoogleAuth/GoogleAuth'
 import { VKAuth } from './components/VKAuth/VKAuth'
+import { ConfirmEmail } from './components/ConfirmEmail/ConfirmEmail'
 
 // Styles
 import '@/assets/styles/index.scss'
@@ -28,6 +29,7 @@ export {
 	Title,
 	Subtitle,
 	Paragraph,
+	ConfirmEmail,
 	Link,
 	CheckBox,
 	Button,
