@@ -1,0 +1,27 @@
+@import '@/assets/styles/vars.scss';
+
+.confirmEmail {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.container {
+		max-width: 500px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 12px;
+	}
+}
+
+.screen {
+	width: 100vw;
+	height: 100vh;
+}
+
+.availableSpace {
+	width: 100%;
+	height: 100%;
+}
