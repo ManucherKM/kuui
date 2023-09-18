@@ -7,7 +7,7 @@ import { glob } from 'glob'
 
 const input = Object.fromEntries(
 	glob.sync('src/**/*.{ts,tsx}', {
-		ignore: "src/**/*.stories.tsx"
+		ignore: ["src/**/*.stories.tsx", "src/**/*.d.ts"]
 	}).map(file => [
 		relative(
 			'src',
@@ -28,7 +28,7 @@ export default defineConfig({
 		copyPublicDir: true,
 		rollupOptions: {
 			input,
-			external: ['react'],
+			external: ['react', 'react/jsx-runtime'],
 			output: {
 				globals: {
 					react: 'react',
