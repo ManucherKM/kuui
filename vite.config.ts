@@ -9,13 +9,15 @@ export default defineConfig({
 			entry: 'src/index.ts',
 			name: 'kuui',
 			fileName: 'index',
+			formats: ['es', "umd"]
 		},
+		copyPublicDir: true,
 		rollupOptions: {
 			external: ['react'],
 			output: {
 				globals: {
 					react: 'react',
-				},
+				}
 			},
 		},
 	},
