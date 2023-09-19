@@ -18,7 +18,6 @@ npm install kuui-react
 ```jsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import 'kuui-react/styles'
 import { Button } from 'kuui-react'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
