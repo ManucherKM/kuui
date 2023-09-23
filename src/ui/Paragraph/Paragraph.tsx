@@ -24,7 +24,7 @@ export enum EParagraphAlign {
 
 /** Allowable Paragraph types. */
 
-export type TParagraph = Omit<HTMLAttributes<HTMLParagraphElement>, 'className'>
+export type TParagraph = HTMLAttributes<HTMLParagraphElement>
 
 /** Paragraph component interface. */
 export interface IParagraph extends TParagraph {
@@ -45,6 +45,7 @@ export const Paragraph: FC<IParagraph> = ({
 	children,
 	dimension = EParagraphDimension.small,
 	align,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
@@ -52,6 +53,7 @@ export const Paragraph: FC<IParagraph> = ({
 		classes.paragraph,
 		classes[dimension],
 		align && classes[align],
+		className,
 	])
 
 	return (

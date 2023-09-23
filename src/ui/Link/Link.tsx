@@ -23,7 +23,7 @@ export enum ELinkAlign {
 
 /** Allowable Link types. */
 
-export type TLink = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className'>
+export type TLink = AnchorHTMLAttributes<HTMLAnchorElement>
 
 /** Link component interface. */
 export interface ILink extends TLink {
@@ -44,6 +44,7 @@ export const Link: FC<ILink> = ({
 	children,
 	dimension = ELinkDimension.small,
 	align,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
@@ -51,6 +52,7 @@ export const Link: FC<ILink> = ({
 		classes.link,
 		classes[dimension],
 		align && classes[align],
+		className,
 	])
 
 	return (

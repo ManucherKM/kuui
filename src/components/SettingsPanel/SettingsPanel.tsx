@@ -6,6 +6,7 @@ import { CheckBox } from '@/ui/CheckBox/CheckBox'
 
 // Styles
 import classes from './SettingsPanel.module.scss'
+import clsx from 'clsx'
 
 /** Сheckbox options interface */
 export interface IToggle {
@@ -15,7 +16,7 @@ export interface IToggle {
 
 /** Allowable SettingsPanel types. */
 
-export type TSettingsPanel = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
+export type TSettingsPanel = HTMLAttributes<HTMLDivElement>
 
 /** SettingsPanel component interface. */
 export interface ISettingsPanel extends TSettingsPanel {
@@ -41,10 +42,13 @@ export interface ISettingsPanel extends TSettingsPanel {
 export const SettingsPanel: FC<ISettingsPanel> = ({
 	name,
 	toggles,
+	className,
 	...props
 }) => {
+	const wrapperStyles = clsx([classes.wrapper, className])
+
 	return (
-		<div className={classes.wrapper} {...props}>
+		<div className={wrapperStyles} {...props}>
 			<span className={classes.name}>{name}</span>
 			<div className={classes.toggles}>
 				{toggles.map((toggle, idx) => (

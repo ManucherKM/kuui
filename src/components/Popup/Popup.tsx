@@ -3,9 +3,10 @@ import type { FC, HTMLAttributes } from 'react'
 
 // Styles
 import classes from './Popup.module.scss'
+import clsx from 'clsx'
 
 /** Allowable Popup types. */
-export type TPopup = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
+export type TPopup = HTMLAttributes<HTMLDivElement>
 
 /** Popup component interface. */
 export interface IPopup extends TPopup {
@@ -21,16 +22,23 @@ export interface IPopup extends TPopup {
  * 		<Button />
  * 	</Popup>
  */
-export const Popup: FC<IPopup> = ({ children, onClose, ...props }) => {
+export const Popup: FC<IPopup> = ({
+	children,
+	onClose,
+	className,
+	...props
+}) => {
 	function clickHandler() {
 		if (onClose) {
 			onClose()
 		}
 	}
 
+	const contentStyles = clsx([classes.content, className])
+
 	return (
 		<div onClick={clickHandler} className={classes.wrapper}>
-			<div className={classes.content} {...props}>
+			<div className={contentStyles} {...props}>
 				{children}
 			</div>
 		</div>

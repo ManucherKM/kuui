@@ -31,10 +31,11 @@ export interface IRadio extends TRadio {
  */
 export const Radio: FC<IRadio> = ({
 	dimension = ERadioDimension.small,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.label, classes[dimension]])
+	const styles = clsx([classes.label, classes[dimension], className])
 
 	return (
 		<label className={styles}>

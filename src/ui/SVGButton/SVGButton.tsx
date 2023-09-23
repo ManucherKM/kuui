@@ -3,9 +3,10 @@ import type { FC, HTMLAttributes } from 'react'
 
 // Styles
 import classes from './SVGButton.module.scss'
+import clsx from 'clsx'
 
 /** Allowable SVGButton types. */
-export type TSVGButton = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
+export type TSVGButton = HTMLAttributes<HTMLDivElement>
 
 /** SVGButton component interface. */
 export interface ISVGButton extends TSVGButton {}
@@ -21,9 +22,15 @@ export interface ISVGButton extends TSVGButton {}
  * 		</svg>
  * 	</SVGButton>
  */
-export const SVGButton: FC<ISVGButton> = ({ children, ...props }) => {
+export const SVGButton: FC<ISVGButton> = ({
+	children,
+	className,
+	...props
+}) => {
+	const styles = clsx([classes.svgButton, className])
+
 	return (
-		<div className={classes.svgButton} {...props}>
+		<div className={styles} {...props}>
 			{children}
 		</div>
 	)

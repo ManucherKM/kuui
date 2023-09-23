@@ -33,6 +33,7 @@ export interface IText extends TText {
 export const Text: FC<IText> = ({
 	dimension = ETextDimension.small,
 	onChange,
+	className,
 	...props
 }) => {
 	// Tracking the status of the input
@@ -56,6 +57,7 @@ export const Text: FC<IText> = ({
 		classes.text,
 		classes[dimension],
 		isChecked && classes.active,
+		className,
 	])
 
 	return (

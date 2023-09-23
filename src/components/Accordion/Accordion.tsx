@@ -6,9 +6,10 @@ import classes from './Accordion.module.scss'
 
 // Components
 import { Item } from './Item/Item'
+import clsx from 'clsx'
 
 /** Allowable Accordion types. */
-export type TAccordion = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
+export type TAccordion = HTMLAttributes<HTMLDivElement>
 
 /** Interface for accordion elements. */
 export interface IAccordionItem {
@@ -35,9 +36,11 @@ export interface IAccordion extends TAccordion {
  * 		]}
  * 	/>
  */
-export const Accordion: FC<IAccordion> = ({ items, ...props }) => {
+export const Accordion: FC<IAccordion> = ({ items, className, ...props }) => {
+	const styles = clsx([classes.wrapper, className])
+
 	return (
-		<div className={classes.wrapper} {...props}>
+		<div className={styles} {...props}>
 			{items.map((item, idx) => (
 				<Item key={idx} name={item.name}>
 					{item.body}

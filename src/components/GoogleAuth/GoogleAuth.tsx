@@ -40,9 +40,10 @@ export interface IGoogleAuth extends TGoogleAuth {
  */
 export const GoogleAuth: FC<IGoogleAuth> = ({
 	variant = EGoogleAuth.small,
+	className,
 	...props
 }) => {
-	const styles = clsx([classes.googleAuth, classes[variant]])
+	const styles = clsx([classes.googleAuth, classes[variant], className])
 
 	return (
 		<div className={styles} tabIndex={getTabIndex()} {...props}>

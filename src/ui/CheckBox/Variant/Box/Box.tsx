@@ -32,10 +32,11 @@ export interface IBox extends TBox {
  */
 export const Box: FC<IBox> = ({
 	dimension = EBoxDimension.small,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.box, classes[dimension]])
+	const styles = clsx([classes.box, classes[dimension], className])
 
 	return (
 		<label className={styles}>

@@ -6,12 +6,10 @@ import classes from './Item.module.scss'
 
 // Utils
 import { getTabIndex } from '@/utils/getTabIndex'
+import clsx from 'clsx'
 
 /** Allowable Item types. */
-export type TItem = Omit<
-	HTMLAttributes<HTMLDivElement>,
-	'className' | 'tabIndex'
->
+export type TItem = Omit<HTMLAttributes<HTMLDivElement>, 'tabIndex'>
 
 /** IItem component interface. */
 export interface IItem extends TItem {
@@ -28,9 +26,11 @@ export interface IItem extends TItem {
  * 		praesentium.
  * 	</Item>
  */
-export const Item: FC<IItem> = ({ name, children, ...props }) => {
+export const Item: FC<IItem> = ({ name, children, className, ...props }) => {
+	const styles = clsx([classes.item, className])
+
 	return (
-		<div className={classes.item} tabIndex={getTabIndex()} {...props}>
+		<div className={styles} tabIndex={getTabIndex()} {...props}>
 			<div className={classes.wrapper_title}>
 				<span className={classes.title}>{name}</span>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8">

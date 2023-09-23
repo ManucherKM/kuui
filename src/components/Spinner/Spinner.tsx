@@ -17,7 +17,7 @@ export enum ESpinnerDimension {
 /** Allowable SVG types. */
 export type SVGSpinnerTypes = Omit<
 	SVGAttributes<SVGSVGElement>,
-	'xmlns' | 'viewBox' | 'className'
+	'xmlns' | 'viewBox'
 >
 
 /** Spinner component interface. */
@@ -34,10 +34,11 @@ export interface ISpinner extends SVGSpinnerTypes {
  */
 export const Spinner: FC<ISpinner> = ({
 	dimension = ESpinnerDimension.medium,
+	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.spinner, classes[dimension]])
+	const styles = clsx([classes.spinner, classes[dimension], className])
 
 	return (
 		<svg
