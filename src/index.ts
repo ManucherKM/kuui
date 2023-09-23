@@ -21,6 +21,7 @@ export { NotFound } from './components/NotFound/NotFound'
 export { GoogleAuth } from './components/GoogleAuth/GoogleAuth'
 export { VKAuth } from './components/VKAuth/VKAuth'
 export { ConfirmEmail } from './components/ConfirmEmail/ConfirmEmail'
+export { ListItem } from './components/ListItem/ListItem'
 
 // Styles
 import '@/assets/styles/index.scss'
