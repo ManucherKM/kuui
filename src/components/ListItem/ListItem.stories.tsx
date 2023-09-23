@@ -31,5 +31,6 @@ export const Playground: Story = {
 			</svg>
 		),
 		title: 'Title',
+		align: 'left',
 	},
 }

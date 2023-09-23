@@ -3,7 +3,9 @@ import classes from './ListItem.module.scss'
 import clsx from 'clsx'
 
 export enum EAlignListItem {
+	left = 'left',
 	center = 'center',
+	right = 'right',
 }
 
 export interface IListItem extends HTMLAttributes<HTMLDivElement> {
