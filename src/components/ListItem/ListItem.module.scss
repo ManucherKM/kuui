@@ -1,0 +1,42 @@
+@import '@/assets/styles/vars.scss';
+
+.wrapper {
+	background-color: $black-500;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: background-color 200ms;
+	display: flex;
+	gap: 0.5rem;
+
+	&:hover,
+	&:focus {
+		transition: background-color 200ms;
+		background-color: $black-250;
+
+		.title {
+			transition: color 200ms;
+			color: $dominant-1;
+		}
+
+		path {
+			transition: fill 200ms;
+			fill: $dominant-1;
+		}
+	}
+
+	path {
+		transition: fill 200ms;
+		fill: $black-250;
+	}
+
+	.title {
+		font-family: $NotoSansMono;
+		font-size: 0.9rem;
+		color: $black-250;
+		transition: color 200ms;
+	}
+}
+
+.center {
+	justify-content: center;
+}
