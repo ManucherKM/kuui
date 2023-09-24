@@ -18,6 +18,7 @@ export interface IAlert extends HTMLAttributes<HTMLDivElement> {
 	appearance?: `${EAlertAppearance}`
 	text: string
 	time: number
+	OnTimeUp: () => void
 }
 
 export const Alert: FC<IAlert> = ({
@@ -26,6 +27,7 @@ export const Alert: FC<IAlert> = ({
 	className,
 	appearance = EAlertAppearance.above,
 	time,
+	OnTimeUp,
 	...props
 }) => {
 	const [isRender, setIsRender] = useState<boolean>(true)
@@ -40,6 +42,7 @@ export const Alert: FC<IAlert> = ({
 	useEffect(() => {
 		setTimeout(() => {
 			setIsRender(false)
+			OnTimeUp()
 		}, time * 1000)
 	}, [isRender])
 	return (
