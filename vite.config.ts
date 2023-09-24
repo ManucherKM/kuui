@@ -6,32 +6,32 @@ import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 
 const input = Object.fromEntries(
-	glob.sync('src/**/*.{ts,tsx}', {
-		ignore: ["src/**/*.stories.tsx", "src/**/*.d.ts"]
-	}).map(file => [
-		relative(
-			'src',
-			file.slice(0, file.length - extname(file).length)
-		),
-		fileURLToPath(new URL(file, import.meta.url))
-	])
+	glob
+		.sync('src/**/*.{ts,tsx}', {
+			ignore: ['src/**/*.stories.tsx', 'src/**/*.d.ts'],
+		})
+		.map(file => [
+			relative('src', file.slice(0, file.length - extname(file).length)),
+			fileURLToPath(new URL(file, import.meta.url)),
+		]),
 )
 
 export default defineConfig({
-	plugins: [dts(), libInjectCss(),],
+	plugins: [dts(), libInjectCss()],
 	build: {
 		lib: {
 			entry: 'src/index.ts',
 			fileName: 'index',
-			formats: ['es']
+			formats: ['es'],
 		},
 		copyPublicDir: true,
 		rollupOptions: {
 			input,
-			external: ['react', 'react/jsx-runtime'],
+			external: ['react', 'react/jsx-runtime', 'react-dom'],
 			output: {
 				globals: {
 					react: 'react',
+					'react-dom': 'react-dom',
 				},
 				assetFileNames: 'assets/[name][extname]',
 				entryFileNames: '[name].js',
