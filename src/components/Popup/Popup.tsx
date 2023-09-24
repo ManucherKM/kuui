@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom'
 // Types
 import type { FC, HTMLAttributes } from 'react'
 
@@ -37,10 +38,15 @@ export const Popup: FC<IPopup> = ({
 	const contentStyles = clsx([classes.content, className])
 
 	return (
-		<div onClick={clickHandler} className={classes.wrapper}>
-			<div className={contentStyles} {...props}>
-				{children}
-			</div>
-		</div>
+		<>
+			{createPortal(
+				<div onClick={clickHandler} className={classes.wrapper}>
+					<div className={contentStyles} {...props}>
+						{children}
+					</div>
+				</div>,
+				document.body,
+			)}
+		</>
 	)
 }

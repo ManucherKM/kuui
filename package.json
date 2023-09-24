@@ -1,7 +1,7 @@
 {
 	"name": "kuui-react",
 	"private": false,
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
@@ -15,7 +15,8 @@
 		"clsx": "^1.2.1"
 	},
 	"peerDependencies": {
-		"react": "*"
+		"react": "*",
+		"react-dom": "*"
 	},
 	"devDependencies": {
 		"@storybook/addon-essentials": "^7.4.0",
@@ -27,6 +28,7 @@
 		"@storybook/react-vite": "^7.4.0",
 		"@storybook/testing-library": "^0.2.0",
 		"@types/react": "^18.0.37",
+		"@types/react-dom": "^18.2.7",
 		"prettier": "^3.0.3",
 		"prettier-plugin-jsdoc": "^1.0.2",
 		"react": "^18.2.0",

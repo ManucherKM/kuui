@@ -1,0 +1,66 @@
+@import '@/assets/styles/vars.scss';
+
+.wrapper {
+	max-width: 400px;
+	min-width: 200px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: $radius;
+	border-color: $dominant-2;
+	padding: 1rem;
+	background-color: $black-500;
+	cursor: default;
+
+	.text {
+		font-size: 0.9rem;
+		font-family: $NotoSansMono;
+	}
+}
+
+.message {
+	.text {
+		color: $dominant-1;
+	}
+}
+
+.error {
+	.text {
+		color: $warning;
+	}
+}
+
+.above {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	top: -100px;
+	opacity: 0;
+	animation: above 200ms ease-in-out;
+	animation-fill-mode: forwards;
+
+	@keyframes above {
+		to {
+			top: 20px;
+			opacity: 1;
+		}
+	}
+}
+
+.fromBelow {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	bottom: -100px;
+	opacity: 0;
+	animation: fromBelow 200ms ease-in-out;
+	animation-fill-mode: forwards;
+
+	@keyframes fromBelow {
+		to {
+			bottom: 20px;
+			opacity: 1;
+		}
+	}
+}
