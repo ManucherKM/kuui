@@ -11,12 +11,14 @@
 	padding: 1rem;
 	background-color: $black-500;
 	cursor: default;
-	border: 1px solid $dominant-1;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
 
 	.text {
 		font-size: 0.9rem;
 		font-family: $NotoSansMono;
-		font-weight: 600;
+		font-weight: 500;
 	}
 }
 
@@ -24,12 +26,16 @@
 	.text {
 		color: $dominant-1;
 	}
+
+	border-color: $dominant-1;
 }
 
 .error {
 	.text {
 		color: $warning;
 	}
+
+	border-color: $warning;
 }
 
 .above {
