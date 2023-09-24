@@ -22,6 +22,7 @@ export { GoogleAuth } from './components/GoogleAuth/GoogleAuth'
 export { VKAuth } from './components/VKAuth/VKAuth'
 export { ConfirmEmail } from './components/ConfirmEmail/ConfirmEmail'
 export { ListItem } from './components/ListItem/ListItem'
+export { Alert } from './components/Alert/Alert'
 
 // Styles
 import '@/assets/styles/index.scss'
