@@ -12,8 +12,7 @@ export enum EFileItemExtension {
 	file = 'file',
 }
 
-export interface IFileItem
-	extends Omit<HTMLAttributes<HTMLDivElement>, 'tabIndex'> {
+export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
 	extension: string
 	name: string
 }
@@ -22,12 +21,9 @@ export const FileItem: FC<IFileItem> = ({
 	className,
 	extension,
 	name,
-	onFocus,
-	onBlur,
 	...props
 }) => {
 	const [isTextFocused, setIsTextFocused] = useState<boolean>(false)
-	const [isFocused, setIsFocused] = useState<boolean>(false)
 
 	function textFocusHandler() {
 		setIsTextFocused(true)
@@ -37,34 +33,14 @@ export const FileItem: FC<IFileItem> = ({
 		setIsTextFocused(false)
 	}
 
-	function focusHandler(e: FocusEvent<HTMLDivElement, Element>) {
-		setIsFocused(true)
-		if (onFocus) {
-			onFocus(e)
-		}
-	}
-
-	function blurHandler(e: FocusEvent<HTMLDivElement, Element>) {
-		setIsFocused(false)
-		if (onBlur) {
-			onBlur(e)
-		}
-	}
-
-	const styles = clsx([classes.wrapper, isFocused && classes.raise, className])
+	const styles = clsx([classes.wrapper, className])
 
 	const textStyles = clsx([
 		classes.name,
 		!isTextFocused && classes.textEllipsis,
 	])
 	return (
-		<div
-			className={styles}
-			onFocus={focusHandler}
-			onBlur={blurHandler}
-			tabIndex={getTabIndex()}
-			{...props}
-		>
+		<div className={styles} {...props}>
 			{(() => {
 				if (extension === EFileItemExtension.word) {
 					return (
