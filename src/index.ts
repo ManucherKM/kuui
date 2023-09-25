@@ -24,6 +24,7 @@ export { ConfirmEmail } from './components/ConfirmEmail/ConfirmEmail'
 export { ListItem } from './components/ListItem/ListItem'
 export { Alert } from './components/Alert/Alert'
 export { FileItem } from './components/FileItem/FileItem'
+export { FileAdd } from './components/FileAdd/FileAdd'
 
 // Styles
 import '@/assets/styles/index.scss'

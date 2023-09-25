@@ -70,3 +70,8 @@
 	white-space: nowrap;
 	overflow: hidden;
 }
+
+.raise {
+	position: relative;
+	z-index: 2;
+}
