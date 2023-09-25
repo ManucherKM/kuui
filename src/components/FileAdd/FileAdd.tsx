@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from 'react'
+import { FC, HTMLAttributes, InputHTMLAttributes } from 'react'
 import classes from './FileAdd.module.scss'
 import clsx from 'clsx'
 
@@ -7,7 +7,8 @@ export enum EFileAddFill {
 	fixed = 'fixed',
 }
 
-export interface IFileAdd extends HTMLAttributes<HTMLDivElement> {
+export interface IFileAdd
+	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
 	fill?: `${EFileAddFill}`
 }
 
@@ -18,7 +19,7 @@ export const FileAdd: FC<IFileAdd> = ({
 }) => {
 	const styles = clsx([classes.wrapper, classes[fill], className])
 	return (
-		<div className={styles} {...props}>
+		<label className={styles}>
 			<svg className={classes.plus} viewBox="0 0 24 24">
 				<path
 					d="M4 12H20M12 4V20"
@@ -26,6 +27,7 @@ export const FileAdd: FC<IFileAdd> = ({
 					strokeLinejoin="round"
 				/>
 			</svg>
-		</div>
+			<input className={classes.input} type="file" {...props} />
+		</label>
 	)
 }

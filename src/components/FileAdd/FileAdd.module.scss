@@ -25,6 +25,15 @@
 			stroke: $dominant-1;
 		}
 	}
+
+	.input {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0.01;
+	}
 }
 
 .all {
