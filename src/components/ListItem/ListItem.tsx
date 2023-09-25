@@ -1,6 +1,13 @@
-import { FC, HTMLAttributes, ReactNode } from 'react'
+import {
+	FC,
+	ForwardRefExoticComponent,
+	HTMLAttributes,
+	ReactNode,
+	RefAttributes,
+} from 'react'
 import classes from './ListItem.module.scss'
 import clsx from 'clsx'
+import { Link, LinkProps } from 'react-router-dom'
 
 export enum EAlignListItem {
 	left = 'left',
@@ -8,7 +15,7 @@ export enum EAlignListItem {
 	right = 'right',
 }
 
-export interface IListItem extends HTMLAttributes<HTMLDivElement> {
+export interface IListItem extends LinkProps {
 	svgIcon: ReactNode
 	title: string
 	align: `${EAlignListItem}`
@@ -25,9 +32,9 @@ export const ListItem: FC<IListItem> = ({
 	const styles = clsx([classes.wrapper, classes[align], className])
 
 	return (
-		<div className={styles} {...props}>
+		<Link className={styles} {...props}>
 			{svgIcon}
 			<span className={classes.title}>{title}</span>
-		</div>
+		</Link>
 	)
 }

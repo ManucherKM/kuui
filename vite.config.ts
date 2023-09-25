@@ -27,7 +27,7 @@ export default defineConfig({
 		copyPublicDir: true,
 		rollupOptions: {
 			input,
-			external: ['react', 'react/jsx-runtime', 'react-dom'],
+			external: ['react', 'react/jsx-runtime', 'react-dom', "react-router-dom"],
 			output: {
 				globals: {
 					react: 'react',
