@@ -11,11 +11,13 @@ import { Popup } from '@/components/Popup/Popup'
 export interface IDragAndDrop
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
 	onClose: () => void
+	onChangeFiles?: (files: FileList) => void
 }
 
 export const DragAndDrop: FC<IDragAndDrop> = ({
 	onClose,
 	className,
+	onChangeFiles = () => {},
 	...props
 }) => {
 	const [isActive, setIsActive] = useState<boolean>(false)
@@ -32,7 +34,7 @@ export const DragAndDrop: FC<IDragAndDrop> = ({
 	function dropHandler(e: DragEvent<HTMLLabelElement>) {
 		e.preventDefault()
 		const files = e.dataTransfer.files
-		console.log(files)
+		onChangeFiles(files)
 		setIsActive(false)
 	}
 

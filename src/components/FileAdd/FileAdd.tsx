@@ -7,17 +7,24 @@ export enum EFileAddVariant {
 	dragAndDrop = 'dragAndDrop',
 }
 
-export type TFileAdd = IArea & IDragAndDrop
-
-export interface IFileAdd extends TFileAdd {
+export interface IFileAddArea extends IArea {
 	variant: `${EFileAddVariant}`
 }
 
-export const FileAdd: FC<IFileAdd> = ({ variant, ...props }) => {
+export interface IFileAddDragAndDrop extends IDragAndDrop {
+	variant: `${EFileAddVariant}`
+}
+
+export const FileAdd: FC<IFileAddArea | IFileAddDragAndDrop> = ({
+	variant,
+	...props
+}) => {
 	return (
 		<>
-			{variant === EFileAddVariant.area && <Area {...props} />}
-			{variant === EFileAddVariant.dragAndDrop && <DragAndDrop {...props} />}
+			{variant === EFileAddVariant.area && <Area {...(props as IArea)} />}
+			{variant === EFileAddVariant.dragAndDrop && (
+				<DragAndDrop {...(props as IDragAndDrop)} />
+			)}
 		</>
 	)
 }
