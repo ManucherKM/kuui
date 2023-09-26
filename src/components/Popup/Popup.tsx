@@ -12,6 +12,7 @@ export type TPopup = HTMLAttributes<HTMLDivElement>
 /** Popup component interface. */
 export interface IPopup extends TPopup {
 	onClose?: () => void
+	clear?: boolean
 }
 
 /**
@@ -27,6 +28,7 @@ export const Popup: FC<IPopup> = ({
 	children,
 	onClose,
 	className,
+	clear = false,
 	...props
 }) => {
 	function clickHandler() {
@@ -41,9 +43,13 @@ export const Popup: FC<IPopup> = ({
 		<>
 			{createPortal(
 				<div onClick={clickHandler} className={classes.wrapper}>
-					<div className={contentStyles} {...props}>
-						{children}
-					</div>
+					{clear ? (
+						children
+					) : (
+						<div className={contentStyles} {...props}>
+							{children}
+						</div>
+					)}
 				</div>,
 				document.body,
 			)}

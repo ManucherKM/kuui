@@ -1,33 +1,23 @@
-import { FC, HTMLAttributes, InputHTMLAttributes } from 'react'
-import classes from './FileAdd.module.scss'
-import clsx from 'clsx'
+import { FC } from 'react'
+import { Area, IArea } from './Variant/Area/Area'
+import { DragAndDrop, IDragAndDrop } from './Variant/DragAndDrop/DragAndDrop'
 
-export enum EFileAddFill {
-	all = 'all',
-	fixed = 'fixed',
+export enum EFileAddVariant {
+	area = 'area',
+	dragAndDrop = 'dragAndDrop',
 }
 
-export interface IFileAdd
-	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
-	fill?: `${EFileAddFill}`
+export type TFileAdd = IArea & IDragAndDrop
+
+export interface IFileAdd extends TFileAdd {
+	variant: `${EFileAddVariant}`
 }
 
-export const FileAdd: FC<IFileAdd> = ({
-	className,
-	fill = EFileAddFill.all,
-	...props
-}) => {
-	const styles = clsx([classes.wrapper, classes[fill], className])
+export const FileAdd: FC<IFileAdd> = ({ variant, ...props }) => {
 	return (
-		<label className={styles}>
-			<svg className={classes.plus} viewBox="0 0 24 24">
-				<path
-					d="M4 12H20M12 4V20"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-				/>
-			</svg>
-			<input className={classes.input} type="file" {...props} />
-		</label>
+		<>
+			{variant === EFileAddVariant.area && <Area {...props} />}
+			{variant === EFileAddVariant.dragAndDrop && <DragAndDrop {...props} />}
+		</>
 	)
 }

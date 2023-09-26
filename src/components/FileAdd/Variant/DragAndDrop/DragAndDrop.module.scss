@@ -1,0 +1,51 @@
+@import '@/assets/styles/vars.scss';
+
+.wrapper {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	height: 80%;
+	gap: 8px;
+	border-radius: $radius;
+	border: 1px solid $dominant-1;
+	position: relative;
+	background-color: $black-500;
+	transition: background-color 300ms;
+	cursor: pointer;
+	padding: 1rem;
+
+	&:hover,
+	&:focus {
+		transition: background-color 300ms;
+		background-color: $black-250;
+	}
+
+	.icon {
+		g {
+			fill: $dominant-1;
+		}
+	}
+
+	.description {
+		font-size: 0.9rem;
+		color: $dominant-1;
+		font-family: $NotoSansMono;
+	}
+
+	.input {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 0.01px;
+		height: 0.01px;
+		opacity: 0.01;
+	}
+}
+
+.active {
+	transition: background-color 300ms;
+	background-color: $black-250;
+}

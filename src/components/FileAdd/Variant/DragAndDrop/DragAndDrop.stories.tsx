@@ -2,22 +2,24 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // Components
-import { FileAdd } from './FileAdd'
+import { DragAndDrop } from './DragAndDrop'
 
 // Styles
 import '@/assets/styles/index.scss'
 
-// Setting FileAdd
-const meta: Meta<typeof FileAdd> = {
-	component: FileAdd,
+// Setting DragAndDrop
+const meta: Meta<typeof DragAndDrop> = {
+	component: DragAndDrop,
 }
 
 export default meta
 
 // Making Story
-type Story = StoryObj<typeof FileAdd>
+type Story = StoryObj<typeof DragAndDrop>
 
 // Setting Story
 export const Playground: Story = {
-	args: {},
+	args: {
+		fill: 'all',
+	},
 }

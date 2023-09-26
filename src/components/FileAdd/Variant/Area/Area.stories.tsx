@@ -2,22 +2,24 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // Components
-import { FileAdd } from './FileAdd'
+import { Area } from './Area'
 
 // Styles
 import '@/assets/styles/index.scss'
 
-// Setting FileAdd
-const meta: Meta<typeof FileAdd> = {
-	component: FileAdd,
+// Setting Area
+const meta: Meta<typeof Area> = {
+	component: Area,
 }
 
 export default meta
 
 // Making Story
-type Story = StoryObj<typeof FileAdd>
+type Story = StoryObj<typeof Area>
 
 // Setting Story
 export const Playground: Story = {
-	args: {},
+	args: {
+		fill: 'all',
+	},
 }
