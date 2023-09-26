@@ -4,7 +4,6 @@
 	width: 100%;
 	min-height: 100%;
 	height: max-content;
-	outline: none;
 	cursor: pointer;
 	padding: 0.5rem;
 	border-width: 1px;
@@ -70,6 +69,7 @@
 	color: $black-250;
 	font-family: $NotoSansMono;
 	transition: color 300ms;
+	outline: none;
 }
 
 .textEllipsis {
