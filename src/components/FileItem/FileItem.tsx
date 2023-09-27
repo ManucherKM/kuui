@@ -15,13 +15,13 @@ export enum EFileItemExtension {
 export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
 	extension: string
 	name: string
-	isActive: boolean
+	isActive?: boolean
 }
 
 export const FileItem: FC<IFileItem> = ({
 	className,
 	extension,
-	isActive,
+	isActive = false,
 	name,
 	...props
 }) => {
