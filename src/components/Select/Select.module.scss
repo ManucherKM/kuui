@@ -1,0 +1,9 @@
+@import '@/assets/styles/vars.scss';
+
+.wrapper {
+	background-color: $black-500;
+	border-radius: $radius;
+	overflow: hidden;
+	max-width: 200px;
+	width: 100%;
+}

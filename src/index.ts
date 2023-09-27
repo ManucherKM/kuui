@@ -25,6 +25,8 @@ export { ListItem } from './components/ListItem/ListItem'
 export { Alert } from './components/Alert/Alert'
 export { FileItem } from './components/FileItem/FileItem'
 export { FileAdd } from './components/FileAdd/FileAdd'
+export { Select } from './components/Select/Select'
+export { Option } from './components/Option/Option'
 
 // Styles
 import '@/assets/styles/index.scss'
