@@ -19,7 +19,8 @@
 	gap: 8px;
 
 	&:hover,
-	&:focus {
+	&:focus,
+	&.active {
 		transition: all 300ms;
 		border-color: $dominant-1;
 		position: relative;

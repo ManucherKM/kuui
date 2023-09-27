@@ -22,5 +22,6 @@ export const Playground: Story = {
 	args: {
 		extension: 'word',
 		name: 'Mike smith',
+		isActive: true,
 	},
 }

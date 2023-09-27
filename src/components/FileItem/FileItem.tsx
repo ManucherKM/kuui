@@ -15,11 +15,13 @@ export enum EFileItemExtension {
 export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
 	extension: string
 	name: string
+	isActive: boolean
 }
 
 export const FileItem: FC<IFileItem> = ({
 	className,
 	extension,
+	isActive,
 	name,
 	...props
 }) => {
@@ -33,7 +35,7 @@ export const FileItem: FC<IFileItem> = ({
 		setIsTextFocused(false)
 	}
 
-	const styles = clsx([classes.wrapper, className])
+	const styles = clsx([classes.wrapper, isActive && classes.active, className])
 
 	const textStyles = clsx([
 		classes.name,
