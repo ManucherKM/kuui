@@ -12,6 +12,7 @@ export enum ELinkDimension {
 	large = 'large',
 	medium = 'medium',
 	small = 'small',
+	extraSmall = 'extraSmall',
 }
 
 /** Enumeration of possible Link positions. */
@@ -22,7 +23,6 @@ export enum ELinkAlign {
 }
 
 /** Allowable Link types. */
-
 export type TLink = AnchorHTMLAttributes<HTMLAnchorElement>
 
 /** Link component interface. */
@@ -43,15 +43,15 @@ export interface ILink extends TLink {
 export const Link: FC<ILink> = ({
 	children,
 	dimension = ELinkDimension.small,
-	align,
+	align = ELinkAlign.left,
 	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
-		classes.link,
+		classes.root,
 		classes[dimension],
-		align && classes[align],
+		classes[align],
 		className,
 	])
 

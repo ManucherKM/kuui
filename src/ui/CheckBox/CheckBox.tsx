@@ -13,10 +13,18 @@ export enum ECheckBoxVariant {
 	text = 'text',
 }
 
-/** CheckBox component interface. */
-export interface ICheckBox extends IBox, IText {
+/** Interface for CheckBox with the "text" variant. */
+export interface ICheckBoxVariantText extends IText {
 	variant: `${ECheckBoxVariant}`
 }
+
+/** Interface for CheckBox with the "box" variant. */
+export interface ICheckBoxVariantBox extends IBox {
+	variant: `${ECheckBoxVariant}`
+}
+
+/** Type for the CheckBox component. */
+export type TCheckBox = ICheckBoxVariantText | ICheckBoxVariantBox
 
 /**
  * The CheckBox component is a customized version of the classic HTML input with
@@ -25,11 +33,11 @@ export interface ICheckBox extends IBox, IText {
  * @example
  * 	;<CheckBox variant="text" checked />
  */
-export const CheckBox: FC<ICheckBox> = ({ variant, ...props }) => {
+export const CheckBox: FC<TCheckBox> = ({ variant, ...props }) => {
 	return (
 		<>
-			{variant === ECheckBoxVariant.box && <Box {...props} />}
-			{variant === ECheckBoxVariant.text && <Text {...props} />}
+			{variant === ECheckBoxVariant.box && <Box {...(props as IBox)} />}
+			{variant === ECheckBoxVariant.text && <Text {...(props as IText)} />}
 		</>
 	)
 }

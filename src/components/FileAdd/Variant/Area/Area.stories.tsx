@@ -12,6 +12,7 @@ const meta: Meta<typeof Area> = {
 	component: Area,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story

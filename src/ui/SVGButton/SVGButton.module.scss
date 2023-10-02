@@ -1,16 +1,19 @@
+// Importing variables.
 @import '@/assets/styles/vars.scss';
 
-.svgButton {
+.root {
 	width: min-content;
 	height: min-content;
 	cursor: pointer;
 
 	path {
+		transition: fill 100ms;
 		fill: $black-250;
 	}
 
 	&:hover {
 		path {
+			transition: fill 100ms;
 			fill: $dominant-1;
 		}
 	}

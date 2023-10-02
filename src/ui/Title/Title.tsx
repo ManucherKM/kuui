@@ -42,7 +42,7 @@ export interface ITitle extends TTitle {
 export const Title: FC<ITitle> = ({
 	children,
 	dimension = ETitleDimension.medium,
-	align,
+	align = ETitleAlign.left,
 	className,
 	...props
 }) => {
@@ -50,7 +50,7 @@ export const Title: FC<ITitle> = ({
 	const styles = clsx([
 		classes.title,
 		classes[dimension],
-		align && classes[align],
+		classes[align],
 		className,
 	])
 

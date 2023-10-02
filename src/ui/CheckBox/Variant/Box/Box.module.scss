@@ -1,6 +1,7 @@
+// Importing variables.
 @import '@/assets/styles/vars.scss';
 
-.box {
+.root {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -21,8 +22,10 @@
 		height: 0.01px;
 		opacity: 0.01;
 		position: absolute;
+		transition: all 100ms;
 
 		&:checked + span {
+			transition: all 100ms;
 			display: block;
 		}
 	}

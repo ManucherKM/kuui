@@ -1,9 +1,11 @@
 // Types
 import type { FC, HTMLAttributes } from 'react'
 
+// Utils
+import clsx from 'clsx'
+
 // Styles
 import classes from './SVGButton.module.scss'
-import clsx from 'clsx'
 
 /** Allowable SVGButton types. */
 export type TSVGButton = HTMLAttributes<HTMLDivElement>
@@ -27,7 +29,8 @@ export const SVGButton: FC<ISVGButton> = ({
 	className,
 	...props
 }) => {
-	const styles = clsx([classes.svgButton, className])
+	// Put all used style classes into the "styles" variable.
+	const styles = clsx([classes.root, className])
 
 	return (
 		<div className={styles} {...props}>

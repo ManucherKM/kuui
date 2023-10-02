@@ -39,15 +39,15 @@ export interface IButton extends TButton {
  * 	<Button disabled>Click me</Button>
  */
 export const Button: FC<IButton> = ({
-	children,
 	variant = EButton.passive,
 	dimension = EButtonDimension.small,
+	children,
 	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
-		classes.button,
+		classes.root,
 		classes[variant],
 		classes[dimension],
 		className,

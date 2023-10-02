@@ -35,7 +35,7 @@ export const Radio: FC<IRadio> = ({
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.label, classes[dimension], className])
+	const styles = clsx([classes.root, classes[dimension], className])
 
 	return (
 		<label className={styles}>

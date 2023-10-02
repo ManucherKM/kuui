@@ -12,6 +12,7 @@ const meta: Meta<typeof Option> = {
 	component: Option,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story

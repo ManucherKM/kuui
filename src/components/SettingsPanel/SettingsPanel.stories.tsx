@@ -12,6 +12,7 @@ const meta: Meta<typeof SettingsPanel> = {
 	component: SettingsPanel,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story

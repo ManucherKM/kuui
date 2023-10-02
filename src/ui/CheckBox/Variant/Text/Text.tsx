@@ -2,8 +2,8 @@
 import type { ChangeEvent, FC, InputHTMLAttributes } from 'react'
 
 // Utils
-import clsx from 'clsx'
 import { useState } from 'react'
+import clsx from 'clsx'
 
 // Styles
 import classes from './Text.module.scss'
@@ -49,12 +49,12 @@ export const Text: FC<IText> = ({
 			onChange(e)
 		}
 
-		setIsChecked(p => !p)
+		setIsChecked(prev => !prev)
 	}
 
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
-		classes.text,
+		classes.root,
 		classes[dimension],
 		isChecked && classes.active,
 		className,

@@ -42,15 +42,15 @@ export interface ISubtitle extends TSubtitle {
 export const Subtitle: FC<ISubtitle> = ({
 	children,
 	dimension = ESubtitleDimension.medium,
-	align,
+	align = ESubtitleAlign.left,
 	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
-		classes.subtitle,
+		classes.root,
 		classes[dimension],
-		align && classes[align],
+		classes[align],
 		className,
 	])
 

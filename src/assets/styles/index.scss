@@ -2,6 +2,10 @@
 @import './themes.scss';
 @import './vars.scss';
 
+* {
+	box-sizing: border-box;
+}
+
 // Scroll
 *::-webkit-scrollbar {
 	width: 6px;

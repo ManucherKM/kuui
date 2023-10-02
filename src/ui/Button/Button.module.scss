@@ -1,6 +1,7 @@
+// Importing variables.
 @import '@/assets/styles/vars.scss';
 
-.button {
+.root {
 	user-select: none;
 	display: inline-flex;
 	justify-content: center;
@@ -18,9 +19,10 @@
 		pointer-events: none;
 	}
 
-	transition: transform 100ms;
+	transition: all 100ms;
+
 	&:hover {
-		transition: transform 100ms;
+		transition: all 100ms;
 		transform: translateY(-2px);
 	}
 }
@@ -43,9 +45,7 @@
 	background-color: $black-500;
 	color: $dominant-2;
 
-	transition: all 100ms;
 	&:hover {
-		transition: all 100ms;
 		background-color: $dominant-1;
 		color: $black-1000;
 	}

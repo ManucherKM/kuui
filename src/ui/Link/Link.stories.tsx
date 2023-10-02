@@ -12,6 +12,7 @@ const meta: Meta<typeof Link> = {
 	component: Link,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story

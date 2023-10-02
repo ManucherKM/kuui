@@ -1,52 +1,45 @@
 // Types
-import type { FC, InputHTMLAttributes } from 'react'
+import type { FC } from 'react'
+import type { IPassword } from './Variant/Password/Password'
+import type { IText } from './Variant/Text/Text'
 
-// Utils
-import clsx from 'clsx'
-
-// Styles
-import classes from './Input.module.scss'
+// Components
+import { Text } from './Variant/Text/Text'
+import { Password } from './Variant/Password/Password'
 
 /** Enumeration of possible Input variants. */
-export enum EInput {
-	default = 'default',
+export enum EInputVariant {
+	text = 'text',
+	password = 'password',
 }
 
-/** An enumeration of possible space filling by the Input component. */
-export enum EInputFill {
-	fixed = 'fixed',
-	all = 'all',
+/** Interface for Input with the "text" variant. */
+export interface IInputText extends IText {
+	variant: `${EInputVariant}`
 }
 
-/** Allowable Input types. */
-export type TInput = InputHTMLAttributes<HTMLInputElement>
-
-/** Input component interface. */
-export interface IInput extends TInput {
-	variant?: `${EInput}`
-	fill?: `${EInputFill}`
+/** Interface for Input with the "password" variant. */
+export interface IInputPassword extends IPassword {
+	variant: `${EInputVariant}`
 }
+
+/** Type for the Input component. */
+export type TInput = IInputPassword | IInputText
 
 /**
- * The Input component is a classic HTML "input" tag with some styles added.
- * Below you can see an example of its use.
+ * The Input component is an extended version of the classic HTML input, with
+ * added styling. Below you can see an example of its use.
  *
  * @example
- * 	;<Input onChange={console.log} />
+ * 	;<Input variant="text" onChange={e => console.log(e.target.value)} />
  */
-export const Input: FC<IInput> = ({
-	variant = EInput.default,
-	fill = EInputFill.fixed,
-	className,
-	...props
-}) => {
-	// Put all used style classes into the "styles" variable.
-	const styles = clsx([
-		classes.input,
-		classes[variant],
-		classes[fill],
-		className,
-	])
-
-	return <input className={styles} {...props} />
+export const Input: FC<TInput> = ({ variant, ...props }) => {
+	return (
+		<>
+			{variant === EInputVariant.text && <Text {...(props as IText)} />}
+			{variant === EInputVariant.password && (
+				<Password {...(props as IPassword)} />
+			)}
+		</>
+	)
 }

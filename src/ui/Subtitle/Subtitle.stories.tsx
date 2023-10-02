@@ -12,6 +12,7 @@ const meta: Meta<typeof Subtitle> = {
 	component: Subtitle,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story

@@ -2,23 +2,23 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // Components
-import { FileAdd } from './FileAdd'
+import { TextError } from './TextError'
 
 // Styles
 import '@/assets/styles/index.scss'
 
-// Setting FileAdd
-const meta: Meta<typeof FileAdd> = {
-	component: FileAdd,
+// Setting TextError
+const meta: Meta<typeof TextError> = {
+	component: TextError,
 }
 
 // Metadata to configure the stories for a component
 export default meta
 
 // Making Story
-type Story = StoryObj<typeof FileAdd>
+type Story = StoryObj<typeof TextError>
 
 // Setting Story
 export const Playground: Story = {
-	args: {},
+	args: { children: 'Error' },
 }

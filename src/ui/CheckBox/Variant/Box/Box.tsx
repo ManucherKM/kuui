@@ -15,7 +15,6 @@ export enum EBoxDimension {
 }
 
 /** Allowable Box types. */
-
 export type TBox = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
 /** Box component interface. */
@@ -36,7 +35,7 @@ export const Box: FC<IBox> = ({
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.box, classes[dimension], className])
+	const styles = clsx([classes.root, classes[dimension], className])
 
 	return (
 		<label className={styles}>

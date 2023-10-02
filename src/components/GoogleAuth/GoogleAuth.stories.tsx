@@ -12,6 +12,7 @@ const meta: Meta<typeof GoogleAuth> = {
 	component: GoogleAuth,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story

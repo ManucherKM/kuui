@@ -44,15 +44,15 @@ export interface IParagraph extends TParagraph {
 export const Paragraph: FC<IParagraph> = ({
 	children,
 	dimension = EParagraphDimension.small,
-	align,
+	align = EParagraphAlign.left,
 	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
-		classes.paragraph,
+		classes.root,
 		classes[dimension],
-		align && classes[align],
+		classes[align],
 		className,
 	])
 

@@ -42,7 +42,7 @@ export interface ITextError extends TTextError {
 export const TextError: FC<ITextError> = ({
 	children,
 	dimension = ETextErrorDimension.medium,
-	align,
+	align = ETextErrorAlign.left,
 	className,
 	...props
 }) => {
@@ -50,7 +50,7 @@ export const TextError: FC<ITextError> = ({
 	const styles = clsx([
 		classes.textError,
 		classes[dimension],
-		align && classes[align],
+		classes[align],
 		className,
 	])
 

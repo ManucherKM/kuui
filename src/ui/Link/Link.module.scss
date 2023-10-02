@@ -1,6 +1,7 @@
+// Importing variables.
 @import '@/assets/styles/vars.scss';
 
-.link {
+.root {
 	color: $dominant-1;
 	font-family: $NotoSansMono;
 	font-weight: 400;
@@ -23,6 +24,10 @@
 
 .small {
 	font-size: 0.9em;
+}
+
+.extraSmall {
+	font-size: 0.7em;
 }
 
 .left {

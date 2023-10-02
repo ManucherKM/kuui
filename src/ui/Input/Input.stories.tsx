@@ -12,6 +12,7 @@ const meta: Meta<typeof Input> = {
 	component: Input,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story
@@ -20,7 +21,7 @@ type Story = StoryObj<typeof Input>
 // Setting Story
 export const Playground: Story = {
 	args: {
-		placeholder: 'Placeholder',
-		value: 'test@gmail.com',
+		variant: 'text',
+		placeholder: 'placeholder',
 	},
 }

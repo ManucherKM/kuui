@@ -12,6 +12,7 @@ const meta: Meta<typeof CheckBox> = {
 	component: CheckBox,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story

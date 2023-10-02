@@ -1,11 +1,9 @@
+// Importing variables.
 @import '@/assets/styles/vars.scss';
 
-.input {
+.root {
 	outline: none;
 	box-sizing: border-box;
-}
-
-.default {
 	padding: 10px 20px;
 	font-size: 16px;
 	font-family: $NotoSansMono;

@@ -13,6 +13,7 @@ const meta: Meta<typeof Accordion> = {
 	component: Accordion,
 }
 
+// Metadata to configure the stories for a component
 export default meta
 
 // Making Story
