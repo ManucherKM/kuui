@@ -1,13 +1,13 @@
 {
 	"name": "kuui-react",
 	"private": false,
-	"version": "0.0.21",
+	"version": "0.0.23",
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
 		"format": "npx prettier --write src/",
 		"push": "npm run format && git add . && git commit -m '.' && git push origin react",
-		"npmjs": "vite build && npm version patch --no-git-tag-version && npm publish",
+		"npmjs": "npm run build && npm version patch --no-git-tag-version && npm publish",
 		"storybook": "storybook dev -p 6006",
 		"storybook:build": "storybook build"
 	},
