@@ -22,5 +22,6 @@ type Story = StoryObj<typeof Area>
 export const Playground: Story = {
 	args: {
 		fill: 'all',
+		onChange: e => console.log(e.target.files),
 	},
 }

@@ -29,7 +29,7 @@ export interface IArea extends TArea {
  * is an example of its use.
  *
  * @example
- * 	<Area variant="active" dimension="small">Click me</Button>
+ * 	<Area onChange={e => console.log(e.target.files)}/>
  */
 export const Area: FC<IArea> = ({
 	className,

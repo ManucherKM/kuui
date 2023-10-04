@@ -48,7 +48,7 @@ export const TextError: FC<ITextError> = ({
 }) => {
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
-		classes.textError,
+		classes.root,
 		classes[dimension],
 		classes[align],
 		className,

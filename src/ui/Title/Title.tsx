@@ -48,7 +48,7 @@ export const Title: FC<ITitle> = ({
 }) => {
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
-		classes.title,
+		classes.root,
 		classes[dimension],
 		classes[align],
 		className,
