@@ -11,6 +11,9 @@ import { Title } from '@/ui/Title/Title'
 // Utils
 import clsx from 'clsx'
 
+// Icons
+import * as icons from '@/assets/icons'
+
 /** Allowable ConfirmEmail types. */
 export type TConfirmEmail = HTMLAttributes<HTMLDivElement>
 
@@ -45,15 +48,8 @@ export const ConfirmEmail: FC<IConfirmEmail> = ({
 	return (
 		<div className={styles} {...props}>
 			<div className={classes.container}>
-				<svg width="60" height="48" viewBox="0 0 60 48" fill="none">
-					<path
-						d="M54 0H6C2.7 0 0.03 2.7 0.03 6L0 42C0 45.3 2.7 48 6 48H54C57.3 48 60 45.3 60 42V6C60 2.7 57.3 0 54 0ZM54 12L30 27L6 12V6L30 21L54 6V12Z"
-						fill="#BC98EA"
-					/>
-				</svg>
-
+				<icons.Mail width="60" height="48" className={classes.mail} />
 				<Title dimension="large">Activate the account.</Title>
-
 				<Subtitle dimension="small" align="center">
 					An email was sent to {email} to activate the account. Please follow
 					the link provided in the e-mail.

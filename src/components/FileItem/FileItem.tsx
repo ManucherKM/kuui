@@ -1,8 +1,17 @@
+// Types
+import type { FC, HTMLAttributes } from 'react'
+
+// Utils
 import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
-import { FC, HTMLAttributes, useState } from 'react'
+import { useState } from 'react'
+
+// Styles
 import classes from './FileItem.module.scss'
 
+/**
+ * Enumerate possible file extensions for the FileItem component.
+ */
 export enum EFileItemExtension {
 	word = 'word',
 	xlsx = 'xlsx',
@@ -12,6 +21,7 @@ export enum EFileItemExtension {
 	file = 'file',
 }
 
+/** FileItem component interface. */
 export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
 	extension: string
 	name: string
@@ -23,6 +33,8 @@ export const FileItem: FC<IFileItem> = ({
 	extension,
 	isActive = false,
 	name,
+	tabIndex = getTabIndex(),
+
 	...props
 }) => {
 	const [isTextFocused, setIsTextFocused] = useState<boolean>(false)
@@ -35,7 +47,7 @@ export const FileItem: FC<IFileItem> = ({
 		setIsTextFocused(false)
 	}
 
-	const styles = clsx([classes.wrapper, isActive && classes.active, className])
+	const styles = clsx([classes.root, isActive && classes.active, className])
 
 	const textStyles = clsx([
 		classes.name,
@@ -92,7 +104,7 @@ export const FileItem: FC<IFileItem> = ({
 				onFocus={textFocusHandler}
 				onBlur={textBlurHandler}
 				className={textStyles}
-				tabIndex={getTabIndex()}
+				tabIndex={tabIndex}
 			>
 				{name}.{extension}
 			</span>

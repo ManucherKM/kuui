@@ -15,6 +15,12 @@
 		align-items: center;
 		gap: 12px;
 	}
+
+	.mail {
+		path {
+			fill: $dominant-1;
+		}
+	}
 }
 
 .screen {
