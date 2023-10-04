@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import classes from './Button.module.scss'
 
 /** Enumeration of possible Button variants. */
-export enum EButton {
+export enum EButtonVariant {
 	active = 'active',
 	passive = 'passive',
 	navigate = 'navigate',
@@ -26,7 +26,7 @@ export type TButton = ButtonHTMLAttributes<HTMLButtonElement>
 
 /** Button component interface. */
 export interface IButton extends TButton {
-	variant?: `${EButton}`
+	variant?: `${EButtonVariant}`
 	dimension?: `${EButtonDimension}`
 }
 
@@ -35,11 +35,10 @@ export interface IButton extends TButton {
  * added styling. Below you can see an example of its use.
  *
  * @example
- * 	<Button variant="active" dimension="small">Click me</Button>
- * 	<Button disabled>Click me</Button>
+ * 	;<Area onClick={console.log} />
  */
 export const Button: FC<IButton> = ({
-	variant = EButton.passive,
+	variant = EButtonVariant.passive,
 	dimension = EButtonDimension.small,
 	children,
 	className,

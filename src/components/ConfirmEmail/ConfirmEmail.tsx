@@ -5,8 +5,8 @@ import type { FC, HTMLAttributes } from 'react'
 import classes from './ConfirmEmail.module.scss'
 
 // Components
-import { Title } from '@/ui/Title/Title'
 import { Subtitle } from '@/ui/Subtitle/Subtitle'
+import { Title } from '@/ui/Title/Title'
 
 // Utils
 import clsx from 'clsx'

@@ -5,7 +5,7 @@ import type { FC, SVGProps } from 'react'
 export type TFile = Omit<SVGProps<SVGSVGElement>, 'viewBox'>
 
 /** File icon component interface. */
-export interface IFile extends SVGProps<SVGSVGElement> {}
+export interface IFile extends TFile {}
 
 /** The File component is a file icon in SVG format. */
 export const File: FC<IFile> = props => {

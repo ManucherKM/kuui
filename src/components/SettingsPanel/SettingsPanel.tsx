@@ -5,8 +5,8 @@ import type { ChangeEvent, FC, HTMLAttributes } from 'react'
 import { CheckBox } from '@/ui/CheckBox/CheckBox'
 
 // Styles
-import classes from './SettingsPanel.module.scss'
 import clsx from 'clsx'
+import classes from './SettingsPanel.module.scss'
 
 /** Сheckbox options interface */
 export interface IToggle {

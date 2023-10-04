@@ -2,10 +2,7 @@
 import type { FC, SVGProps } from 'react'
 
 /** Allowable Google icon types. */
-export type TGoogle = Omit<
-	SVGProps<SVGSVGElement>,
-	'viewBox' | 'width' | 'height'
->
+export type TGoogle = Omit<SVGProps<SVGSVGElement>, 'viewBox'>
 
 /** Google icon component interface. */
 export interface IGoogle extends TGoogle {}
@@ -13,7 +10,7 @@ export interface IGoogle extends TGoogle {}
 /** The Google component is an svg icon of the Google company. */
 export const Google: FC<IGoogle> = props => {
 	return (
-		<svg width="20px" height="20px" viewBox="0 0 48 48" {...props}>
+		<svg viewBox="0 0 48 48" {...props}>
 			<g>
 				<path
 					fill="#EA4335"

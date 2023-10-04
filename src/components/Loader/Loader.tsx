@@ -1,11 +1,11 @@
 // Types
 import type { FC } from 'react'
-import type { ESpinnerDimension } from '../Spinner/Spinner'
 import type { IPopup } from '../Popup/Popup'
+import type { ESpinnerDimension } from '../Spinner/Spinner'
 
 // Components
-import { Spinner } from '../Spinner/Spinner'
 import { Popup } from '../Popup/Popup'
+import { Spinner } from '../Spinner/Spinner'
 
 /** Loader component interface. */
 export interface ILoader extends IPopup {

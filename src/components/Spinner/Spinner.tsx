@@ -1,6 +1,6 @@
 // Types
-import type { FC } from 'react'
 import type { ISpinner as ISpinnerIcon } from '@/assets/icons/Spinner'
+import type { FC } from 'react'
 
 // Utils
 import clsx from 'clsx'

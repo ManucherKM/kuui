@@ -2,8 +2,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // Components
-import { Select } from './Select'
 import { IOption, Option } from '../Option/Option'
+import { Select } from './Select'
 
 // Styles
 import '@/assets/styles/index.scss'

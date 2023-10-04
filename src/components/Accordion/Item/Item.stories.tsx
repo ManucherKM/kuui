@@ -2,8 +2,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // Components
-import { Item } from './Item'
 import { Paragraph } from '@/ui/Paragraph/Paragraph'
+import { Item } from './Item'
 
 // Styles
 import '@/assets/styles/index.scss'

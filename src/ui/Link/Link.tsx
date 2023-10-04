@@ -1,5 +1,5 @@
 // Types
-import type { FC, AnchorHTMLAttributes } from 'react'
+import type { AnchorHTMLAttributes, FC } from 'react'
 
 // Utils
 import clsx from 'clsx'

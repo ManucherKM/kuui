@@ -2,9 +2,9 @@
 import type { FC, HTMLAttributes } from 'react'
 
 // Utils
+import clsx from 'clsx'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import clsx from 'clsx'
 
 // Styles
 import classes from './Alert.module.scss'

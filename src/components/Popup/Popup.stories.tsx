@@ -2,8 +2,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // Components
-import { Popup } from './Popup'
 import { Button } from '@/ui/Button/Button'
+import { Popup } from './Popup'
 
 // Styles
 import '@/assets/styles/index.scss'

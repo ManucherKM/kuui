@@ -1,9 +1,13 @@
 // Types
 import type { FC, SVGProps } from 'react'
 
-/** Arrow component interface. */
-export interface IArrow extends SVGProps<SVGSVGElement> {}
+/** Allowable Arrow icon types. */
+export type TArrow = Omit<SVGProps<SVGSVGElement>, 'viewBox'>
 
+/** Arrow component interface. */
+export interface IArrow extends TArrow {}
+
+/** The Arrow component is an arrow icon in svg format. */
 export const Arrow: FC<IArrow> = props => {
 	return (
 		<svg viewBox="0 0 12 8" {...props}>

@@ -1,8 +1,11 @@
 // Types
 import type { FC, SVGProps } from 'react'
 
+/** Allowable СrossedEye icon types. */
+export type TСrossedEye = Omit<SVGProps<SVGSVGElement>, 'viewBox'>
+
 /** СrossedEye component interface. */
-export interface IСrossedEye extends SVGProps<SVGSVGElement> {}
+export interface IСrossedEye extends TСrossedEye {}
 
 /** The СrossedEye component is an svg icon of a crossed out eye. */
 export const СrossedEye: FC<IСrossedEye> = props => {

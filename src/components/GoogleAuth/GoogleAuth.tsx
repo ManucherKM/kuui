@@ -42,7 +42,7 @@ export const GoogleAuth: FC<IGoogleAuth> = ({
 
 	return (
 		<div className={styles} tabIndex={getTabIndex()} {...props}>
-			<icons.Google />
+			<icons.Google width="20px" height="20px" />
 			{variant === EGoogleAuthVariant.large && (
 				<span className={classes.title}>Continue with Google</span>
 			)}

@@ -1,11 +1,5 @@
 // Types
-import type {
-	FC,
-	HTMLAttributes,
-	ReactElement,
-	ReactNode,
-	SVGProps,
-} from 'react'
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 
 // Utils
 import clsx from 'clsx'

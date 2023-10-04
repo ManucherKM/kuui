@@ -43,7 +43,7 @@ export const VKAuth: FC<IVKAuth> = ({
 
 	return (
 		<div className={styles} tabIndex={tabIndex} {...props}>
-			<icons.Vk />
+			<icons.Vk width="20px" height="20px" />
 
 			{variant === EVKAuthVariant.large && (
 				<span className={classes.title}>Continue with VK</span>

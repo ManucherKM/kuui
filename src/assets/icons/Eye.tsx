@@ -1,8 +1,11 @@
 // Types
 import type { FC, SVGProps } from 'react'
 
+/** Allowable Eye icon types. */
+export type TEye = Omit<SVGProps<SVGSVGElement>, 'viewBox'>
+
 /** Eye component interface. */
-export interface IEye extends SVGProps<SVGSVGElement> {}
+export interface IEye extends TEye {}
 
 /** The Eye component is an svg eye icon. */
 export const Eye: FC<IEye> = props => {

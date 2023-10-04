@@ -4,8 +4,8 @@ import type { IPassword } from './Variant/Password/Password'
 import type { IText } from './Variant/Text/Text'
 
 // Components
-import { Text } from './Variant/Text/Text'
 import { Password } from './Variant/Password/Password'
+import { Text } from './Variant/Text/Text'
 
 /** Enumeration of possible Input variants. */
 export enum EInputVariant {

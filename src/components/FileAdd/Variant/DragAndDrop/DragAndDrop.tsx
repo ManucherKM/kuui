@@ -1,9 +1,9 @@
 // Types
-import type { DragEvent, FC, InputHTMLAttributes, ChangeEvent } from 'react'
+import type { ChangeEvent, DragEvent, FC, InputHTMLAttributes } from 'react'
 
 // Utils
-import { useState } from 'react'
 import clsx from 'clsx'
+import { useState } from 'react'
 
 // Styles
 import classes from './DragAndDrop.module.scss'

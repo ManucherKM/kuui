@@ -2,8 +2,8 @@
 import type { ChangeEvent, FC, InputHTMLAttributes } from 'react'
 
 // Utils
-import { useState } from 'react'
 import clsx from 'clsx'
+import { useState } from 'react'
 
 // Styles
 import classes from './Text.module.scss'
