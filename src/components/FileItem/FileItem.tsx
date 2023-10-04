@@ -28,27 +28,42 @@ export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
 	isActive?: boolean
 }
 
+/**
+ * Using the FileItem component, you can display information about a user's file. Below is an example of its use.
+ *
+ * @example
+ * 				<FileItem extension="word" name="Mike smith" isActive={true} />
+
+ */
 export const FileItem: FC<IFileItem> = ({
 	className,
 	extension,
 	isActive = false,
 	name,
 	tabIndex = getTabIndex(),
-
 	...props
 }) => {
+	// State for focus tracking.
 	const [isTextFocused, setIsTextFocused] = useState<boolean>(false)
 
+	/**
+	 * Function handler for the "focus" event.
+	 */
 	function textFocusHandler() {
 		setIsTextFocused(true)
 	}
 
+	/**
+	 * Function handler for the "blur" event.
+	 */
 	function textBlurHandler() {
 		setIsTextFocused(false)
 	}
 
+	// We put the wrapper styles into the "styles" variable.
 	const styles = clsx([classes.root, isActive && classes.active, className])
 
+	// Place the text styles in the "textStyles" variable.
 	const textStyles = clsx([
 		classes.name,
 		!isTextFocused && classes.textEllipsis,
