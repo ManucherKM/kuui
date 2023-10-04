@@ -1,6 +1,7 @@
+// Importing variables.
 @import '@/assets/styles/vars.scss';
 
-.googleAuth {
+.root {
 	user-select: none;
 	background-color: $black-500;
 	color: $dominant-2;
@@ -9,11 +10,6 @@
 	cursor: pointer;
 	border: 1px solid transparent;
 	transition: border-color 200ms;
-
-	.googleLogo {
-		width: 20px;
-		height: 20px;
-	}
 
 	.title {
 		font-family: $NotoSansMono;

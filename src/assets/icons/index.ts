@@ -1,2 +1,7 @@
 export { Eye } from './Eye'
 export { СrossedEye } from './СrossedEye'
+export { Spinner } from './Spinner'
+export { Google } from './Google'
+export { Vk } from './Vk'
+export { Arrow } from './Arrow'
+export { File } from './File'

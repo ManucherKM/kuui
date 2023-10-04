@@ -15,7 +15,6 @@ export interface IToggle {
 }
 
 /** Allowable SettingsPanel types. */
-
 export type TSettingsPanel = HTMLAttributes<HTMLDivElement>
 
 /** SettingsPanel component interface. */
@@ -45,10 +44,11 @@ export const SettingsPanel: FC<ISettingsPanel> = ({
 	className,
 	...props
 }) => {
-	const wrapperStyles = clsx([classes.wrapper, className])
+	// Put all used style classes into the "styles" variable.
+	const styles = clsx([classes.root, className])
 
 	return (
-		<div className={wrapperStyles} {...props}>
+		<div className={styles} {...props}>
 			<span className={classes.name}>{name}</span>
 			<div className={classes.toggles}>
 				{toggles.map((toggle, idx) => (

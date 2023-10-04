@@ -1,7 +1,7 @@
-import { FC, FocusEvent, HTMLAttributes, useState } from 'react'
-import classes from './FileItem.module.scss'
+import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
-import { getTabIndex } from '@/utils/getTabIndex'
+import { FC, HTMLAttributes, useState } from 'react'
+import classes from './FileItem.module.scss'
 
 export enum EFileItemExtension {
 	word = 'word',

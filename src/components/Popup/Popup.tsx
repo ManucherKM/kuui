@@ -1,10 +1,12 @@
-import { createPortal } from 'react-dom'
 // Types
 import type { FC, HTMLAttributes } from 'react'
 
+// Utils
+import clsx from 'clsx'
+import { createPortal } from 'react-dom'
+
 // Styles
 import classes from './Popup.module.scss'
-import clsx from 'clsx'
 
 /** Allowable Popup types. */
 export type TPopup = HTMLAttributes<HTMLDivElement>
@@ -25,18 +27,22 @@ export interface IPopup extends TPopup {
  * 	</Popup>
  */
 export const Popup: FC<IPopup> = ({
-	children,
 	onClose,
+	children,
 	className,
 	clear = false,
 	...props
 }) => {
+	/** Function handler for clicking on the background of the popup. */
 	function clickHandler() {
+		// If the user passed the function.
 		if (onClose) {
+			// Call the function.
 			onClose()
 		}
 	}
 
+	// We place the styles necessary for the content into a variable.
 	const contentStyles = clsx([classes.content, className])
 
 	return (

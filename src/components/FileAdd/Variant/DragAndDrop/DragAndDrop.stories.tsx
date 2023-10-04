@@ -21,6 +21,6 @@ type Story = StoryObj<typeof DragAndDrop>
 // Setting Story
 export const Playground: Story = {
 	args: {
-		fill: 'all',
+		onChangeFiles: console.log,
 	},
 }

@@ -13,7 +13,7 @@ import classes from './NotFound.module.scss'
  */
 export const NotFound: FC = () => {
 	return (
-		<div className={classes.wrapper}>
+		<div className={classes.root}>
 			<span className={classes.title}>Error 404</span>
 			<span className={classes.subtitle}>Page not found</span>
 		</div>

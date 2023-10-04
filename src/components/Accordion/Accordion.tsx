@@ -1,12 +1,14 @@
 // Types
 import type { FC, HTMLAttributes, ReactNode } from 'react'
 
+// Utils
+import clsx from 'clsx'
+
 // Styles
 import classes from './Accordion.module.scss'
 
 // Components
 import { Item } from './Item/Item'
-import clsx from 'clsx'
 
 /** Allowable Accordion types. */
 export type TAccordion = HTMLAttributes<HTMLDivElement>
@@ -37,7 +39,8 @@ export interface IAccordion extends TAccordion {
  * 	/>
  */
 export const Accordion: FC<IAccordion> = ({ items, className, ...props }) => {
-	const styles = clsx([classes.wrapper, className])
+	// Put all used style classes into the "styles" variable.
+	const styles = clsx([classes.root, className])
 
 	return (
 		<div className={styles} {...props}>

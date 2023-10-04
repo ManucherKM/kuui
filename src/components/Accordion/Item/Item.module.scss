@@ -1,6 +1,7 @@
+// Importing variables.
 @import '@/assets/styles/vars.scss';
 
-.item {
+.root {
 	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
@@ -9,17 +10,17 @@
 	background-color: $black-500;
 	outline: none;
 	cursor: pointer;
-	transition: border-color 100ms;
+	transition: all 100ms;
 
 	&:hover,
 	&:focus {
-		transition: border-color 100ms;
+		transition: all 100ms;
 		border-color: $dominant-1;
 
-		.wrapper_title {
+		.wrapperTitle {
 			svg {
 				path {
-					transition: fill 100ms;
+					transition: all 100ms;
 					fill: $dominant-1;
 				}
 			}
@@ -27,26 +28,26 @@
 	}
 
 	&:focus {
-		.wrapper_title {
+		.wrapperTitle {
 			svg {
-				transition: transform 200ms;
+				transition: all 200ms;
 				transform: rotate(180deg);
 
 				path {
-					transition: fill 200ms;
+					transition: all 200ms;
 					fill: $dominant-1;
 				}
 			}
 		}
 
-		.wrapper_subtitle {
+		.wrapperSubtitle {
 			transition: all 200ms;
 			height: auto;
 			margin-top: 10px;
 		}
 	}
 
-	.wrapper_title {
+	.wrapperTitle {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -65,16 +66,16 @@
 			width: 1rem;
 			height: 1rem;
 			fill: none;
-			transition: transform 200ms;
+			transition: all 200ms;
 
 			path {
-				transition: fill 100ms;
+				transition: all 100ms;
 				fill: $black-250;
 			}
 		}
 	}
 
-	.wrapper_subtitle {
+	.wrapperSubtitle {
 		transition: all 200ms;
 		height: 0px;
 		overflow: hidden;

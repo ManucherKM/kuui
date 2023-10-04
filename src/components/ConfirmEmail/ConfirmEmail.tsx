@@ -39,7 +39,8 @@ export const ConfirmEmail: FC<IConfirmEmail> = ({
 	className,
 	...props
 }) => {
-	const styles = clsx([classes.confirmEmail, classes[fill], className])
+	// Put all used style classes into the "styles" variable.
+	const styles = clsx([classes.root, classes[fill], className])
 
 	return (
 		<div className={styles} {...props}>
