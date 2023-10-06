@@ -12,7 +12,8 @@
 	outline: none;
 
 	&:hover,
-	&:focus {
+	&:focus,
+	&.active {
 		transition: background-color 200ms;
 		background-color: $black-250;
 

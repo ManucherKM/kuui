@@ -23,6 +23,7 @@ export interface IListItem extends LinkProps {
 	icon: ReactNode
 	title: string
 	align?: `${EListItemAlign}`
+	isActive?: boolean
 }
 
 /**
@@ -39,11 +40,17 @@ export const ListItem: FC<IListItem> = ({
 	className,
 	title,
 	icon,
+	isActive = false,
 	align = EListItemAlign.left,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.root, classes[align], className])
+	const styles = clsx([
+		classes.root,
+		classes[align],
+		isActive && classes.active,
+		className,
+	])
 
 	return (
 		<Link className={styles} {...props}>
