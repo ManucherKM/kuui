@@ -1,11 +1,15 @@
 // Types
-import type { AnchorHTMLAttributes, FC } from 'react'
+import type { FC } from 'react'
+import type { LinkProps } from 'react-router-dom'
 
 // Utils
 import clsx from 'clsx'
 
 // Styles
 import classes from './Link.module.scss'
+
+// Componets
+import { Link as LocalLink } from 'react-router-dom'
 
 /** Enumeration of possible Link dimension. */
 export enum ELinkDimension {
@@ -23,7 +27,7 @@ export enum ELinkAlign {
 }
 
 /** Allowable Link types. */
-export type TLink = AnchorHTMLAttributes<HTMLAnchorElement>
+export type TLink = LinkProps
 
 /** Link component interface. */
 export interface ILink extends TLink {
@@ -32,11 +36,11 @@ export interface ILink extends TLink {
 }
 
 /**
- * The Link component is a classic HTML "a" tag with some styles added. Below
+ * The Link component is the Link component from the "react-router-dom" package with some styling added. Below
  * you can see an example of its use.
  *
  * @example
- * 	;<Link href="#" dimension="small">
+ * 	;<Link to="#" dimension="small">
  * 		Link
  * 	</Link>
  */
@@ -56,8 +60,8 @@ export const Link: FC<ILink> = ({
 	])
 
 	return (
-		<a className={styles} {...props}>
+		<LocalLink className={styles} {...props}>
 			{children}
-		</a>
+		</LocalLink>
 	)
 }
