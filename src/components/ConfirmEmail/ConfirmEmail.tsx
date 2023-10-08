@@ -50,7 +50,7 @@ export const ConfirmEmail: FC<IConfirmEmail> = ({
 			<div className={classes.container}>
 				<icons.Mail width="60" height="48" className={classes.mail} />
 				<Title dimension="large" align="center">
-					Activate the account.
+					Activate the account
 				</Title>
 				<Subtitle dimension="small" align="center">
 					An email was sent to {email} to activate the account. Please follow
