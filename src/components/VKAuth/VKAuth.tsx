@@ -20,9 +20,16 @@ export enum EVKAuthVariant {
 	large = 'large',
 }
 
+/** Enumeration of possible VKAuth fill variants. */
+export enum EVkAuthFill {
+	fixed = 'fixed',
+	all = 'all',
+}
+
 /** VKAuth component interface. */
 export interface IVKAuth extends TVKAuth {
 	variant?: `${EVKAuthVariant}`
+	fill?: `${EVkAuthFill}`
 }
 
 /**
@@ -34,12 +41,20 @@ export interface IVKAuth extends TVKAuth {
  */
 export const VKAuth: FC<IVKAuth> = ({
 	variant = EVKAuthVariant.small,
+	fill = EVkAuthFill.fixed,
+
 	className,
+
 	tabIndex = getTabIndex(),
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.root, classes[variant], className])
+	const styles = clsx([
+		classes.root,
+		classes[variant],
+		classes[fill],
+		className,
+	])
 
 	return (
 		<div className={styles} tabIndex={tabIndex} {...props}>

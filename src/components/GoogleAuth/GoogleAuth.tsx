@@ -20,9 +20,16 @@ export enum EGoogleAuthVariant {
 	large = 'large',
 }
 
+/** Enumeration of possible GoogleAuth fill variants. */
+export enum EGoogleAuthFill {
+	fixed = 'fixed',
+	all = 'all',
+}
+
 /** GoogleAuth component interface. */
 export interface IGoogleAuth extends TGoogleAuth {
 	variant?: `${EGoogleAuthVariant}`
+	fill?: `${EGoogleAuthFill}`
 }
 
 /**
@@ -34,11 +41,17 @@ export interface IGoogleAuth extends TGoogleAuth {
  */
 export const GoogleAuth: FC<IGoogleAuth> = ({
 	variant = EGoogleAuthVariant.small,
+	fill = EGoogleAuthFill.fixed,
 	className,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.root, classes[variant], className])
+	const styles = clsx([
+		classes.root,
+		classes[variant],
+		classes[fill],
+		className,
+	])
 
 	return (
 		<div className={styles} tabIndex={getTabIndex()} {...props}>
