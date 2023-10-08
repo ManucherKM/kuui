@@ -1,3 +1,6 @@
+// Core
+import '@/core'
+
 // UI
 export { Button } from './ui/Button/Button'
 export { CheckBox } from './ui/CheckBox/CheckBox'

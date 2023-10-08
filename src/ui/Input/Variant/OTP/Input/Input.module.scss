@@ -1,0 +1,40 @@
+// Importing variables.
+@import '@/assets/styles/vars.scss';
+
+.root {
+	width: 50px;
+	height: 50px;
+	box-sizing: border-box;
+	border-radius: $radius;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+	background-color: $black-500;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: text;
+	transition: all 100ms;
+
+	&.active,
+	&:hover {
+		transition: all 100ms;
+		border-color: $dominant-1;
+	}
+
+	.text {
+		font-size: 25px;
+		color: $dominant-1;
+		font-family: $NotoSansMono;
+	}
+
+	.input {
+		width: 0.01px;
+		height: 0.01px;
+		opacity: 0.01;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
