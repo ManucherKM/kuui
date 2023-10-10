@@ -1,5 +1,5 @@
 // Types
-import type { FC, InputHTMLAttributes } from 'react'
+import { forwardRef, type FC, type InputHTMLAttributes } from 'react'
 
 // Utils
 import clsx from 'clsx'
@@ -28,13 +28,11 @@ export interface IText extends TText {
  * @example
  * 	;<Text fill="all" onChange={e => console.log(e.target.value)} />
  */
-export const Text: FC<IText> = ({
-	fill = ETextFill.fixed,
-	className,
-	...props
-}) => {
-	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.root, classes[fill], className])
+export const Text = forwardRef<HTMLInputElement, IText>(
+	({ fill = ETextFill.fixed, className, ...props }, ref) => {
+		// Put all used style classes into the "styles" variable.
+		const styles = clsx([classes.root, classes[fill], className])
 
-	return <input className={styles} type="text" {...props} />
-}
+		return <input ref={ref} className={styles} type="text" {...props} />
+	},
+)

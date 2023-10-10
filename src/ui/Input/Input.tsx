@@ -1,5 +1,5 @@
 // Types
-import type { FC } from 'react'
+import { forwardRef, type FC } from 'react'
 import type { IOTP } from './Variant/OTP/OTP'
 import type { IPassword } from './Variant/Password/Password'
 import type { IText } from './Variant/Text/Text'
@@ -41,14 +41,18 @@ export type TInput = IInputPassword | IInputText | IInputOTP
  * @example
  * 	;<Input variant="text" onChange={e => console.log(e.target.value)} />
  */
-export const Input: FC<TInput> = ({ variant, ...props }) => {
-	return (
-		<>
-			{variant === EInputVariant.text && <Text {...(props as IText)} />}
-			{variant === EInputVariant.password && (
-				<Password {...(props as IPassword)} />
-			)}
-			{variant === EInputVariant.OTP && <OTP {...(props as IOTP)} />}
-		</>
-	)
-}
+export const Input = forwardRef<HTMLInputElement, TInput>(
+	({ variant, ...props }, ref) => {
+		return (
+			<>
+				{variant === EInputVariant.text && (
+					<Text ref={ref} {...(props as IText)} />
+				)}
+				{variant === EInputVariant.password && (
+					<Password ref={ref} {...(props as IPassword)} />
+				)}
+				{variant === EInputVariant.OTP && <OTP {...(props as IOTP)} />}
+			</>
+		)
+	},
+)

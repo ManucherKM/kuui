@@ -3,7 +3,7 @@ import type { FC, FocusEvent, InputHTMLAttributes } from 'react'
 
 // Utils
 import clsx from 'clsx'
-import { useState } from 'react'
+import { forwardRef, useState } from 'react'
 
 // Styles
 import classes from './Password.module.scss'
@@ -36,84 +36,84 @@ type InputTypes = 'password' | 'text'
  * @example
  * 	;<Password fill="all" onChange={e => console.log(e.target.value)} />
  */
-export const Password: FC<IPassword> = ({
-	fill = EPasswordFill.fixed,
-	onFocus,
-	onBlur,
-	className,
-	...props
-}) => {
-	// State for tracking input activity.
-	const [isActive, setIsActive] = useState<boolean>(false)
+export const Password = forwardRef<HTMLInputElement, IPassword>(
+	(
+		{ fill = EPasswordFill.fixed, onFocus, onBlur, className, ...props },
+		ref,
+	) => {
+		// State for tracking input activity.
+		const [isActive, setIsActive] = useState<boolean>(false)
 
-	// The state of valid types for input.
-	const [type, setType] = useState<InputTypes>('password')
+		// The state of valid types for input.
+		const [type, setType] = useState<InputTypes>('password')
 
-	/** Function handler for changing the input type. */
-	function changeInputTypeHandler() {
-		if (type === 'password') {
-			setType('text')
-		} else {
-			setType('password')
-		}
-	}
-
-	/** Focus handler function for input. */
-	function inputFocusHandler(e: FocusEvent<HTMLInputElement>) {
-		// If the end user also added a handler for the focus event.
-		if (onFocus) {
-			// Let's call this function.
-			onFocus(e)
+		/** Function handler for changing the input type. */
+		function changeInputTypeHandler() {
+			if (type === 'password') {
+				setType('text')
+			} else {
+				setType('password')
+			}
 		}
 
-		// Change the activity state of the input.
-		setIsActive(true)
-	}
+		/** Focus handler function for input. */
+		function inputFocusHandler(e: FocusEvent<HTMLInputElement>) {
+			// If the end user also added a handler for the focus event.
+			if (onFocus) {
+				// Let's call this function.
+				onFocus(e)
+			}
 
-	/** Blur handler function for input. */
-	function inputBlurHandler(e: FocusEvent<HTMLInputElement>) {
-		// If the end user also added a handler for the blur event.
-		if (onBlur) {
-			// Let's call this function.
-			onBlur(e)
+			// Change the activity state of the input.
+			setIsActive(true)
 		}
 
-		// Change the activity state of the input.
-		setIsActive(false)
-	}
+		/** Blur handler function for input. */
+		function inputBlurHandler(e: FocusEvent<HTMLInputElement>) {
+			// If the end user also added a handler for the blur event.
+			if (onBlur) {
+				// Let's call this function.
+				onBlur(e)
+			}
 
-	// Place all used style classes for the label into the “styles” variable.
-	const stylesLabel = clsx([
-		classes.root,
-		classes[fill],
-		isActive && classes.active,
-		className,
-	])
+			// Change the activity state of the input.
+			setIsActive(false)
+		}
 
-	return (
-		<label className={stylesLabel}>
-			<input
-				onFocus={inputFocusHandler}
-				onBlur={inputBlurHandler}
-				className={classes.input}
-				type={type}
-				{...props}
-			/>
-			{type === 'password' ? (
-				<icons.СrossedEye
-					onClick={changeInputTypeHandler}
-					className={classes.eye}
-					width="20px"
-					height="20px"
+		// Place all used style classes for the label into the “styles” variable.
+		const stylesLabel = clsx([
+			classes.root,
+			classes[fill],
+			isActive && classes.active,
+			className,
+		])
+
+		return (
+			<label className={stylesLabel}>
+				<input
+					ref={ref}
+					onFocus={inputFocusHandler}
+					onBlur={inputBlurHandler}
+					className={classes.input}
+					type={type}
+					{...props}
 				/>
-			) : (
-				<icons.Eye
-					onClick={changeInputTypeHandler}
-					className={classes.eye}
-					width="20px"
-					height="20px"
-				/>
-			)}
-		</label>
-	)
-}
+				{type === 'password' ? (
+					<icons.СrossedEye
+						onClick={changeInputTypeHandler}
+						className={classes.eye}
+						width="20px"
+						height="20px"
+					/>
+				) : (
+					<icons.Eye
+						onClick={changeInputTypeHandler}
+						className={classes.eye}
+						width="20px"
+						height="20px"
+					/>
+				)}
+			</label>
+		)
+	},
+)
