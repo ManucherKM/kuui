@@ -7,9 +7,10 @@ export interface IOTP {
 	value: string
 	length: number
 	onChange: (value: string) => void
+	onComplete: () => void
 }
 
-export const OTP: FC<IOTP> = ({ value, length, onChange }) => {
+export const OTP: FC<IOTP> = ({ value, length, onChange, onComplete }) => {
 	const [focusIdx, setFocusIdx] = useState<number>(0)
 	const [prevValue, setPrevValue] = useState<string>('')
 
@@ -29,16 +30,18 @@ export const OTP: FC<IOTP> = ({ value, length, onChange }) => {
 		}
 
 		setPrevValue(value)
+
+		if (value.length === length) {
+			onComplete()
+		}
 	}, [value])
 
 	useEffect(() => {
 		inputRefs.current[focusIdx]?.focus()
 	}, [focusIdx])
 
-	const styles = clsx([classes.root])
-
 	return (
-		<div className={styles}>
+		<div className={classes.root}>
 			{arr.map((_, idx) => (
 				<Input
 					onKeyDown={keyDownHandler}
