@@ -33,6 +33,7 @@ export const OTP: FC<IOTP> = ({ value, length, onChange, onComplete }) => {
 
 		if (value.length === length) {
 			onComplete()
+			inputRefs.current[focusIdx]?.blur()
 		}
 	}, [value])
 
