@@ -23,5 +23,7 @@ export const Playground: Story = {
 	args: {
 		variant: 'text',
 		placeholder: 'placeholder',
+		length: 6,
+		value: '',
 	},
 }

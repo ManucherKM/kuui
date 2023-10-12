@@ -1,5 +1,5 @@
 // Types
-import { forwardRef, type FC, type InputHTMLAttributes } from 'react'
+import { forwardRef, type InputHTMLAttributes } from 'react'
 
 // Utils
 import clsx from 'clsx'

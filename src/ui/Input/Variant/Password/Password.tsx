@@ -1,5 +1,5 @@
 // Types
-import type { FC, FocusEvent, InputHTMLAttributes } from 'react'
+import type { FocusEvent, InputHTMLAttributes } from 'react'
 
 // Utils
 import clsx from 'clsx'

@@ -1,5 +1,5 @@
 // Types
-import { forwardRef, type FC } from 'react'
+import { forwardRef } from 'react'
 import type { IOTP } from './Variant/OTP/OTP'
 import type { IPassword } from './Variant/Password/Password'
 import type { IText } from './Variant/Text/Text'

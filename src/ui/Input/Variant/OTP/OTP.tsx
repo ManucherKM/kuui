@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import { KeyboardEvent, useEffect, useRef, useState, type FC } from 'react'
 import { Input } from './Input/Input'
 import classes from './OTP.module.scss'
@@ -12,7 +11,6 @@ export interface IOTP {
 
 export const OTP: FC<IOTP> = ({ value, length, onChange, onComplete }) => {
 	const [focusIdx, setFocusIdx] = useState<number>(0)
-	const [prevValue, setPrevValue] = useState<string>('')
 
 	const arr = new Array(length).fill(null)
 
@@ -25,11 +23,7 @@ export const OTP: FC<IOTP> = ({ value, length, onChange, onComplete }) => {
 	}
 
 	useEffect(() => {
-		if (value.length > prevValue.length) {
-			setFocusIdx(prev => prev + 1)
-		}
-
-		setPrevValue(value)
+		setFocusIdx(value.length)
 
 		if (value.length === length) {
 			onComplete()
