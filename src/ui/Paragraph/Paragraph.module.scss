@@ -2,11 +2,14 @@
 @import '@/assets/styles/vars.scss';
 
 .root {
-	color: $dominant-2;
 	font-family: $NotoSansMono;
 	font-weight: 400;
 	margin: 0;
 	cursor: default;
+
+	a {
+		font-size: inherit;
+	}
 }
 
 .large {
@@ -35,4 +38,12 @@
 
 .justify {
 	text-align: justify;
+}
+
+.default {
+	color: $dominant-2;
+}
+
+.passive {
+	color: $black-250;
 }

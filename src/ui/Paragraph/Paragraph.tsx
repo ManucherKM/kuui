@@ -22,14 +22,20 @@ export enum EParagraphAlign {
 	justify = 'justify',
 }
 
-/** Allowable Paragraph types. */
+/** Enumeration of possible Paragraph variants. */
+export enum EParagraphVariant {
+	default = 'default',
+	passive = 'passive',
+}
 
+/** Allowable Paragraph types. */
 export type TParagraph = HTMLAttributes<HTMLParagraphElement>
 
 /** Paragraph component interface. */
 export interface IParagraph extends TParagraph {
 	dimension?: `${EParagraphDimension}`
 	align?: `${EParagraphAlign}`
+	variant?: `${EParagraphVariant}`
 }
 
 /**
@@ -46,6 +52,7 @@ export const Paragraph: FC<IParagraph> = ({
 	dimension = EParagraphDimension.small,
 	align = EParagraphAlign.left,
 	className,
+	variant = EParagraphVariant.default,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
@@ -53,6 +60,7 @@ export const Paragraph: FC<IParagraph> = ({
 		classes.root,
 		classes[dimension],
 		classes[align],
+		classes[variant],
 		className,
 	])
 
