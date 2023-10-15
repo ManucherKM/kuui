@@ -1,0 +1,13 @@
+.root {
+	min-width: 40px;
+	min-height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: opacity 100ms;
+
+	&:hover,
+	&:focus {
+		opacity: 0.8;
+		transition: opacity 100ms;
+	}
+}

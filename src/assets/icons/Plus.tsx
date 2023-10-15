@@ -11,7 +11,12 @@ export interface IPlus extends TPlus {}
 export const Plus: FC<IPlus> = props => {
 	return (
 		<svg viewBox="0 0 24 24" {...props}>
-			<path d="M4 12H20M12 4V20" strokeLinecap="round" strokeLinejoin="round" />
+			<path
+				d="M4 12H20M12 4V20"
+				strokeWidth={2}
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
 		</svg>
 	)
 }

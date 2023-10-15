@@ -1,0 +1,18 @@
+// Importing variables.
+@import '@/assets/styles/vars.scss';
+
+.root {
+	display: flex;
+	width: 100%;
+	overflow: auto;
+	gap: 8px;
+	padding-bottom: 10px;
+}
+
+.all {
+	max-width: 100%;
+}
+
+.fixed {
+	max-width: 300px;
+}

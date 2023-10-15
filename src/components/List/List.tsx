@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 /** List component interface. */
 export interface IList<T> {
 	arr: T[]
-	callback: (item: T) => ReactNode
+	callback: (item: T, idx: number, arr: T[]) => ReactNode
 }
 
 /**

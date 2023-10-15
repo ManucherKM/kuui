@@ -1,0 +1,27 @@
+// Importing variables.
+@import '@/assets/styles/vars.scss';
+
+.root {
+	min-width: 40px;
+	min-height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: opacity 100ms;
+	background-color: $black-500;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 200ms;
+
+	svg {
+		path {
+			stroke: $dominant-1;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		transition: all 200ms;
+		background-color: $black-250;
+	}
+}
