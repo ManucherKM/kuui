@@ -5,7 +5,7 @@ import type { FC, HTMLAttributes } from 'react'
 import classes from './VKAuth.module.scss'
 
 // Utils
-import { getTabIndex } from '@/utils'
+import { getTabIndex } from '@/utils/getTabIndex'
 import clsx from 'clsx'
 
 // Icons

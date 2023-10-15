@@ -17,6 +17,7 @@ export { Title } from './ui/Title/Title'
 // Components
 export { Accordion } from './components/Accordion/Accordion'
 export { Alert } from './components/Alert/Alert'
+export { ChangeRound } from './components/ChangeRound/ChangeRound'
 export { ColorThemes } from './components/ColorThemes/ColorThemes'
 export { ConfirmEmail } from './components/ConfirmEmail/ConfirmEmail'
 export { FileAdd } from './components/FileAdd/FileAdd'

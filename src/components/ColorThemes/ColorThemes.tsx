@@ -8,7 +8,7 @@ import { ListThemes } from './ListThemes/ListThemes'
 
 // Utils
 import * as themes from '@/core/themes'
-import { changeTheme } from '@/utils'
+import { changeTheme } from '@/utils/changeTheme'
 import clsx from 'clsx'
 import { useRef } from 'react'
 
