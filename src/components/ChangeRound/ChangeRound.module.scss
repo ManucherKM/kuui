@@ -1,3 +1,7 @@
+// Importing variables.
+@import '@/assets/styles/vars.scss';
+
 .root {
 	max-width: 100px;
+	border-color: $black-250;
 }

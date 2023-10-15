@@ -21,6 +21,13 @@ type Story = StoryObj<typeof Theme>
 // Setting Story
 export const Playground: Story = {
 	args: {
-		bg: 'red',
+		theme: {
+			black1000: '#22272e',
+			black500: '#272e35',
+			black250: '#6d7887',
+			dominant1: 'red',
+			dominant2: '#cbd0df',
+			warning: '#ef6c75',
+		},
 	},
 }

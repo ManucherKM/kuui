@@ -2,7 +2,7 @@
 import type { FC, HTMLAttributes } from 'react'
 
 // Utils
-import { getTabIndex } from '@/utils/getTabIndex'
+import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
 
 // Styles

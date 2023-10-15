@@ -1,1 +1,1 @@
-import './replaceAt'
+import './prototypes/replaceAt'

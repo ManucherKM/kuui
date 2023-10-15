@@ -5,7 +5,7 @@ import type { FC, HTMLAttributes, ReactNode } from 'react'
 import classes from './Item.module.scss'
 
 // Utils
-import { getTabIndex } from '@/utils/getTabIndex'
+import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
 
 // Icons

@@ -1,5 +1,4 @@
 @import './fonts.scss';
-@import './themes.scss';
 @import './vars.scss';
 
 * {
@@ -24,4 +23,14 @@
 	border-radius: 9999px;
 	/* Rounded out the runner */
 	border: 3px solid transparent;
+}
+
+// Default theme
+:root {
+	--kuui-black-1000: #242526;
+	--kuui-black-500: #2f3031;
+	--kuui-black-250: #737373;
+	--kuui-dominant-1: #bc98ea;
+	--kuui-dominant-2: #ebedf0;
+	--kuui-warning: #bc3174;
 }

@@ -9,7 +9,7 @@ import { useState } from 'react'
 import classes from './DragAndDrop.module.scss'
 
 // Components
-import { Popup } from '@/components/Popup/Popup'
+import { Popup } from '@/components'
 
 // Icons
 import * as icons from '@/assets/icons'

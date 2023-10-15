@@ -36,8 +36,8 @@ export interface ILink extends TLink {
 }
 
 /**
- * The Link component is the Link component from the "react-router-dom" package with some styling added. Below
- * you can see an example of its use.
+ * The Link component is the Link component from the "react-router-dom" package
+ * with some styling added. Below you can see an example of its use.
  *
  * @example
  * 	;<Link to="#" dimension="small">

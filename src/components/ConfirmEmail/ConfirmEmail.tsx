@@ -31,7 +31,8 @@ export interface IConfirmEmail extends TConfirmEmail {
 
 /**
  * The ConfirmEmail component is a page/component that will be shown to the user
- * for the user to go to their email and activate their account. Below is an example of its use.
+ * for the user to go to their email and activate their account. Below is an
+ * example of its use.
  *
  * @example
  * 	;<ConfirmEmail email="test@gmail.com" />

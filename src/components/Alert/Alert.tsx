@@ -30,10 +30,11 @@ export interface IAlert extends HTMLAttributes<HTMLDivElement> {
 	onTimeUp?: () => void
 }
 /**
- * Using the Alert component, you can show the user an error or notify him that an action has taken place. Below is an example of its use.
+ * Using the Alert component, you can show the user an error or notify him that
+ * an action has taken place. Below is an example of its use.
  *
  * @example
- * <Alert text="Unexpected server error." time={6} />
+ * 	;<Alert text="Unexpected server error." time={6} />
  */
 export const Alert: FC<IAlert> = ({
 	text,

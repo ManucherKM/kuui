@@ -19,6 +19,4 @@ export default meta
 type Story = StoryObj<typeof AddTheme>
 
 // Setting Story
-export const Playground: Story = {
-	args: {},
-}
+export const Playground: Story = {}

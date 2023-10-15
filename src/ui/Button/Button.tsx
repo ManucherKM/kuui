@@ -35,7 +35,7 @@ export interface IButton extends TButton {
  * added styling. Below you can see an example of its use.
  *
  * @example
- * 	;<Area onClick={console.log} />
+ * 	;<Button onClick={console.log} />
  */
 export const Button: FC<IButton> = ({
 	variant = EButtonVariant.passive,

@@ -2,16 +2,14 @@
 import type { FC, HTMLAttributes } from 'react'
 
 // Utils
-import { getTabIndex } from '@/utils/getTabIndex'
+import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
 import { useState } from 'react'
 
 // Styles
 import classes from './FileItem.module.scss'
 
-/**
- * Enumerate possible file extensions for the FileItem component.
- */
+/** Enumerate possible file extensions for the FileItem component. */
 export enum EFileItemExtension {
 	word = 'word',
 	xlsx = 'xlsx',
@@ -29,11 +27,11 @@ export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Using the FileItem component, you can display information about a user's file. Below is an example of its use.
+ * Using the FileItem component, you can display information about a user's
+ * file. Below is an example of its use.
  *
  * @example
- * 				<FileItem extension="word" name="Mike smith" isActive={true} />
-
+ * 	;<FileItem extension="word" name="Mike smith" isActive={true} />
  */
 export const FileItem: FC<IFileItem> = ({
 	className,
@@ -46,16 +44,12 @@ export const FileItem: FC<IFileItem> = ({
 	// State for focus tracking.
 	const [isTextFocused, setIsTextFocused] = useState<boolean>(false)
 
-	/**
-	 * Function handler for the "focus" event.
-	 */
+	/** Function handler for the "focus" event. */
 	function textFocusHandler() {
 		setIsTextFocused(true)
 	}
 
-	/**
-	 * Function handler for the "blur" event.
-	 */
+	/** Function handler for the "blur" event. */
 	function textBlurHandler() {
 		setIsTextFocused(false)
 	}
