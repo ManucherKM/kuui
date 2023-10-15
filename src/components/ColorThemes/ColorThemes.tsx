@@ -1,27 +1,41 @@
-import * as themes from '@/core/themes'
-import { ITheme } from '@/core/themes/types'
-import clsx from 'clsx'
-import { FC, HTMLAttributes, useState } from 'react'
+// Types
+import type { ITheme } from '@/core/themes/types'
+import type { FC, HTMLAttributes } from 'react'
+
+// Components
 import { AddTheme } from './AddTheme/AddTheme'
-import classes from './ColorThemes.module.scss'
 import { ListThemes } from './ListThemes/ListThemes'
 
-export type TColorThemes = HTMLAttributes<HTMLDivElement>
+// Utils
+import * as themes from '@/core/themes'
+import { changeTheme } from '@/utils'
+import clsx from 'clsx'
+import { useRef } from 'react'
 
-export enum IColorThemesFill {
+// Styles
+import classes from './ColorThemes.module.scss'
+
+/** Enumeration of possible ColorThemes fill variants. */
+export enum EColorThemesFill {
 	fixed = 'fixed',
 	all = 'all',
 }
 
+/** Allowable ColorThemes types. */
+export type TColorThemes = HTMLAttributes<HTMLDivElement>
+
+/** ColorThemes component interface. */
 export interface IColorThemes extends TColorThemes {
-	fill?: `${IColorThemesFill}`
-	themes?: ITheme[]
+	fill?: `${EColorThemesFill}`
+	customThemes?: ITheme[]
 	addTheme?: boolean
 	onAddTheme?: () => void
-	onThemeChange?: (theme: ITheme) => void
 }
 
-export const defaultThemes: ITheme[] = [
+/**
+ * Default themes
+ */
+const defaultThemes: ITheme[] = [
 	themes.native,
 	themes.redux,
 	themes.cornhub,
@@ -33,25 +47,26 @@ export const ColorThemes: FC<IColorThemes> = ({
 	addTheme,
 	onAddTheme,
 	className,
-	onThemeChange,
-	themes,
-	fill,
+	customThemes = [],
+	fill = EColorThemesFill.fixed,
 	...props
 }) => {
-	const [allThemes, setAllThemes] = useState<ITheme[]>(
-		themes?.length ? [...defaultThemes, ...themes] : defaultThemes,
-	)
+	/**
+	 * Array of Themes.
+	 */
+	const themes = useRef<ITheme[]>([...defaultThemes, ...customThemes])
 
 	function onThemeChangeHandler(theme: ITheme) {
-		if (onThemeChange) {
-			onThemeChange(theme)
-		}
+		changeTheme(theme)
 	}
 
-	const styles = clsx([classes.root, fill && classes[fill], className])
+	const styles = clsx([classes.root, classes[fill], className])
 	return (
 		<div className={styles} {...props}>
-			<ListThemes onThemeChange={} themes={allThemes} />
+			<ListThemes
+				onThemeChange={onThemeChangeHandler}
+				themes={themes.current}
+			/>
 			{addTheme && <AddTheme onClick={onAddTheme} />}
 		</div>
 	)
