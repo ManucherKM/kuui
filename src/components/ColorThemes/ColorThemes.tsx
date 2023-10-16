@@ -1,5 +1,4 @@
 // Types
-import type { ITheme } from '@/core/themes/types'
 import type { FC, HTMLAttributes } from 'react'
 
 // Components
@@ -7,13 +6,22 @@ import { AddTheme } from './AddTheme/AddTheme'
 import { ListThemes } from './ListThemes/ListThemes'
 
 // Utils
-import * as themes from '@/core/themes'
 import { changeTheme } from '@/utils'
 import clsx from 'clsx'
 import { useRef } from 'react'
 
 // Styles
 import classes from './ColorThemes.module.scss'
+
+export interface ITheme {
+	id: string
+	black1000: string
+	black500: string
+	black250: string
+	dominant1: string
+	dominant2: string
+	warning: string
+}
 
 /** Enumeration of possible ColorThemes fill variants. */
 export enum EColorThemesFill {
@@ -27,14 +35,11 @@ export type TColorThemes = HTMLAttributes<HTMLDivElement>
 /** ColorThemes component interface. */
 export interface IColorThemes extends TColorThemes {
 	fill?: `${EColorThemesFill}`
-	customThemes?: ITheme[]
+	themes?: ITheme[]
 	addTheme?: boolean
 	onAddTheme?: () => void
 	onChangeTheme?: (theme: ITheme) => void
 }
-
-/** Default themes provided by the library. */
-const defaultThemes: ITheme[] = Object.values(themes)
 
 /**
  * With this component you can change the user's color theme. Below you can see
@@ -48,13 +53,10 @@ export const ColorThemes: FC<IColorThemes> = ({
 	onAddTheme,
 	onChangeTheme,
 	className,
-	customThemes = [],
+	themes = [],
 	fill = EColorThemesFill.fixed,
 	...props
 }) => {
-	/** Array of Themes. */
-	const themes = useRef<ITheme[]>([...defaultThemes, ...customThemes])
-
 	/**
 	 * Function handler for changing the theme.
 	 *
@@ -76,10 +78,7 @@ export const ColorThemes: FC<IColorThemes> = ({
 	const styles = clsx([classes.root, classes[fill], className])
 	return (
 		<div className={styles} {...props}>
-			<ListThemes
-				onThemeChange={onThemeChangeHandler}
-				themes={themes.current}
-			/>
+			<ListThemes onThemeChange={onThemeChangeHandler} themes={themes} />
 			{addTheme && <AddTheme onClick={onAddTheme} />}
 		</div>
 	)
