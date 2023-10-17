@@ -42,12 +42,18 @@
 			color: $dominant-1;
 		}
 	}
-
+	img {
+		object-fit: cover;
+	}
+	img,
 	svg {
 		min-width: 50px;
 		min-height: 67px;
 		max-width: 50px;
 		max-height: 67px;
+	}
+
+	svg {
 		fill: none;
 
 		path {
