@@ -9,6 +9,8 @@ import { useState } from 'react'
 // Styles
 import classes from './FileItem.module.scss'
 
+const images = ['jpg', 'jpeg', 'png']
+
 /** Enumerate possible file extensions for the FileItem component. */
 export enum EFileItemExtension {
 	word = 'word',
@@ -38,6 +40,7 @@ export const FileItem: FC<IFileItem> = ({
 	extension,
 	isActive = false,
 	name,
+	children,
 	tabIndex = getTabIndex(),
 	...props
 }) => {
@@ -100,6 +103,8 @@ export const FileItem: FC<IFileItem> = ({
 							<rect x="0.5" y="0.5" width="49" height="65.1538" rx="3.5" />
 						</svg>
 					)
+				} else if (images.includes(extension)) {
+					return children
 				} else {
 					return (
 						<svg viewBox="0 0 50 67">
