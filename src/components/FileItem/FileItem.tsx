@@ -82,17 +82,15 @@ export const FileItem: FC<IFileItem> = ({
 	])
 	return (
 		<div className={styles} {...props}>
-			{extension === EFileItemExtension.word && <FileWord />}
-			{extension === EFileItemExtension.xlsx && <FileXlsx />}
-			{extension === EFileItemExtension.zip && <FileZip />}
-			{extension === EFileItemExtension.rar && <FileRar />}
-			{extension === EFileItemExtension.txt && <FileTxt />}
-			{extension !== `${EFileItemExtension}` &&
-			images.includes(extension.toLowerCase()) ? (
-				children
-			) : (
-				<FileDefault />
-			)}
+			{(() => {
+				if (extension === EFileItemExtension.word) return <FileWord />
+				else if (extension === EFileItemExtension.xlsx) return <FileXlsx />
+				else if (extension === EFileItemExtension.zip) return <FileZip />
+				else if (extension === EFileItemExtension.rar) return <FileRar />
+				else if (extension === EFileItemExtension.txt) return <FileTxt />
+				else if (images.includes(extension.toLowerCase())) return children
+				else return <FileDefault />
+			})()}
 			<span
 				onFocus={textFocusHandler}
 				onBlur={textBlurHandler}
