@@ -1,11 +1,11 @@
 // Types
-import type { ITheme as IColorTheme } from '@/core/themes/types'
 import type { CSSProperties, FC, HTMLAttributes } from 'react'
 
 // Utils
 import clsx from 'clsx'
 
 // Styles
+import { IColorTheme } from '../ColorThemes'
 import classes from './Theme.module.scss'
 
 /** Allowable Theme types. */
@@ -13,6 +13,7 @@ export type TTheme = HTMLAttributes<HTMLDivElement>
 
 /** Theme component interface. */
 export interface ITheme extends TTheme {
+	/** Color theme. */
 	theme?: IColorTheme
 }
 

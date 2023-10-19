@@ -5,27 +5,31 @@ import type { FC, HTMLAttributes } from 'react'
 import classes from './ConfirmEmail.module.scss'
 
 // Components
-import { Subtitle } from '@/ui/Subtitle/Subtitle'
-import { Title } from '@/ui/Title/Title'
+import { Subtitle, Title } from '@/ui'
 
 // Utils
 import clsx from 'clsx'
 
 // Icons
-import * as icons from '@/assets/icons'
+import { Mail } from '@/assets/icons'
 
 /** Allowable ConfirmEmail types. */
 export type TConfirmEmail = HTMLAttributes<HTMLDivElement>
 
 /** Enumeration of possible ConfirmEmail fill. */
 export enum EFillConfirmEmail {
+	/** Fills a space equal to the size of the screen. */
 	screen = 'screen',
+
+	/** Fills all available space. */
 	availableSpace = 'availableSpace',
 }
 
 /** ConfirmEmail component interface. */
 export interface IConfirmEmail extends TConfirmEmail {
 	email: string
+
+	/** The parameter is responsible for how the available space should be filled. */
 	fill?: `${EFillConfirmEmail}`
 }
 
@@ -49,7 +53,7 @@ export const ConfirmEmail: FC<IConfirmEmail> = ({
 	return (
 		<div className={styles} {...props}>
 			<div className={classes.container}>
-				<icons.Mail width="60" height="48" className={classes.mail} />
+				<Mail width="60" height="48" className={classes.mail} />
 				<Title dimension="large" align="center">
 					Activate the account
 				</Title>

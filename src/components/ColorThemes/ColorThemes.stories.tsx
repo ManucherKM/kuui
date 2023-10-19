@@ -24,6 +24,7 @@ export const Playground: Story = {
 		addTheme: true,
 		themes: [
 			{
+				id: '1',
 				black1000: '#22272e',
 				black500: '#272e35',
 				black250: '#6d7887',

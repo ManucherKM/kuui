@@ -9,8 +9,13 @@ import classes from './Radio.module.scss'
 
 /** Enumeration of possible Radio dimension. */
 export enum ERadioDimension {
+	/** Large size */
 	large = 'large',
+
+	/** Medium size */
 	medium = 'medium',
+
+	/** Small size */
 	small = 'small',
 }
 
@@ -19,6 +24,7 @@ export type TRadio = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
 /** Radio component interface. */
 export interface IRadio extends TRadio {
+	/** Radio size */
 	dimension?: `${ERadioDimension}`
 }
 

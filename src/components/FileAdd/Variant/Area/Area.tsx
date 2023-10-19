@@ -8,11 +8,14 @@ import clsx from 'clsx'
 import classes from './Area.module.scss'
 
 // Icons
-import * as icons from '@/assets/icons'
+import { Plus } from '@/assets/icons'
 
 /** Enumeration of possible Area fill variants. */
 export enum EAreaFill {
+	/** Fills all available space. */
 	all = 'all',
+
+	/** Fills a fixed space from the available space. */
 	fixed = 'fixed',
 }
 
@@ -21,6 +24,7 @@ export type TArea = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
 /** Area component interface. */
 export interface IArea extends TArea {
+	/** Options for filling available space. */
 	fill?: `${EAreaFill}`
 }
 
@@ -41,7 +45,7 @@ export const Area: FC<IArea> = ({
 
 	return (
 		<label className={styles}>
-			<icons.Plus width="24px" height="24px" className={classes.plus} />
+			<Plus width="24px" height="24px" className={classes.plus} />
 			<input className={classes.input} type="file" {...props} />
 		</label>
 	)

@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // Components
-import { Paragraph } from '@/ui/Paragraph/Paragraph'
+import { Paragraph } from '@/ui'
 import { Item } from './Item'
 
 // Styles

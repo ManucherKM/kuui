@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // Components
-import { Button } from '@/ui/Button/Button'
+import { Button } from '@/ui'
 import { Popup } from './Popup'
 
 // Styles

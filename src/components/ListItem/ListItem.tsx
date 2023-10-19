@@ -13,16 +13,28 @@ import { Link } from 'react-router-dom'
 
 /** Enumeration of possible ListItem positions. */
 export enum EListItemAlign {
+	/** Aligns the element to the left. */
 	left = 'left',
+
+	/** Aligns the element to the center. */
 	center = 'center',
+
+	/** Aligns the element to the right. */
 	right = 'right',
 }
 
 /** ListItem component interface. */
 export interface IListItem extends LinkProps {
+	/** Icon (svg format). */
 	icon: ReactNode
+
+	/** Element name. */
 	title: string
+
+	/** Component positioning. */
 	align?: `${EListItemAlign}`
+
+	/** Parameters for determining component activity. */
 	isActive?: boolean
 }
 

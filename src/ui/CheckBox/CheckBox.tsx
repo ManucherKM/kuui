@@ -9,17 +9,22 @@ import { Text } from './Variant/Text/Text'
 
 /** Enumeration of possible CheckBox variants. */
 export enum ECheckBoxVariant {
+	/** Variant box */
 	box = 'box',
+
+	/** Variant text */
 	text = 'text',
 }
 
 /** Interface for CheckBox with the "text" variant. */
 export interface ICheckBoxVariantText extends IText {
+	/** CheckBox variants */
 	variant: `${ECheckBoxVariant}`
 }
 
 /** Interface for CheckBox with the "box" variant. */
 export interface ICheckBoxVariantBox extends IBox {
+	/** CheckBox variants */
 	variant: `${ECheckBoxVariant}`
 }
 

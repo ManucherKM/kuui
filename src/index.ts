@@ -7,6 +7,9 @@ export * from '@/ui'
 // Components
 export * from '@/components'
 
+// Icons
+export * from '@/assets/icons'
+
 // Utils
 export * from '@/utils'
 

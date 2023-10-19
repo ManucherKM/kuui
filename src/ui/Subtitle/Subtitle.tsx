@@ -9,15 +9,25 @@ import classes from './Subtitle.module.scss'
 
 /** Enumeration of possible Subtitle dimension. */
 export enum ESubtitleDimension {
+	/** Large size */
 	large = 'large',
+
+	/** Medium size */
 	medium = 'medium',
+
+	/** Small size */
 	small = 'small',
 }
 
 /** Enumeration of possible Subtitle positions. */
 export enum ESubtitleAlign {
+	/** Align left */
 	left = 'left',
+
+	/** Align center */
 	center = 'center',
+
+	/** Align right */
 	right = 'right',
 }
 
@@ -26,7 +36,10 @@ export type TSubtitle = HTMLAttributes<HTMLHeadingElement>
 
 /** Subtitle component interface. */
 export interface ISubtitle extends TSubtitle {
+	/** Subtitle size */
 	dimension?: `${ESubtitleDimension}`
+
+	/** Subtitle align */
 	align?: `${ESubtitleAlign}`
 }
 

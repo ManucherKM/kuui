@@ -8,23 +8,39 @@ import clsx from 'clsx'
 import classes from './Paragraph.module.scss'
 
 /** Enumeration of possible Paragraph dimension. */
+
 export enum EParagraphDimension {
+	/** Large size */
 	large = 'large',
+
+	/** Medium size */
 	medium = 'medium',
+
+	/** Small size */
 	small = 'small',
 }
 
 /** Enumeration of possible Paragraph positions. */
 export enum EParagraphAlign {
+	/** Align left */
 	left = 'left',
+
+	/** Align center */
 	center = 'center',
+
+	/** Align right */
 	right = 'right',
+
+	/** Align justify */
 	justify = 'justify',
 }
 
 /** Enumeration of possible Paragraph variants. */
 export enum EParagraphVariant {
+	/** Default Paragraph */
 	default = 'default',
+
+	/** Passive Paragraph */
 	passive = 'passive',
 }
 
@@ -33,8 +49,13 @@ export type TParagraph = HTMLAttributes<HTMLParagraphElement>
 
 /** Paragraph component interface. */
 export interface IParagraph extends TParagraph {
+	/** Paragraph size */
 	dimension?: `${EParagraphDimension}`
+
+	/** Paragraph align */
 	align?: `${EParagraphAlign}`
+
+	/** Paragraph variant */
 	variant?: `${EParagraphVariant}`
 }
 

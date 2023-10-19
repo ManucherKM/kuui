@@ -8,12 +8,13 @@ import { ListThemes } from './ListThemes/ListThemes'
 // Utils
 import { changeTheme } from '@/utils'
 import clsx from 'clsx'
-import { useRef } from 'react'
 
 // Styles
 import classes from './ColorThemes.module.scss'
 
-export interface ITheme {
+/** Color theme interface. */
+export interface IColorTheme {
+	/** Color theme id. */
 	id: string
 	black1000: string
 	black500: string
@@ -25,7 +26,10 @@ export interface ITheme {
 
 /** Enumeration of possible ColorThemes fill variants. */
 export enum EColorThemesFill {
+	/** Fills a fixed space from the available space. */
 	fixed = 'fixed',
+
+	/** Fills all available space. */
 	all = 'all',
 }
 
@@ -35,10 +39,10 @@ export type TColorThemes = HTMLAttributes<HTMLDivElement>
 /** ColorThemes component interface. */
 export interface IColorThemes extends TColorThemes {
 	fill?: `${EColorThemesFill}`
-	themes?: ITheme[]
+	themes?: IColorTheme[]
 	addTheme?: boolean
 	onAddTheme?: () => void
-	onChangeTheme?: (theme: ITheme) => void
+	onChangeTheme?: (theme: IColorTheme) => void
 }
 
 /**
@@ -63,7 +67,7 @@ export const ColorThemes: FC<IColorThemes> = ({
 	 * @param theme An object with values ​​that will be set as the values ​​of
 	 *   CSS variables responsible for the color theme.
 	 */
-	function onThemeChangeHandler(theme: ITheme) {
+	function onThemeChangeHandler(theme: IColorTheme) {
 		// Change the values ​​of CSS variables to change the color theme.
 		changeTheme(theme)
 

@@ -15,12 +15,19 @@ export type TAccordion = HTMLAttributes<HTMLDivElement>
 
 /** Interface for accordion elements. */
 export interface IAccordionItem {
+	/** A title for a specific accordion element. */
 	name: string
+
+	/**
+	 * Content that will be displayed when a specific accordion element is
+	 * expanded.
+	 */
 	body: ReactNode
 }
 
 /** IItem component interface. */
 export interface IAccordion extends TAccordion {
+	/** An array of accordion elements. */
 	items: IAccordionItem[]
 }
 

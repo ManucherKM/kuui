@@ -19,6 +19,11 @@ export type TChangeRound = Omit<
 
 /** ChangeRound component interface. */
 export interface IChangeRound extends TChangeRound {
+	/**
+	 * A handler function that fires every time the value of round changes.
+	 *
+	 * @param round Rounding the corners of elements.
+	 */
 	onChangeRound?: (round: string) => void
 }
 

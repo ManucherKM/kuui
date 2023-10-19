@@ -9,17 +9,22 @@ import { DragAndDrop } from './Variant/DragAndDrop/DragAndDrop'
 
 /** Enumeration of possible FileAdd variants. */
 export enum EFileAddVariant {
+	/** A certain area. */
 	area = 'area',
+
+	/** Allows you to get files by dragging them to a specific area. */
 	dragAndDrop = 'dragAndDrop',
 }
 
 /** Interface for FileAdd with the "area" variant. */
 export interface IFileAddArea extends IArea {
+	/** Options for receiving the files for area. */
 	variant: `${EFileAddVariant}`
 }
 
 /** Interface for FileAdd with the "dragAndDrop" variant. */
 export interface IFileAddDragAndDrop extends IDragAndDrop {
+	/** Options for receiving the files for dragAndDrop. */
 	variant: `${EFileAddVariant}`
 }
 

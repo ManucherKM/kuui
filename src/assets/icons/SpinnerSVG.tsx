@@ -1,14 +1,14 @@
 // Types
 import { FC, SVGProps } from 'react'
 
-/** Allowable Spinner icon types. */
-export type TSpinner = Omit<SVGProps<SVGSVGElement>, 'viewBox'>
+/** Allowable SpinnerSVG icon types. */
+export type TSpinnerSVG = Omit<SVGProps<SVGSVGElement>, 'viewBox'>
 
-/** Spinner icon component interface. */
-export interface ISpinner extends TSpinner {}
+/** SpinnerSVG icon component interface. */
+export interface ISpinnerSVG extends TSpinnerSVG {}
 
-/** The Spinner component is an svg icon of a circle with a cutout. */
-export const Spinner: FC<ISpinner> = props => {
+/** The SpinnerSVG component is an svg icon of a circle with a cutout. */
+export const SpinnerSVG: FC<ISpinnerSVG> = props => {
 	return (
 		<svg viewBox="0 0 32 32" {...props}>
 			<path d="M31 16C31 13.0333 30.1203 10.1332 28.472 7.66645C26.8238 5.19971 24.4811 3.27712 21.7403 2.14181C18.9994 1.00649 15.9834 0.709442 13.0736 1.28822C10.1639 1.867 7.49119 3.29561 5.3934 5.3934C3.29561 7.49119 1.867 10.1639 1.28822 13.0736C0.709442 15.9834 1.00649 18.9994 2.14181 21.7403C3.27712 24.4811 5.19971 26.8238 7.66645 28.472C10.1332 30.1203 13.0333 31 16 31" />

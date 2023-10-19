@@ -9,13 +9,14 @@ import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
 
 // Icons
-import * as icons from '@/assets/icons'
+import { Arrow } from '@/assets/icons'
 
 /** Allowable Item types. */
 export type TItem = HTMLAttributes<HTMLDivElement>
 
 /** IItem component interface. */
 export interface IItem extends TItem {
+	/** Title of the accordion element. */
 	name: ReactNode
 }
 
@@ -43,7 +44,7 @@ export const Item: FC<IItem> = ({
 		<div className={styles} tabIndex={tabIndex} {...props}>
 			<div className={classes.wrapperTitle}>
 				<span className={classes.title}>{name}</span>
-				<icons.Arrow />
+				<Arrow />
 			</div>
 			<div className={classes.wrapperSubtitle}>{children}</div>
 		</div>

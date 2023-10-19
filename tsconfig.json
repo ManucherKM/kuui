@@ -5,26 +5,19 @@
 		"jsx": "react-jsx",
 		"strict": true,
 		"esModuleInterop": true,
-		"lib": [
-			"ES2020",
-			"DOM"
-		],
+		"lib": ["ES2020", "DOM"],
 		"outDir": "dist",
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
 		"sourceMap": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
 		"declaration": true,
 		"paths": {
-			"@/*": [
-				"./src/*"
-			]
+			"@/*": ["./src/*"]
 		}
 	},
-	"include": [
-		"src"
-	],
-	"exclude": [
-		"node_modules",
-		"dist",
-		".storybook",
-		"src/**/*.stories.tsx"
-	]
+	"include": ["src"],
+	"exclude": ["node_modules", "dist", ".storybook", "src/**/*.stories.tsx"]
 }

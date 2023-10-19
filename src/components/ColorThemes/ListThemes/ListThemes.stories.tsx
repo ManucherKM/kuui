@@ -23,6 +23,7 @@ export const Playground: Story = {
 	args: {
 		themes: [
 			{
+				id: '1',
 				black1000: '#1b1b1b',
 				black500: '#292929',
 				black250: '#808080',
@@ -31,6 +32,7 @@ export const Playground: Story = {
 				warning: '#c71700',
 			},
 			{
+				id: '2',
 				black1000: '#212529',
 				black500: '#282c31',
 				black250: '#6e767f',

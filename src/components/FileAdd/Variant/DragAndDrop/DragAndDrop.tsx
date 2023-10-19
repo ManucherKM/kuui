@@ -12,14 +12,21 @@ import classes from './DragAndDrop.module.scss'
 import { Popup } from '@/components'
 
 // Icons
-import * as icons from '@/assets/icons'
+import { File } from '@/assets/icons'
 
 /** Allowable DragAndDrop types. */
 export type TDragAndDrop = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
 /** DragAndDrop component interface. */
 export interface IDragAndDrop extends TDragAndDrop {
+	/** A handler function that fires when "DragAndDrop" disappears. */
 	onClose: () => void
+
+	/**
+	 * A handler function that fires when new files are added.
+	 *
+	 * @param files File list
+	 */
 	onChangeFiles?: (files: FileList) => void
 }
 
@@ -50,7 +57,7 @@ export const DragAndDrop: FC<IDragAndDrop> = ({
 	}
 
 	/** Handler function for the dragleave event. */
-	function dragLeaveHandler(e: DragEvent<HTMLLabelElement>) {
+	function dragLeaveHandler() {
 		// Changing the activity state.
 		setIsActive(false)
 	}
@@ -99,7 +106,7 @@ export const DragAndDrop: FC<IDragAndDrop> = ({
 				onDragLeave={dragLeaveHandler}
 				onDrop={dropHandler}
 			>
-				<icons.File className={classes.icon} width="50" height="50" />
+				<File className={classes.icon} width="50" height="50" />
 				<span className={classes.description}>
 					Transfer files to this area.
 				</span>

@@ -11,13 +11,25 @@ import classes from './Alert.module.scss'
 
 /** Enumeration of possible Alert variants. */
 export enum EAlertVariant {
+	/**
+	 * Option "message" with which you can notify the user about any action. For
+	 * example, that the text was copied to the clipboard.
+	 */
 	message = 'message',
+
+	/**
+	 * The “error” option can be used to notify the user that an error has
+	 * occurred. For example, it was not possible to send data to the server.
+	 */
 	error = 'error',
 }
 
 /** Enumeration possible options for the appearance of Alert. */
 export enum EAlertAppearance {
+	/** Causes an animation to appear on top. */
 	above = 'above',
+
+	/** Causes an animation to appear from below. */
 	fromBelow = 'fromBelow',
 }
 

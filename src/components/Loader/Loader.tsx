@@ -9,6 +9,7 @@ import { Spinner } from '../Spinner/Spinner'
 
 /** Loader component interface. */
 export interface ILoader extends IPopup {
+	/** Component size. */
 	dimension?: `${ESpinnerDimension}`
 }
 

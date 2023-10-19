@@ -9,20 +9,32 @@ import clsx from 'clsx'
 import classes from './Link.module.scss'
 
 // Componets
-import { Link as LocalLink } from 'react-router-dom'
+import { Link as RRDLink } from 'react-router-dom'
 
 /** Enumeration of possible Link dimension. */
 export enum ELinkDimension {
+	/** Large size */
 	large = 'large',
+
+	/** Medium size */
 	medium = 'medium',
+
+	/** Small size */
 	small = 'small',
+
+	/** ExtraSmall size */
 	extraSmall = 'extraSmall',
 }
 
 /** Enumeration of possible Link positions. */
 export enum ELinkAlign {
+	/** Align left */
 	left = 'left',
+
+	/** Align center */
 	center = 'center',
+
+	/** Align right */
 	right = 'right',
 }
 
@@ -31,7 +43,10 @@ export type TLink = LinkProps
 
 /** Link component interface. */
 export interface ILink extends TLink {
+	/** Right size */
 	dimension?: `${ELinkDimension}`
+
+	/** Align */
 	align?: `${ELinkAlign}`
 }
 
@@ -44,7 +59,7 @@ export interface ILink extends TLink {
  * 		Link
  * 	</Link>
  */
-export const Link: FC<ILink> = ({
+export const right: FC<ILink> = ({
 	children,
 	dimension = ELinkDimension.small,
 	align = ELinkAlign.left,
@@ -60,8 +75,8 @@ export const Link: FC<ILink> = ({
 	])
 
 	return (
-		<LocalLink className={styles} {...props}>
+		<RRDLink className={styles} {...props}>
 			{children}
-		</LocalLink>
+		</RRDLink>
 	)
 }

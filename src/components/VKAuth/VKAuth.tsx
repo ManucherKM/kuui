@@ -9,26 +9,35 @@ import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
 
 // Icons
-import * as icons from '@/assets/icons'
+import { Vk } from '@/assets/icons'
 
 /** Allowable VKAuth types. */
 export type TVKAuth = HTMLAttributes<HTMLDivElement>
 
 /** Enumeration of possible VKAuth variants. */
 export enum EVKAuthVariant {
+	/** Small button. */
 	small = 'small',
+
+	/** Large button. */
 	large = 'large',
 }
 
 /** Enumeration of possible VKAuth fill variants. */
 export enum EVkAuthFill {
-	fixed = 'fixed',
+	/** Fills all available space. */
 	all = 'all',
+
+	/** Fills a fixed space from the available space. */
+	fixed = 'fixed',
 }
 
 /** VKAuth component interface. */
 export interface IVKAuth extends TVKAuth {
+	/** Button variants. */
 	variant?: `${EVKAuthVariant}`
+
+	/** Options for filling available space. */
 	fill?: `${EVkAuthFill}`
 }
 
@@ -42,9 +51,7 @@ export interface IVKAuth extends TVKAuth {
 export const VKAuth: FC<IVKAuth> = ({
 	variant = EVKAuthVariant.small,
 	fill = EVkAuthFill.fixed,
-
 	className,
-
 	tabIndex = getTabIndex(),
 	...props
 }) => {
@@ -58,7 +65,7 @@ export const VKAuth: FC<IVKAuth> = ({
 
 	return (
 		<div className={styles} tabIndex={tabIndex} {...props}>
-			<icons.Vk width="20px" height="20px" />
+			<Vk width="20px" height="20px" />
 
 			{variant === EVKAuthVariant.large && (
 				<span className={classes.title}>Continue with VK</span>

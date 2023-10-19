@@ -9,18 +9,25 @@ import classes from './Option.module.scss'
 
 /** Enumeration of possible Option positions. */
 export enum EOptionAlign {
+	/** Aligns the element to the left. */
 	left = 'left',
+
+	/** Aligns the element to the center. */
 	center = 'center',
+
+	/** Aligns the element to the right. */
 	right = 'right',
 }
 
 /** Option component interface. */
 export interface IOption extends HTMLAttributes<HTMLDivElement> {
-	/** SVG icon */
+	/** Icon (svg format). */
 	icon: ReactNode
+
 	/** The text that will be placed in the Option component. */
 	text: string
-	/** Position */
+
+	/** Component positioning. */
 	align?: `${EOptionAlign}`
 }
 

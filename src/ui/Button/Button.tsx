@@ -9,15 +9,25 @@ import classes from './Button.module.scss'
 
 /** Enumeration of possible Button variants. */
 export enum EButtonVariant {
+	/** Active button. */
 	active = 'active',
+
+	/** Passive button. */
 	passive = 'passive',
+
+	/** Navigation button. */
 	navigate = 'navigate',
 }
 
 /** Enumeration of possible Button dimension. */
 export enum EButtonDimension {
+	/** Large button. */
 	large = 'large',
+
+	/** Medium button. */
 	medium = 'medium',
+
+	/** Small button. */
 	small = 'small',
 }
 
@@ -26,7 +36,10 @@ export type TButton = ButtonHTMLAttributes<HTMLButtonElement>
 
 /** Button component interface. */
 export interface IButton extends TButton {
+	/** Button variants */
 	variant?: `${EButtonVariant}`
+
+	/** Button size */
 	dimension?: `${EButtonDimension}`
 }
 

@@ -13,7 +13,10 @@ export type TPopup = HTMLAttributes<HTMLDivElement>
 
 /** Popup component interface. */
 export interface IPopup extends TPopup {
+	/** A handler function that fires when Popup disappears. */
 	onClose?: () => void
+
+	/** Clears the Popup of unnecessary blocks. */
 	clear?: boolean
 }
 

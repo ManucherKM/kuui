@@ -9,15 +9,25 @@ import classes from './TextError.module.scss'
 
 /** Enumeration of possible TextError dimension. */
 export enum ETextErrorDimension {
+	/** Large size */
 	large = 'large',
+
+	/** Medium size */
 	medium = 'medium',
+
+	/** Small size */
 	small = 'small',
 }
 
 /** Enumeration of possible TextError positions. */
 export enum ETextErrorAlign {
+	/** Align left */
 	left = 'left',
+
+	/** Align center */
 	center = 'center',
+
+	/** Align right */
 	right = 'right',
 }
 
@@ -26,7 +36,10 @@ export type TTextError = HTMLAttributes<HTMLParagraphElement>
 
 /** TextError component interface. */
 export interface ITextError extends TTextError {
+	/** TextError size */
 	dimension?: `${ETextErrorDimension}`
+
+	/** TextError align */
 	align?: `${ETextErrorAlign}`
 }
 

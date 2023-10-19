@@ -16,19 +16,28 @@ export type TGoogleAuth = Omit<HTMLAttributes<HTMLDivElement>, 'tabIndex'>
 
 /** Enumeration of possible GoogleAuth variants. */
 export enum EGoogleAuthVariant {
+	/** Small button. */
 	small = 'small',
+
+	/** Large button. */
 	large = 'large',
 }
 
 /** Enumeration of possible GoogleAuth fill variants. */
 export enum EGoogleAuthFill {
-	fixed = 'fixed',
+	/** Fills all available space. */
 	all = 'all',
+
+	/** Fills a fixed space from the available space. */
+	fixed = 'fixed',
 }
 
 /** GoogleAuth component interface. */
 export interface IGoogleAuth extends TGoogleAuth {
+	/** Button variants. */
 	variant?: `${EGoogleAuthVariant}`
+
+	/** Options for filling available space. */
 	fill?: `${EGoogleAuthFill}`
 }
 

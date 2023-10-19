@@ -6,7 +6,7 @@ import { Accordion } from './Accordion'
 
 // Styles
 import '@/assets/styles/index.scss'
-import { Paragraph } from '@/ui/Paragraph/Paragraph'
+import { Paragraph } from '@/ui'
 
 // Setting Accordion
 const meta: Meta<typeof Accordion> = {

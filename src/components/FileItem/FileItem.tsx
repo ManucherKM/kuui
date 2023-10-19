@@ -9,7 +9,7 @@ import { useState } from 'react'
 // Styles
 import classes from './FileItem.module.scss'
 
-const images = ['jpg', 'jpeg', 'png']
+const images = ['jpg', 'jpeg', 'png', 'apng', 'avif', 'gif', 'webp']
 
 /** Enumerate possible file extensions for the FileItem component. */
 export enum EFileItemExtension {
@@ -23,8 +23,13 @@ export enum EFileItemExtension {
 
 /** FileItem component interface. */
 export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
+	/** File extension. */
 	extension: string
+
+	/** File name. */
 	name: string
+
+	/** Flag for checking file activity. */
 	isActive?: boolean
 }
 
@@ -103,7 +108,7 @@ export const FileItem: FC<IFileItem> = ({
 							<rect x="0.5" y="0.5" width="49" height="65.1538" rx="3.5" />
 						</svg>
 					)
-				} else if (images.includes(extension)) {
+				} else if (images.includes(extension.toLowerCase())) {
 					return children
 				} else {
 					return (

@@ -1,5 +1,5 @@
 // Types
-import type { ISpinner as ISpinnerIcon } from '@/assets/icons/Spinner'
+import type { ISpinnerSVG } from '@/assets/icons'
 import type { FC } from 'react'
 
 // Utils
@@ -19,7 +19,7 @@ export enum ESpinnerDimension {
 }
 
 /** Spinner component interface. */
-export interface ISpinner extends ISpinnerIcon {
+export interface ISpinner extends ISpinnerSVG {
 	dimension?: `${ESpinnerDimension}`
 }
 
@@ -38,5 +38,5 @@ export const Spinner: FC<ISpinner> = ({
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([classes.root, classes[dimension], className])
 
-	return <icons.Spinner className={styles} {...props} />
+	return <icons.SpinnerSVG className={styles} {...props} />
 }

@@ -9,15 +9,25 @@ import classes from './Title.module.scss'
 
 /** Enumeration of possible Title dimension. */
 export enum ETitleDimension {
+	/** Large size */
 	large = 'large',
+
+	/** Medium size */
 	medium = 'medium',
+
+	/** Small size */
 	small = 'small',
 }
 
 /** Enumeration of possible Title positions. */
 export enum ETitleAlign {
+	/** Align left */
 	left = 'left',
+
+	/** Align center */
 	center = 'center',
+
+	/** Align right */
 	right = 'right',
 }
 
@@ -26,7 +36,10 @@ export type TTitle = HTMLAttributes<HTMLHeadingElement>
 
 /** Title component interface. */
 export interface ITitle extends TTitle {
+	/** Title size */
 	dimension?: `${ETitleDimension}`
+
+	/** Title align */
 	align?: `${ETitleAlign}`
 }
 

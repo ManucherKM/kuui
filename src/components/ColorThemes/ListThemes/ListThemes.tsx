@@ -1,15 +1,22 @@
 // Types
-import type { ITheme } from '@/core/themes/types'
 import type { FC } from 'react'
 
 // Components
-import { List } from '@/components/List/List'
+import { List } from '@/components'
+import { IColorTheme } from '../ColorThemes'
 import { Theme } from '../Theme/Theme'
 
 /** ListThemes component interface. */
 export interface IListThemes {
-	onThemeChange: (theme: ITheme) => void
-	themes: ITheme[]
+	/**
+	 * A handler function that is called every time the color theme changes.
+	 *
+	 * @param theme Color theme
+	 */
+	onThemeChange: (theme: IColorTheme) => void
+
+	/** Array of color themes. */
+	themes: IColorTheme[]
 }
 
 /**
