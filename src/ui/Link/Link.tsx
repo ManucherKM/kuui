@@ -59,7 +59,7 @@ export interface ILink extends TLink {
  * 		Link
  * 	</Link>
  */
-export const right: FC<ILink> = ({
+export const Link: FC<ILink> = ({
 	children,
 	dimension = ELinkDimension.small,
 	align = ELinkAlign.left,
