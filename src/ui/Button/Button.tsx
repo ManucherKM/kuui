@@ -7,13 +7,6 @@ import clsx from 'clsx'
 // Styles
 import classes from './Button.module.scss'
 
-/** Enumeration of possible Button positions. */
-export enum EButtonAlign {
-	left = 'left',
-	center = 'center',
-	right = 'right',
-}
-
 /** Enumeration of possible Button variants. */
 export enum EButtonVariant {
 	active = 'active',
@@ -35,7 +28,6 @@ export type TButton = ButtonHTMLAttributes<HTMLButtonElement>
 export interface IButton extends TButton {
 	variant?: `${EButtonVariant}`
 	dimension?: `${EButtonDimension}`
-	align?: `${EButtonAlign}`
 }
 
 /**
@@ -48,7 +40,6 @@ export interface IButton extends TButton {
 export const Button: FC<IButton> = ({
 	variant = EButtonVariant.passive,
 	dimension = EButtonDimension.small,
-	align = EButtonAlign.left,
 	children,
 	className,
 	...props
@@ -58,7 +49,6 @@ export const Button: FC<IButton> = ({
 		classes.root,
 		classes[variant],
 		classes[dimension],
-		classes[align],
 		className,
 	])
 
