@@ -54,12 +54,12 @@ export const ChangeRound: FC<IChangeRound> = ({ onChangeRound, ...props }) => {
 		if (round.length !== 0) {
 			// Change the value of the CSS variable.
 			changeRound(round + 'px')
+		}
 
-			// If the developer has installed a handler to track changes.
-			if (onChangeRound) {
-				// We call this handler by passing the current rounding value to it.
-				onChangeRound(round)
-			}
+		// If the developer has installed a handler to track changes.
+		if (onChangeRound) {
+			// We call this handler by passing the current rounding value to it.
+			onChangeRound(round)
 		}
 	}, [round])
 
