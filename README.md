@@ -1,4 +1,6 @@
-# Kuui (Beta)
+![Banner](https://github.com/ManucherKM/kuui/blob/react/images/Banner.png?raw=true)
+
+# Kuui | Beta testing.
 
 ## Tools
 
