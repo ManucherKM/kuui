@@ -19,6 +19,9 @@ export type TChangeRound = Omit<
 
 /** ChangeRound component interface. */
 export interface IChangeRound extends TChangeRound {
+	/** Default round value */
+	defaultValue: string
+
 	/**
 	 * A handler function that fires every time the value of round changes.
 	 *
@@ -34,9 +37,13 @@ export interface IChangeRound extends TChangeRound {
  * @example
  * 	;<ChangeRound onChangeRound={console.log} />
  */
-export const ChangeRound: FC<IChangeRound> = ({ onChangeRound, ...props }) => {
+export const ChangeRound: FC<IChangeRound> = ({
+	onChangeRound,
+	defaultValue,
+	...props
+}) => {
 	// State for rounding.
-	const [round, setRound] = useState<string>('')
+	const [round, setRound] = useState<string>(defaultValue || '')
 
 	/**
 	 * Function handler for input.
