@@ -1,12 +1,11 @@
 {
 	"name": "kuui-react",
 	"private": false,
-	"version": "0.0.66",
+	"version": "0.0.68",
 	"type": "module",
 	"scripts": {
 		"build": "tsc && vite build",
 		"format": "npx prettier --write src/",
-		"push": "npm run format && git add . && git commit -m '.' && git push origin react",
 		"npmjs": "npm run build && npm version patch --no-git-tag-version && npm publish",
 		"storybook": "storybook dev -p 6006",
 		"storybook:build": "storybook build"
@@ -51,5 +50,4 @@
 	"sideEffects": [
 		"*.css"
 	]
-	
 }
