@@ -47,5 +47,9 @@
 	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
+	],
+	"sideEffects": [
+		"*.css"
 	]
+	
 }
