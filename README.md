@@ -4,10 +4,13 @@
 
 ## Tools
 
-![TypeScript](https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=TypeScript&logoColor=2f74c0)
-![SCSS](https://img.shields.io/badge/-SCSS-000?style=for-the-badge&logo=SASS&logoColor=c76393)
-![Vite](https://img.shields.io/badge/-Vite-000?style=for-the-badge&logo=Vite)
 ![React](https://img.shields.io/badge/-React-000?style=for-the-badge&logo=React&logoColor=5ed3f3)
+![TypeScript](https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=TypeScript&logoColor=2f74c0)
+![Vite](https://img.shields.io/badge/-Vite-000?style=for-the-badge&logo=Vite)
+![SCSS](https://img.shields.io/badge/-SCSS-000?style=for-the-badge&logo=SASS&logoColor=c76393)
+![Storybook](https://img.shields.io/badge/-Storybook-000?style=for-the-badge&logo=Storybook&logoColor=ff4785)
+![Prettier](https://img.shields.io/badge/-Prettier-000?style=for-the-badge&logo=Prettier&logoColor=426675)
+![Git](https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=Git&logoColor=e84d31)
 
 ## Install
 
