@@ -44,7 +44,7 @@ export const Tooltip: FC<ITooltip> = ({
 	const stylesText = clsx([
 		classes.tooltip,
 		classes[position],
-		classes[align],
+		classes['text-' + align],
 		className,
 	])
 	return (
