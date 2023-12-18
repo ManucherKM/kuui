@@ -1,0 +1,46 @@
+// Importing variables.
+@import '@/assets/styles/vars.scss';
+
+$gap: 8px;
+
+.root {
+	position: relative;
+	display: inline-block;
+
+	.tooltip {
+		padding: 10px;
+		background: rgba(0, 0, 0, 0.8);
+		color: $dominant-2;
+		font-size: 0.7rem;
+		border-radius: $radius;
+		font-family: $NotoSansMono;
+		cursor: default;
+		position: absolute;
+		z-index: 1;
+		min-width: 300px;
+	}
+}
+
+.top {
+	bottom: calc(100% + $gap);
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.bottom {
+	top: calc(100% + $gap);
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.right {
+	left: calc(100% + $gap);
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.left {
+	right: calc(100% + $gap);
+	top: 50%;
+	transform: translateY(-50%);
+}
