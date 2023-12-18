@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useState, type FC, type ReactNode } from 'react'
+import { HTMLAttributes, useState, type FC, type ReactNode } from 'react'
 import classes from './Tooltip.module.scss'
 
 export enum EPosition {
@@ -9,16 +9,27 @@ export enum EPosition {
 	left = 'left',
 }
 
-export interface ITooltip {
+export enum EAlign {
+	left = 'left',
+	right = 'right',
+	center = 'center',
+	justify = 'justify',
+}
+
+export interface ITooltip extends HTMLAttributes<HTMLSpanElement> {
 	text: string
 	children: ReactNode
 	position?: `${EPosition}`
+	align: `${EAlign}`
 }
 
 export const Tooltip: FC<ITooltip> = ({
 	text,
 	children,
 	position = EPosition.top,
+	align = EAlign.left,
+	className,
+	...props
 }) => {
 	const [isShow, setIsShow] = useState<boolean>(false)
 
@@ -30,7 +41,12 @@ export const Tooltip: FC<ITooltip> = ({
 		setIsShow(false)
 	}
 
-	const stylesText = clsx([classes.tooltip, classes[position]])
+	const stylesText = clsx([
+		classes.tooltip,
+		classes[position],
+		classes[align],
+		className,
+	])
 	return (
 		<div
 			className={classes.root}
@@ -38,7 +54,11 @@ export const Tooltip: FC<ITooltip> = ({
 			onMouseLeave={mouseLeaveHandler}
 		>
 			{children}
-			{isShow && <span className={stylesText}>{text}</span>}
+			{isShow && (
+				<span {...props} className={stylesText} title="">
+					{text}
+				</span>
+			)}
 		</div>
 	)
 }

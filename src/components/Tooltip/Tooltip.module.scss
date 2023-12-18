@@ -20,7 +20,6 @@ $gap: 8px;
 		min-width: 200px;
 		height: max-content;
 		animation: appearance 200ms linear;
-		text-align: center;
 
 		@keyframes appearance {
 			from {
@@ -55,4 +54,20 @@ $gap: 8px;
 	right: calc(100% + $gap);
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.justify {
+	text-align: justify;
 }
