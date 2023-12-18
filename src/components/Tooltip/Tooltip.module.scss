@@ -18,6 +18,17 @@ $gap: 8px;
 		position: absolute;
 		z-index: 1;
 		min-width: 200px;
+		height: max-content;
+		animation: appearance 200ms linear;
+
+		@keyframes appearance {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
 	}
 }
 
