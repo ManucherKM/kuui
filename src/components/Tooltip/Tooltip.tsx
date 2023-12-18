@@ -20,7 +20,7 @@ export interface ITooltip extends HTMLAttributes<HTMLSpanElement> {
 	text: string
 	children: ReactNode
 	position?: `${EPosition}`
-	align: `${EAlign}`
+	align?: `${EAlign}`
 }
 
 export const Tooltip: FC<ITooltip> = ({
