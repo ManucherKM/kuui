@@ -20,7 +20,7 @@ export const Tooltip: FC<ITooltip> = ({
 	children,
 	position = EPosition.top,
 }) => {
-	const [isShow, setIsShow] = useState<boolean>(true)
+	const [isShow, setIsShow] = useState<boolean>(false)
 
 	function mouseEnterHandler() {
 		setIsShow(true)
@@ -37,8 +37,8 @@ export const Tooltip: FC<ITooltip> = ({
 			onMouseEnter={mouseEnterHandler}
 			onMouseLeave={mouseLeaveHandler}
 		>
-			{isShow && <div className={stylesText}>{text}</div>}
 			{children}
+			{isShow && <span className={stylesText}>{text}</span>}
 		</div>
 	)
 }
