@@ -29,8 +29,6 @@ export interface IAccordionItem {
 export interface IAccordion extends TAccordion {
 	/** An array of accordion elements. */
 	items: IAccordionItem[]
-
-	autoTabIndex: boolean
 }
 
 /**
@@ -47,19 +45,14 @@ export interface IAccordion extends TAccordion {
  * 		]}
  * 	/>
  */
-export const Accordion: FC<IAccordion> = ({
-	items,
-	className,
-	autoTabIndex,
-	...props
-}) => {
+export const Accordion: FC<IAccordion> = ({ items, className, ...props }) => {
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([classes.root, className])
 
 	return (
 		<div className={styles} {...props}>
 			{items.map((item, idx) => (
-				<Item key={idx} name={item.name} autoTabIndex={autoTabIndex}>
+				<Item key={idx} name={item.name}>
 					{item.body}
 				</Item>
 			))}

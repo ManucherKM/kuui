@@ -1,15 +1,15 @@
 // Types
-import type { FC, HTMLAttributes, ReactNode } from 'react'
+import { type FC, type HTMLAttributes, type ReactNode } from 'react'
 
 // Styles
 import classes from './Item.module.scss'
 
 // Utils
-import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
 
 // Icons
 import { Arrow } from '@/assets/icons'
+import { useTabIndex } from '@/hooks'
 
 /** Allowable Item types. */
 export type TItem = HTMLAttributes<HTMLDivElement>
@@ -18,8 +18,6 @@ export type TItem = HTMLAttributes<HTMLDivElement>
 export interface IItem extends TItem {
 	/** Title of the accordion element. */
 	name: ReactNode
-
-	autoTabIndex: boolean
 }
 
 /**
@@ -36,19 +34,14 @@ export const Item: FC<IItem> = ({
 	name,
 	children,
 	className,
-	autoTabIndex,
-	tabIndex = getTabIndex(),
+	tabIndex = useTabIndex(),
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([classes.root, className])
 
 	return (
-		<div
-			className={styles}
-			tabIndex={autoTabIndex ? tabIndex : undefined}
-			{...props}
-		>
+		<div className={styles} tabIndex={tabIndex} {...props}>
 			<div className={classes.wrapperTitle}>
 				<span className={classes.title}>{name}</span>
 				<Arrow />

@@ -2,7 +2,6 @@
 import type { FC, HTMLAttributes } from 'react'
 
 // Utils
-import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
 import { useState } from 'react'
 
@@ -18,6 +17,7 @@ import {
 	FileXlsx,
 	FileZip,
 } from '@/assets/icons'
+import { useTabIndex } from '@/hooks'
 
 const images = ['jpg', 'jpeg', 'png', 'apng', 'avif', 'gif', 'webp']
 
@@ -56,7 +56,7 @@ export const FileItem: FC<IFileItem> = ({
 	isActive = false,
 	name,
 	children,
-	tabIndex = getTabIndex(),
+	tabIndex = useTabIndex(),
 	...props
 }) => {
 	// State for focus tracking.

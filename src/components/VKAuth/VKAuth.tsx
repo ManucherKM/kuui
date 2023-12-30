@@ -5,11 +5,11 @@ import type { FC, HTMLAttributes } from 'react'
 import classes from './VKAuth.module.scss'
 
 // Utils
-import { getTabIndex } from '@/utils'
 import clsx from 'clsx'
 
 // Icons
 import { Vk } from '@/assets/icons'
+import { useTabIndex } from '@/hooks'
 
 /** Allowable VKAuth types. */
 export type TVKAuth = HTMLAttributes<HTMLDivElement>
@@ -52,7 +52,7 @@ export const VKAuth: FC<IVKAuth> = ({
 	variant = EVKAuthVariant.small,
 	fill = EVkAuthFill.fixed,
 	className,
-	tabIndex = getTabIndex(),
+	tabIndex = useTabIndex(),
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
