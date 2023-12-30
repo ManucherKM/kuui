@@ -17,7 +17,7 @@ import {
 	FileXlsx,
 	FileZip,
 } from '@/assets/icons'
-import { useTabIndex } from '@/hooks'
+import { getTabIndex } from '@/utils'
 
 const images = ['jpg', 'jpeg', 'png', 'apng', 'avif', 'gif', 'webp']
 
@@ -56,7 +56,7 @@ export const FileItem: FC<IFileItem> = ({
 	isActive = false,
 	name,
 	children,
-	tabIndex = useTabIndex(),
+	tabIndex = getTabIndex(),
 	...props
 }) => {
 	// State for focus tracking.
