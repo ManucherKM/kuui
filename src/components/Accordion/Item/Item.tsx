@@ -18,6 +18,8 @@ export type TItem = HTMLAttributes<HTMLDivElement>
 export interface IItem extends TItem {
 	/** Title of the accordion element. */
 	name: ReactNode
+
+	autoTabIndex: boolean
 }
 
 /**
@@ -34,6 +36,7 @@ export const Item: FC<IItem> = ({
 	name,
 	children,
 	className,
+	autoTabIndex,
 	tabIndex = getTabIndex(),
 	...props
 }) => {
@@ -41,7 +44,11 @@ export const Item: FC<IItem> = ({
 	const styles = clsx([classes.root, className])
 
 	return (
-		<div className={styles} tabIndex={tabIndex} {...props}>
+		<div
+			className={styles}
+			tabIndex={autoTabIndex ? tabIndex : undefined}
+			{...props}
+		>
 			<div className={classes.wrapperTitle}>
 				<span className={classes.title}>{name}</span>
 				<Arrow />
