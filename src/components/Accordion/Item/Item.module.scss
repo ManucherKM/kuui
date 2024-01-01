@@ -18,6 +18,13 @@
 		border-color: $dominant-1;
 
 		.wrapperTitle {
+			.title {
+				transition: all 100ms;
+				color: $dominant-1;
+			}
+		}
+
+		.wrapperTitle {
 			svg {
 				path {
 					transition: all 100ms;
