@@ -27,6 +27,8 @@ export type TArea = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 export interface IArea extends TArea {
 	/** Options for filling available space. */
 	fill?: `${EAreaFill}`
+
+	wrapperAreaLabel?: string
 }
 
 /**
@@ -39,6 +41,7 @@ export interface IArea extends TArea {
 export const Area: FC<IArea> = ({
 	className,
 	fill = EAreaFill.all,
+	wrapperAreaLabel,
 	...props
 }) => {
 	const id = useId()
@@ -47,7 +50,7 @@ export const Area: FC<IArea> = ({
 	const styles = clsx([classes.root, classes[fill], className])
 
 	return (
-		<label htmlFor={id} className={styles}>
+		<label htmlFor={id} className={styles} aria-label={wrapperAreaLabel}>
 			<Plus width="24px" height="24px" className={classes.plus} />
 			<input id={id} className={classes.input} type="file" {...props} />
 		</label>
