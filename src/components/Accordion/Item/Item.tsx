@@ -9,7 +9,6 @@ import clsx from 'clsx'
 
 // Icons
 import { Arrow } from '@/assets/icons'
-import { getTabIndex } from '@/utils'
 
 /** Allowable Item types. */
 export type TItem = HTMLAttributes<HTMLDivElement>
@@ -34,7 +33,7 @@ export const Item: FC<IItem> = ({
 	name,
 	children,
 	className,
-	tabIndex = getTabIndex(),
+	tabIndex = 0,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.

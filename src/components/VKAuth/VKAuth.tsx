@@ -9,7 +9,6 @@ import clsx from 'clsx'
 
 // Icons
 import { Vk } from '@/assets/icons'
-import { getTabIndex } from '@/utils'
 
 /** Allowable VKAuth types. */
 export type TVKAuth = HTMLAttributes<HTMLDivElement>
@@ -52,7 +51,7 @@ export const VKAuth: FC<IVKAuth> = ({
 	variant = EVKAuthVariant.small,
 	fill = EVkAuthFill.fixed,
 	className,
-	tabIndex = getTabIndex(),
+	tabIndex = 0,
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.

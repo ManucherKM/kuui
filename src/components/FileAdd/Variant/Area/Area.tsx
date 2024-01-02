@@ -3,6 +3,7 @@ import type { FC, InputHTMLAttributes } from 'react'
 
 // Utils
 import clsx from 'clsx'
+import { useId } from 'react'
 
 // Styles
 import classes from './Area.module.scss'
@@ -40,13 +41,15 @@ export const Area: FC<IArea> = ({
 	fill = EAreaFill.all,
 	...props
 }) => {
+	const id = useId()
+
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([classes.root, classes[fill], className])
 
 	return (
-		<label className={styles}>
+		<label htmlFor={id} className={styles}>
 			<Plus width="24px" height="24px" className={classes.plus} />
-			<input className={classes.input} type="file" {...props} />
+			<input id={id} className={classes.input} type="file" {...props} />
 		</label>
 	)
 }

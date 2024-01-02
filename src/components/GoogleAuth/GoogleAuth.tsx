@@ -9,7 +9,6 @@ import classes from './GoogleAuth.module.scss'
 
 // Icons
 import * as icons from '@/assets/icons'
-import { getTabIndex } from '@/utils'
 
 /** Allowable GoogleAuth types. */
 export type TGoogleAuth = Omit<HTMLAttributes<HTMLDivElement>, 'tabIndex'>
@@ -63,7 +62,7 @@ export const GoogleAuth: FC<IGoogleAuth> = ({
 	])
 
 	return (
-		<div className={styles} tabIndex={getTabIndex()} {...props}>
+		<div className={styles} tabIndex={0} {...props}>
 			<icons.Google width="20px" height="20px" />
 			{variant === EGoogleAuthVariant.large && (
 				<span className={classes.title}>Continue with Google</span>
