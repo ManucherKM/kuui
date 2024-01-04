@@ -31,6 +31,22 @@ export const Playground: Story = {
 					</Paragraph>
 				),
 			},
+			{
+				children: (
+					<Paragraph>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi,
+						facere?
+					</Paragraph>
+				),
+			},
+			{
+				children: (
+					<Paragraph>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi,
+						facere?
+					</Paragraph>
+				),
+			},
 		],
 	},
 }
