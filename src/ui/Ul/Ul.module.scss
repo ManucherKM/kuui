@@ -1,0 +1,11 @@
+// Importing variables.
+@import '@/assets/styles/vars.scss';
+
+.root {
+	padding-left: 16px;
+	list-style-type: disc;
+
+	li {
+		color: $dominant-1;
+	}
+}
