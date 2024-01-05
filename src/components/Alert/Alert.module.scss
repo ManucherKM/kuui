@@ -78,3 +78,24 @@
 		}
 	}
 }
+
+.left {
+	justify-content: left;
+	.text {
+		text-align: left;
+	}
+}
+
+.center {
+	justify-content: center;
+	.text {
+		text-align: center;
+	}
+}
+
+.right {
+	justify-content: right;
+	.text {
+		text-align: right;
+	}
+}

@@ -9,6 +9,18 @@ import { createPortal } from 'react-dom'
 // Styles
 import classes from './Alert.module.scss'
 
+/** Enumeration of possible Alert positions. */
+export enum EAlertAlign {
+	/** Aligns the element to the left. */
+	left = 'left',
+
+	/** Aligns the element to the center. */
+	center = 'center',
+
+	/** Aligns the element to the right. */
+	right = 'right',
+}
+
 /** Enumeration of possible Alert variants. */
 export enum EAlertVariant {
 	/**
@@ -37,6 +49,7 @@ export enum EAlertAppearance {
 export interface IAlert extends HTMLAttributes<HTMLDivElement> {
 	variant?: `${EAlertVariant}`
 	appearance?: `${EAlertAppearance}`
+	align?: `${EAlertAlign}`
 	text: string
 	time: number
 	onTimeUp?: () => void
@@ -53,6 +66,7 @@ export const Alert: FC<IAlert> = ({
 	variant = EAlertVariant.message,
 	appearance = EAlertAppearance.above,
 	className,
+	align = EAlertAlign.center,
 	time,
 	onTimeUp,
 	...props
@@ -65,6 +79,7 @@ export const Alert: FC<IAlert> = ({
 		classes.root,
 		classes[variant],
 		classes[appearance],
+		classes[align],
 		className,
 	])
 
