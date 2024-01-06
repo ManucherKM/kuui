@@ -1,5 +1,5 @@
 // Types
-import type { FC, HTMLAttributes } from 'react'
+import { useEffect, useRef, type FC, type HTMLAttributes } from 'react'
 
 // Utils
 import clsx from 'clsx'
@@ -36,6 +36,8 @@ export const Popup: FC<IPopup> = ({
 	clear = false,
 	...props
 }) => {
+	const popupRef = useRef<HTMLDivElement | null>(null)
+
 	/** Function handler for clicking on the background of the popup. */
 	function clickHandler() {
 		// If the user passed the function.
@@ -48,10 +50,20 @@ export const Popup: FC<IPopup> = ({
 	// We place the styles necessary for the content into a variable.
 	const contentStyles = clsx([classes.content, className])
 
+	useEffect(() => {
+		if (!popupRef.current) return
+
+		popupRef.current.scrollIntoView()
+		document.body.style.overflow = 'hidden'
+
+		return () => {
+			document.body.style.removeProperty('overflow')
+		}
+	}, [])
 	return (
 		<>
 			{createPortal(
-				<div onClick={clickHandler} className={classes.wrapper}>
+				<div ref={popupRef} onClick={clickHandler} className={classes.wrapper}>
 					{clear ? (
 						children
 					) : (
