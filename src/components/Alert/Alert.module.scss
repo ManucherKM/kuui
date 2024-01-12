@@ -47,6 +47,7 @@
 
 .above {
 	position: absolute;
+	z-index: 3;
 	left: 50%;
 	transform: translate(-50%, 0);
 	top: -100px;
@@ -64,6 +65,7 @@
 
 .fromBelow {
 	position: absolute;
+	z-index: 3;
 	left: 50%;
 	transform: translate(-50%, 0);
 	bottom: -100px;
