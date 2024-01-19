@@ -21,10 +21,7 @@ type Story = StoryObj<typeof Skeleton>
 // Setting Story
 export const Playground: Story = {
 	args: {
-		style: {
-			borderRadius: '12px',
-			width: '200px',
-			height: '100px',
-		},
+		width: '200px',
+		height: '100px',
 	},
 }
