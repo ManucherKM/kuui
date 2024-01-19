@@ -1,4 +1,4 @@
-![Banner](https://github.com/ManucherKM/kuui/blob/react/images/Banner.png?raw=true)
+![Banner](https://github.com/ManucherKM/kuui/assets/91463158/5957a7fc-2ed9-4879-a782-e81cc99a6f50)
 
 # Kuui | Beta testing.
 
@@ -14,7 +14,7 @@
 
 ## Preview
 
-
+https://github.com/ManucherKM/kuui/assets/91463158/6c522822-4a8c-485e-b8b4-ffc8e85c27f7
 
 ## Demo
 [Demo](https://kuui.vercel.app)
