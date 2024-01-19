@@ -22,5 +22,6 @@ type Story = StoryObj<typeof Title>
 export const Playground: Story = {
 	args: {
 		children: 'Title',
+		importance: 'h2',
 	},
 }

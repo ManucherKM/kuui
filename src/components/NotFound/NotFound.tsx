@@ -8,6 +8,7 @@ import classes from './NotFound.module.scss'
 export enum ENotFoundFill {
 	screen = 'screen',
 	all = 'all',
+	fixed = 'fixed',
 }
 
 export interface INotFound {
@@ -21,7 +22,7 @@ export interface INotFound {
  * @example
  * 	;<NotFound />
  */
-export const NotFound: FC<INotFound> = ({ fill = ENotFoundFill.screen }) => {
+export const NotFound: FC<INotFound> = ({ fill = ENotFoundFill.fixed }) => {
 	const rootStyles = clsx([classes.root, classes[fill]])
 	return (
 		<div className={rootStyles}>

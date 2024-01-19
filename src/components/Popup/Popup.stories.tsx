@@ -23,5 +23,6 @@ type Story = StoryObj<typeof Popup>
 export const Playground: Story = {
 	args: {
 		children: <Button variant="active">Button</Button>,
+		onClick: e => e.stopPropagation(),
 	},
 }

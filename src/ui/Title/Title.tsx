@@ -31,6 +31,15 @@ export enum ETitleAlign {
 	right = 'right',
 }
 
+export enum ETitleImportance {
+	h1 = 'h1',
+	h2 = 'h2',
+	h3 = 'h3',
+	h4 = 'h4',
+	h5 = 'h5',
+	h6 = 'h6',
+}
+
 /** Allowable Title types. */
 export type TTitle = HTMLAttributes<HTMLHeadingElement>
 
@@ -41,6 +50,8 @@ export interface ITitle extends TTitle {
 
 	/** Title align */
 	align?: `${ETitleAlign}`
+
+	importance?: `${ETitleImportance}`
 }
 
 /**
@@ -56,9 +67,12 @@ export const Title: FC<ITitle> = ({
 	children,
 	dimension = ETitleDimension.medium,
 	align = ETitleAlign.left,
+	importance = ETitleImportance.h1,
 	className,
 	...props
 }) => {
+	const Tag = importance
+
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
 		classes.root,
@@ -68,9 +82,9 @@ export const Title: FC<ITitle> = ({
 	])
 
 	return (
-		<h1 className={styles} {...props}>
+		<Tag className={styles} {...props}>
 			{children}
-		</h1>
+		</Tag>
 	)
 }
 

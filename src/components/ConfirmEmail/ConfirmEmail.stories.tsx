@@ -21,7 +21,7 @@ type Story = StoryObj<typeof ConfirmEmail>
 // Setting Story
 export const Playground: Story = {
 	args: {
-		fill: 'screen',
+		fill: 'fixed',
 		email: 'test@gmail.com',
 	},
 }

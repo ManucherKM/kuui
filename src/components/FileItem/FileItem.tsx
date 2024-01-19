@@ -30,6 +30,15 @@ export enum EFileItemExtension {
 	file = 'file',
 }
 
+/** Enumeration of possible FileItem fill variants. */
+export enum EFileItemFill {
+	/** Fills all available space. */
+	all = 'all',
+
+	/** Fills a fixed space from the available space. */
+	fixed = 'fixed',
+}
+
 /** FileItem component interface. */
 export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
 	/** File extension. */
@@ -40,6 +49,8 @@ export interface IFileItem extends HTMLAttributes<HTMLDivElement> {
 
 	/** Flag for checking file activity. */
 	isActive?: boolean
+
+	fill?: `${EFileItemFill}`
 }
 
 /**
@@ -56,6 +67,7 @@ export const FileItem: FC<IFileItem> = ({
 	name,
 	children,
 	tabIndex = 0,
+	fill = EFileItemFill.fixed,
 	...props
 }) => {
 	// State for focus tracking.
@@ -72,7 +84,12 @@ export const FileItem: FC<IFileItem> = ({
 	}
 
 	// We put the wrapper styles into the "styles" variable.
-	const styles = clsx([classes.root, isActive && classes.active, className])
+	const styles = clsx([
+		classes.root,
+		isActive && classes.active,
+		fill && classes[fill],
+		className,
+	])
 
 	// Place the text styles in the "textStyles" variable.
 	const textStyles = clsx([
@@ -96,7 +113,7 @@ export const FileItem: FC<IFileItem> = ({
 				className={textStyles}
 				tabIndex={tabIndex}
 			>
-				{name}.{extension}
+				{extension ? `${name}.${extension}` : name}
 			</span>
 		</div>
 	)

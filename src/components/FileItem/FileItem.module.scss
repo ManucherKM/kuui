@@ -2,9 +2,6 @@
 @import '@/assets/styles/vars.scss';
 
 .root {
-	width: 100%;
-	min-height: 100%;
-	height: max-content;
 	cursor: pointer;
 	padding: 0.5rem;
 	border-width: 1px;
@@ -13,9 +10,9 @@
 	transition: all 300ms;
 	border-radius: $radius;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	background-color: $black-500;
 	gap: 8px;
 
@@ -66,22 +63,46 @@
 			stroke: $black-250;
 		}
 	}
-}
 
-.name {
-	display: inline-block;
-	font-size: 0.7rem;
-	text-align: center;
-	width: 100px;
-	word-break: break-all;
-	color: $black-250;
-	font-family: $NotoSansMono;
-	transition: color 300ms;
-	outline: none;
+	.name {
+		display: inline-block;
+		font-size: 0.7rem;
+		text-align: center;
+		width: 100px;
+		word-break: break-all;
+		color: $black-250;
+		font-family: $NotoSansMono;
+		transition: color 300ms;
+		outline: none;
+	}
 }
 
 .textEllipsis {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.all {
+	width: 100%;
+	min-height: 100%;
+	height: max-content;
+
+	.name {
+		width: 80%;
+	}
+}
+
+.fixed {
+	width: 120px;
+	height: max-content;
+}
+
+.availableSpace {
+	width: 100%;
+	height: 100%;
+
+	.name {
+		width: 80%;
+	}
 }

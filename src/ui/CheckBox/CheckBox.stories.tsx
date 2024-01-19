@@ -22,5 +22,6 @@ type Story = StoryObj<typeof CheckBox>
 export const Playground: Story = {
 	args: {
 		variant: 'box',
+		dimension: 'medium',
 	},
 }

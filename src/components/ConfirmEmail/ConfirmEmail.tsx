@@ -22,7 +22,9 @@ export enum EFillConfirmEmail {
 	screen = 'screen',
 
 	/** Fills all available space. */
-	availableSpace = 'availableSpace',
+	all = 'all',
+
+	fixed = 'fixed',
 }
 
 /** ConfirmEmail component interface. */
@@ -48,7 +50,7 @@ export const ConfirmEmail: FC<IConfirmEmail> = ({
 	...props
 }) => {
 	// Put all used style classes into the "styles" variable.
-	const styles = clsx([classes.root, classes[fill], className])
+	const styles = clsx([classes.root, fill && classes[fill], className])
 
 	return (
 		<div className={styles} {...props}>

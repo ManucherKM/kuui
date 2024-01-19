@@ -31,6 +31,15 @@ export enum ESubtitleAlign {
 	right = 'right',
 }
 
+export enum ESubtitleImportance {
+	h1 = 'h1',
+	h2 = 'h2',
+	h3 = 'h3',
+	h4 = 'h4',
+	h5 = 'h5',
+	h6 = 'h6',
+}
+
 /** Allowable Subtitle types. */
 export type TSubtitle = HTMLAttributes<HTMLHeadingElement>
 
@@ -41,6 +50,8 @@ export interface ISubtitle extends TSubtitle {
 
 	/** Subtitle align */
 	align?: `${ESubtitleAlign}`
+
+	importance?: `${ESubtitleImportance}`
 }
 
 /**
@@ -56,9 +67,12 @@ export const Subtitle: FC<ISubtitle> = ({
 	children,
 	dimension = ESubtitleDimension.medium,
 	align = ESubtitleAlign.left,
+	importance = ESubtitleImportance.h2,
 	className,
 	...props
 }) => {
+	const Tag = importance
+
 	// Put all used style classes into the "styles" variable.
 	const styles = clsx([
 		classes.root,
@@ -68,8 +82,8 @@ export const Subtitle: FC<ISubtitle> = ({
 	])
 
 	return (
-		<h2 className={styles} {...props}>
+		<Tag className={styles} {...props}>
 			{children}
-		</h2>
+		</Tag>
 	)
 }

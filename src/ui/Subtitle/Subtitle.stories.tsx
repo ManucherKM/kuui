@@ -22,5 +22,6 @@ type Story = StoryObj<typeof Subtitle>
 export const Playground: Story = {
 	args: {
 		children: 'Subtitle',
+		importance: 'h3',
 	},
 }
